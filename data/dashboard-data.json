@@ -17,13 +17,15 @@
       "label": "Total Claims",
       "value": "3.5M",
       "unit": "#",
-      "color": "#449cfb"
+      "color": "#449cfb",
+      "tooltip": "Avg. rate relativity = Σ (Allowed / Medicare Reference Price) / Total # of claims"
     },
     {
       "label": "Total Billed Amount",
       "value": "$11.38B",
       "unit": "USD",
-      "color": "#449cfb"
+      "color": "#449cfb",
+      "tooltip": "Avg. rate relativity = Σ (Allowed / Medicare Reference Price) / Total # of claims"
     },
     {
       "label": "Total Allowed Amount",

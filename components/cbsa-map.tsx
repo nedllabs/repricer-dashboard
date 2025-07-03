@@ -6,14 +6,13 @@ import type { Map } from "mapbox-gl"
 import cbsaMetrics from "@/data/cbsa-metrics.json"
 import cbsaMapConfig from "@/data/cbsa-map-config.json"
 
-mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN!
-
 type MetricKey = "claimsVolume" | "rateRelativity"
 
 interface ChoroplethProps {
   title: string
   metric: MetricKey
   legendUnit: string
+  token: string
 }
 
 function getColorForValue(value: number, metric: MetricKey): string {
@@ -36,13 +35,15 @@ function getRadiusForValue(value: number, metric: MetricKey): number {
   }
 }
 
-export function CbsaMap({ title, metric, legendUnit }: ChoroplethProps) {
+export function CbsaMap({ title, metric, legendUnit, token }: ChoroplethProps) {
   const mapContainer = useRef<HTMLDivElement>(null)
   const mapRef = useRef<Map>()
 
   useEffect(() => {
     if (!mapContainer.current) return
     if (mapRef.current) return
+
+    mapboxgl.accessToken = token
 
     // Create GeoJSON from point data
     const pointFeatures = cbsaMetrics.map((cbsa) => ({
@@ -194,7 +195,7 @@ export function CbsaMap({ title, metric, legendUnit }: ChoroplethProps) {
     })
 
     return () => map.remove()
-  }, [metric, legendUnit])
+  }, [metric, legendUnit, token])
 
   return (
     <div className="bg-white rounded-xl p-4 shadow-sm border border-[#e5e7eb] flex flex-col relative">

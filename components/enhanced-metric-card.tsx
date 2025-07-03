@@ -1,7 +1,8 @@
 "use client"
 
-import { TrendingUp, TrendingDown } from "lucide-react"
+import { TrendingUp, TrendingDown, Info } from "lucide-react"
 import { useState } from "react"
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 
 interface EnhancedMetricCardProps {
   label: string
@@ -10,12 +11,21 @@ interface EnhancedMetricCardProps {
   color: string
   trend?: number
   previousValue?: string
+  tooltip?: string
 }
 
-export function EnhancedMetricCard({ label, value, unit, color, trend = 0, previousValue }: EnhancedMetricCardProps) {
+export function EnhancedMetricCard({
+  label,
+  value,
+  unit,
+  color,
+  trend = 0,
+  previousValue,
+  tooltip,
+}: EnhancedMetricCardProps) {
   const [isHovered, setIsHovered] = useState(false)
 
-  return (
+  const CardContent = () => (
     <div
       className="group relative bg-white rounded-xl p-6 shadow-sm border border-[#e5e7eb] hover:shadow-lg transition-all duration-300 cursor-pointer overflow-hidden w-full"
       onMouseEnter={() => setIsHovered(true)}
@@ -35,7 +45,12 @@ export function EnhancedMetricCard({ label, value, unit, color, trend = 0, previ
 
       <div className="relative z-10">
         <div className="flex items-start justify-between mb-4 min-h-12">
-          <div className="text-sm font-medium text-[#6b7280] leading-tight font-comfortaa">{label}</div>
+          <div className="text-sm font-medium text-[#6b7280] leading-tight font-comfortaa flex items-center space-x-2">
+            <span>{label}</span>
+            {tooltip && (
+              <Info className="w-3 h-3 text-[#9ca3af] opacity-60 group-hover:opacity-100 transition-opacity" />
+            )}
+          </div>
           {trend !== 0 && (
             <div className={`flex items-center space-x-1 ${trend > 0 ? "text-green-500" : "text-red-500"}`}>
               {trend > 0 ? <TrendingUp className="w-3 h-3" /> : <TrendingDown className="w-3 h-3" />}
@@ -57,4 +72,24 @@ export function EnhancedMetricCard({ label, value, unit, color, trend = 0, previ
       </div>
     </div>
   )
+
+  if (tooltip) {
+    return (
+      <TooltipProvider>
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <div>
+              <CardContent />
+            </div>
+          </TooltipTrigger>
+          <TooltipContent side="top" className="max-w-xs p-3 bg-[#374151] text-white text-sm rounded-lg shadow-lg">
+            <div className="font-medium mb-1">Formula:</div>
+            <div className="text-xs leading-relaxed">{tooltip}</div>
+          </TooltipContent>
+        </Tooltip>
+      </TooltipProvider>
+    )
+  }
+
+  return <CardContent />
 }

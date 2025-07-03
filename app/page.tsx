@@ -25,6 +25,7 @@ function SummaryTab() {
               color={metric.color}
               trend={index % 2 === 0 ? 12.5 : -3.2}
               previousValue={index === 0 ? "3.2M" : undefined}
+              tooltip={metric.tooltip}
             />
           ))}
         </div>
@@ -35,6 +36,7 @@ function SummaryTab() {
             unit={dashboardData.metrics[5].unit}
             color={dashboardData.metrics[5].color}
             trend={8.7}
+            tooltip={dashboardData.metrics[5].tooltip}
           />
           <EnhancedMetricCard
             label={dashboardData.metrics[6].label}
@@ -42,6 +44,7 @@ function SummaryTab() {
             unit={dashboardData.metrics[6].unit}
             color={dashboardData.metrics[6].color}
             trend={-2.1}
+            tooltip={dashboardData.metrics[6].tooltip}
           />
         </div>
       </div>
