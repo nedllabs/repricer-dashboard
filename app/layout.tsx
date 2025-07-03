@@ -14,7 +14,53 @@ const comfortaa = Comfortaa({
 
 export const metadata: Metadata = {
   title: "NEDL Analytics Dashboard",
-  description: "Healthcare analytics and claims processing dashboard",
+  description: "Healthcare analytics and claims processing dashboard for comprehensive data insights and reporting",
+  keywords: ["healthcare analytics", "claims processing", "medical data", "dashboard", "NEDL"],
+  authors: [{ name: "NEDL Analytics Team" }],
+  creator: "NEDL Analytics",
+  publisher: "NEDL Analytics",
+  openGraph: {
+    title: "NEDL Analytics Dashboard",
+    description: "Healthcare analytics and claims processing dashboard for comprehensive data insights and reporting",
+    url: "https://nedl-analytics.vercel.app",
+    siteName: "NEDL Analytics",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "NEDL Analytics Dashboard - Claims Process Summary",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "NEDL Analytics Dashboard",
+    description: "Healthcare analytics and claims processing dashboard for comprehensive data insights and reporting",
+    images: ["/og-image.png"],
+    creator: "@nedlanalytics",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  icons: {
+    icon: [
+      { url: "/favicon.png", type: "image/svg+xml" },
+      { url: "/favicon.ico", sizes: "any" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
+  },
+  manifest: "/site.webmanifest",
     generator: 'v0.dev'
 }
 
@@ -25,6 +71,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/favicon.png" type="image/svg+xml" />
+        <link rel="alternate icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <meta name="theme-color" content="#8b5cf6" />
+      </head>
       <body className={`${inter.variable} ${comfortaa.variable} font-sans antialiased`}>
         <div className="min-h-screen bg-gradient-to-br from-[#f8fafc] to-[#f1f5f9]">
           <HeaderNavigation />
