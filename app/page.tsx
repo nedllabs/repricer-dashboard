@@ -5,17 +5,18 @@ import { EnhancedMetricCard } from "@/components/enhanced-metric-card"
 import { ModernPieChart } from "@/components/modern-pie-chart"
 import { ReimbursementTable } from "@/components/reimbursement-table"
 import { ComparisonBarChart } from "@/components/comparison-bar-chart"
-import { CompactDateFilters } from "@/components/compact-date-filters"
+import { MobileDateFilters } from "@/components/mobile-date-filters"
 import { ModernSectionHeader } from "@/components/modern-section-header"
-import { ModernTabNavigation } from "@/components/modern-tab-navigation"
+import { MobileTabNavigation } from "@/components/mobile-tab-navigation"
 import { InpatientTab } from "@/components/inpatient-tab"
 import dashboardData from "@/data/dashboard-data.json"
 
 function SummaryTab() {
   return (
     <>
-      <div className="space-y-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+      <div className="space-y-4 lg:space-y-6">
+        {/* Mobile: Stack metrics vertically, Desktop: Grid layout */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 lg:gap-4">
           {dashboardData.metrics.slice(0, 5).map((metric, index) => (
             <EnhancedMetricCard
               key={index}
@@ -29,7 +30,7 @@ function SummaryTab() {
             />
           ))}
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 lg:gap-4 max-w-2xl sm:max-w-full mx-auto">
           <EnhancedMetricCard
             label={dashboardData.metrics[5].label}
             value={dashboardData.metrics[5].value}
@@ -48,7 +49,9 @@ function SummaryTab() {
           />
         </div>
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+      {/* Mobile: Stack charts vertically, Desktop: Side by side */}
+      <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 lg:gap-6">
         <ModernPieChart
           title={dashboardData.claimVolumePieChart.title}
           data={dashboardData.claimVolumePieChart.data}
@@ -60,8 +63,10 @@ function SummaryTab() {
           layout="horizontal"
         />
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        <div className="lg:col-span-2">
+
+      {/* Mobile: Stack table and chart vertically, Desktop: Side by side */}
+      <div className="grid grid-cols-1 xl:grid-cols-3 gap-4 lg:gap-6">
+        <div className="xl:col-span-2">
           <ReimbursementTable
             headers={dashboardData.reimbursementTable.headers}
             sections={dashboardData.reimbursementTable.sections}
@@ -82,13 +87,13 @@ export default function Dashboard() {
   const [activeTab, setActiveTab] = useState("summary")
 
   return (
-    <main className="p-6 space-y-6">
+    <main className="p-3 lg:p-6 space-y-4 lg:space-y-6">
       <ModernSectionHeader
         title="Repricer Intelligence Dashboard"
         subtitle="Overview of claims repricing metrics and analytics"
       />
-      <CompactDateFilters />
-      <ModernTabNavigation tabs={dashboardData.tabs} onTabChange={setActiveTab} />
+      <MobileDateFilters />
+      <MobileTabNavigation tabs={dashboardData.tabs} onTabChange={setActiveTab} />
 
       {activeTab === "summary" && <SummaryTab />}
       {activeTab === "inpatient" && <InpatientTab />}

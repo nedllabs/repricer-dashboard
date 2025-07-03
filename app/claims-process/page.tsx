@@ -45,7 +45,7 @@ const tableData = [
 
 export default function ClaimsProcessPage() {
   return (
-    <main className="p-6 space-y-6">
+    <main className="p-3 lg:p-6 space-y-4 lg:space-y-6">
       <ModernSectionHeader
         title="Claims Process Summary"
         subtitle="Overview of claims processing status and methodology breakdown"
@@ -53,8 +53,8 @@ export default function ClaimsProcessPage() {
 
       <ProcessedDataFilter />
 
-      {/* Metrics Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4">
+      {/* Mobile: 2 columns, Desktop: 6 columns */}
+      <div className="grid grid-cols-2 lg:grid-cols-6 gap-3 lg:gap-4">
         {claimsProcessMetrics.map((metric, index) => (
           <EnhancedMetricCard
             key={index}
@@ -66,15 +66,15 @@ export default function ClaimsProcessPage() {
         ))}
       </div>
 
-      {/* Charts Section */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      {/* Mobile: Stack charts vertically, Desktop: Side by side */}
+      <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 lg:gap-6">
         <ClaimsProcessPieChart title="Claim Volume by Reimbursement Methodology" data={claimVolumeData} />
         <RepricingStatusChart title="Repricing status by Reimbursement Methodology" data={repricingStatusData} />
       </div>
 
-      {/* Table and Selector Section */}
-      <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
-        <div className="lg:col-span-3">
+      {/* Mobile: Stack table and selector vertically, Desktop: Side by side */}
+      <div className="grid grid-cols-1 xl:grid-cols-4 gap-4 lg:gap-6">
+        <div className="xl:col-span-3">
           <ClaimsProcessTable data={tableData} />
         </div>
         <div>
