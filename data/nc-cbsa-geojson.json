@@ -1,0 +1,68 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "11700",
+      "properties": { "name": "Asheville, NC" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-83.5, 35.4], [-82.5, 35.4], [-82.5, 34.8], [-83.5, 34.8], [-83.5, 35.4]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "25860",
+      "properties": { "name": "Hickory-Lenoir-Morganton, NC" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-82.2, 36.1], [-81.2, 36.1], [-81.2, 35.5], [-82.2, 35.5], [-82.2, 36.1]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "24660",
+      "properties": { "name": "Greensboro-High Point, NC" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-80.4, 36.3], [-79.4, 36.3], [-79.4, 35.7], [-80.4, 35.7], [-80.4, 36.3]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "20500",
+      "properties": { "name": "Durham-Chapel Hill, NC" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-79.4, 36.2], [-78.4, 36.2], [-78.4, 35.6], [-79.4, 35.6], [-79.4, 36.2]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "39580",
+      "properties": { "name": "Raleigh-Cary, NC" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-79.0, 36.1], [-78.0, 36.1], [-78.0, 35.5], [-79.0, 35.5], [-79.0, 36.1]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "27340",
+      "properties": { "name": "Jacksonville, NC" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-78.3, 35.1], [-77.3, 35.1], [-77.3, 34.5], [-78.3, 34.5], [-78.3, 35.1]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "48900",
+      "properties": { "name": "Wilmington, NC" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-78.0, 34.6], [-77.0, 34.6], [-77.0, 34.0], [-78.0, 34.0], [-78.0, 34.6]]]
+      }
+    }
+  ]
+}

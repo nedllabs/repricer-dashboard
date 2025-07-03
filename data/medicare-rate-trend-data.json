@@ -1,0 +1,12 @@
+{
+  "data": [
+    { "quarter": "Q1 2023", "rate": 118.5, "target": 120 },
+    { "quarter": "Q2 2023", "rate": 119.2, "target": 120 },
+    { "quarter": "Q3 2023", "rate": 121.8, "target": 120 },
+    { "quarter": "Q4 2023", "rate": 120.4, "target": 120 },
+    { "quarter": "Q1 2024", "rate": 122.1, "target": 120 },
+    { "quarter": "Q2 2024", "rate": 119.8, "target": 120 },
+    { "quarter": "Q3 2024", "rate": 123.5, "target": 120 },
+    { "quarter": "Q4 2024", "rate": 125.2, "target": 120 }
+  ]
+}

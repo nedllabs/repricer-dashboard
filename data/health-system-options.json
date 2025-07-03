@@ -1,0 +1,14 @@
+{
+  "healthSystemOptions": [
+    "All Health Systems",
+    "Ascension Health",
+    "HCA Healthcare",
+    "CommonSpirit Health",
+    "Trinity Health",
+    "Tenet Healthcare",
+    "Kaiser Permanente",
+    "Mayo Clinic",
+    "Cleveland Clinic",
+    "Johns Hopkins"
+  ]
+}

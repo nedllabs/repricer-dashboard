@@ -1,0 +1,124 @@
+{
+  "data": [
+    {
+      "provider": "Metro General",
+      "claimCount": 4500,
+      "rateRelativity": 185,
+      "isOutlier": true,
+      "severity": "high",
+      "category": "High Rate"
+    },
+    {
+      "provider": "City Medical",
+      "claimCount": 3200,
+      "rateRelativity": 95,
+      "isOutlier": false,
+      "severity": "low",
+      "category": "Normal"
+    },
+    {
+      "provider": "Regional Health",
+      "claimCount": 5800,
+      "rateRelativity": 110,
+      "isOutlier": false,
+      "severity": "low",
+      "category": "Normal"
+    },
+    {
+      "provider": "University Hospital",
+      "claimCount": 2100,
+      "rateRelativity": 165,
+      "isOutlier": true,
+      "severity": "medium",
+      "category": "High Rate"
+    },
+    {
+      "provider": "Community Care",
+      "claimCount": 6200,
+      "rateRelativity": 88,
+      "isOutlier": false,
+      "severity": "low",
+      "category": "Normal"
+    },
+    {
+      "provider": "Specialty Center",
+      "claimCount": 1200,
+      "rateRelativity": 195,
+      "isOutlier": true,
+      "severity": "high",
+      "category": "High Rate"
+    },
+    {
+      "provider": "Valley Medical",
+      "claimCount": 3800,
+      "rateRelativity": 125,
+      "isOutlier": false,
+      "severity": "low",
+      "category": "Normal"
+    },
+    {
+      "provider": "Downtown Clinic",
+      "claimCount": 900,
+      "rateRelativity": 75,
+      "isOutlier": true,
+      "severity": "medium",
+      "category": "Low Rate"
+    },
+    {
+      "provider": "Suburban Hospital",
+      "claimCount": 4100,
+      "rateRelativity": 115,
+      "isOutlier": false,
+      "severity": "low",
+      "category": "Normal"
+    },
+    {
+      "provider": "Academic Medical",
+      "claimCount": 7200,
+      "rateRelativity": 145,
+      "isOutlier": true,
+      "severity": "medium",
+      "category": "High Rate"
+    },
+    {
+      "provider": "Family Health",
+      "claimCount": 2800,
+      "rateRelativity": 105,
+      "isOutlier": false,
+      "severity": "low",
+      "category": "Normal"
+    },
+    {
+      "provider": "Emergency Care",
+      "claimCount": 1500,
+      "rateRelativity": 220,
+      "isOutlier": true,
+      "severity": "high",
+      "category": "High Rate"
+    },
+    {
+      "provider": "Wellness Center",
+      "claimCount": 3600,
+      "rateRelativity": 92,
+      "isOutlier": false,
+      "severity": "low",
+      "category": "Normal"
+    },
+    {
+      "provider": "Cardiac Institute",
+      "claimCount": 2400,
+      "rateRelativity": 175,
+      "isOutlier": true,
+      "severity": "high",
+      "category": "High Rate"
+    },
+    {
+      "provider": "Orthopedic Clinic",
+      "claimCount": 1800,
+      "rateRelativity": 155,
+      "isOutlier": true,
+      "severity": "medium",
+      "category": "High Rate"
+    }
+  ]
+}

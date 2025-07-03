@@ -1,0 +1,99 @@
+{
+  "methodologies": [
+    {
+      "id": "ipps",
+      "name": "IPPS",
+      "description": "Inpatient Hospital",
+      "category": "Inpatient"
+    },
+    {
+      "id": "snf",
+      "name": "SNF",
+      "description": "Skilled Nursing Facility",
+      "category": "Inpatient"
+    },
+    {
+      "id": "ipf",
+      "name": "IPF",
+      "description": "Inpatient Psychiatric Facility",
+      "category": "Inpatient"
+    },
+    {
+      "id": "irf",
+      "name": "IRF",
+      "description": "Inpatient Rehabilitation Facility",
+      "category": "Inpatient"
+    },
+    {
+      "id": "hospice",
+      "name": "Hospice",
+      "description": "Hospice Care",
+      "category": "Inpatient"
+    },
+    {
+      "id": "home-health",
+      "name": "Home Health",
+      "description": "Home Health Agency services",
+      "category": "Inpatient"
+    },
+    {
+      "id": "ltch",
+      "name": "LTCH",
+      "description": "Long-term Care Hospital",
+      "category": "Inpatient"
+    },
+    {
+      "id": "opps",
+      "name": "OPPS",
+      "description": "Outpatient Hospital",
+      "category": "Outpatient"
+    },
+    {
+      "id": "esrd",
+      "name": "ESRD",
+      "description": "End-Stage Renal Disease",
+      "category": "Outpatient"
+    },
+    {
+      "id": "fqhc",
+      "name": "FQHC",
+      "description": "Federally Qualified Health Center",
+      "category": "Outpatient"
+    },
+    {
+      "id": "asc",
+      "name": "ASC",
+      "description": "Ambulatory Surgery Center",
+      "category": "Outpatient"
+    },
+    {
+      "id": "pfs",
+      "name": "PFS",
+      "description": "Physician Fee Schedule",
+      "category": "Medicare Fee Schedule"
+    },
+    {
+      "id": "dmepos",
+      "name": "DMEPOS",
+      "description": "Durable Medical Equipment, Prosthetics, Orthotics, and Supplies",
+      "category": "Medicare Fee Schedule"
+    },
+    {
+      "id": "clinical-lab",
+      "name": "Clinical Lab",
+      "description": "Laboratory Services",
+      "category": "Medicare Fee Schedule"
+    },
+    {
+      "id": "ambulance",
+      "name": "Ambulance",
+      "description": "Emergency Transport Services",
+      "category": "Medicare Fee Schedule"
+    }
+  ],
+  "categoryColors": {
+    "Inpatient": "#449cfb",
+    "Outpatient": "#e679f2",
+    "Medicare Fee Schedule": "#22c55e"
+  }
+}

@@ -1,0 +1,273 @@
+{
+  "dateFilters": {
+    "startDate": "2019",
+    "startQuarter": "Q1",
+    "endDate": "2025",
+    "endQuarter": "Q2"
+  },
+  "tabs": [
+    { "id": "summary", "label": "Summary", "active": true },
+    { "id": "inpatient", "label": "Inpatient", "active": false },
+    { "id": "outpatient", "label": "Outpatient", "active": false },
+    { "id": "fee-schedules", "label": "Fee Schedules", "active": false },
+    { "id": "others", "label": "Others", "active": false }
+  ],
+  "metrics": [
+    {
+      "label": "Total Claims",
+      "value": "3.5M",
+      "unit": "#",
+      "color": "#449cfb"
+    },
+    {
+      "label": "Total Billed Amount",
+      "value": "$11.38B",
+      "unit": "USD",
+      "color": "#449cfb"
+    },
+    {
+      "label": "Total Allowed Amount",
+      "value": "$5.69B",
+      "unit": "USD",
+      "color": "#449cfb"
+    },
+    {
+      "label": "Total Paid Amount",
+      "value": "$4.83B",
+      "unit": "USD",
+      "color": "#449cfb"
+    },
+    {
+      "label": "Total Medicare Reference Price",
+      "value": "$4.74B",
+      "unit": "USD",
+      "color": "#449cfb"
+    },
+    {
+      "label": "Total Exclusion Amount",
+      "value": "1.69M",
+      "unit": "#",
+      "color": "#449cfb"
+    },
+    {
+      "label": "Avg. Rate Relativity",
+      "value": "120%",
+      "unit": "USD",
+      "color": "#449cfb"
+    }
+  ],
+  "claimVolumePieChart": {
+    "title": "Claim Volume across Reimbursement Methodologies",
+    "data": [
+      { "name": "PPS", "value": 42.3, "color": "#A10839" },
+      { "name": "OPPS", "value": 33.2, "color": "#FB457F" },
+      { "name": "IPPS", "value": 19.6, "color": "#7A0485" },
+      { "name": "ASC", "value": 3.6, "color": "#EC45FB" },
+      { "name": "SNF", "value": 1.3, "color": "#3E0475" }
+    ]
+  },
+  "allowedAmountPieChart": {
+    "title": "Allowed Amount across Reimbursement Methodologies",
+    "data": [
+      { "name": "IPPS", "value": 46.4, "color": "#7A0485" },
+      { "name": "OPPS", "value": 26.9, "color": "#FB457F" },
+      { "name": "PPS", "value": 22.8, "color": "#A10839" },
+      { "name": "ASC", "value": 2.5, "color": "#EC45FB" },
+      { "name": "SNF", "value": 1.4, "color": "#3E0475" }
+    ]
+  },
+  "reimbursementTable": {
+    "headers": [
+      "Reimbursement Methodology",
+      "Claims",
+      "Billed Amount",
+      "Allowed Amount",
+      "Paid Amount",
+      "Medicare Ref Price"
+    ],
+    "sections": [
+      {
+        "title": "Inpatient",
+        "color": "#449cfb",
+        "rows": [
+          {
+            "methodology": "IPPS",
+            "claims": "650K",
+            "billed": "$5.38B",
+            "allowed": "$2.45B",
+            "paid": "$2.08B",
+            "medicare": "$2.04B"
+          },
+          {
+            "methodology": "SNF",
+            "claims": "60K",
+            "billed": "$213M",
+            "allowed": "$97M",
+            "paid": "$82M",
+            "medicare": "$81M"
+          },
+          {
+            "methodology": "IPF",
+            "claims": "18K",
+            "billed": "$128M",
+            "allowed": "$58M",
+            "paid": "$49M",
+            "medicare": "$48M"
+          },
+          {
+            "methodology": "IRF",
+            "claims": "30K",
+            "billed": "$213M",
+            "allowed": "$97M",
+            "paid": "$82M",
+            "medicare": "$81M"
+          },
+          {
+            "methodology": "Hospice",
+            "claims": "25K",
+            "billed": "$103M",
+            "allowed": "$47M",
+            "paid": "$40M",
+            "medicare": "$39M"
+          },
+          {
+            "methodology": "Home health",
+            "claims": "40K",
+            "billed": "$114M",
+            "allowed": "$52M",
+            "paid": "$44M",
+            "medicare": "$43M"
+          },
+          {
+            "methodology": "LTCH",
+            "claims": "12K",
+            "billed": "$84M",
+            "allowed": "$38M",
+            "paid": "$32M",
+            "medicare": "$32M"
+          }
+        ]
+      },
+      {
+        "title": "Outpatient",
+        "color": "#449cfb",
+        "rows": [
+          {
+            "methodology": "OPPS",
+            "claims": "1.1M",
+            "billed": "$3.13B",
+            "allowed": "$1.42B",
+            "paid": "$1.21B",
+            "medicare": "$1.18B"
+          },
+          {
+            "methodology": "ESRD",
+            "claims": "10K",
+            "billed": "$59M",
+            "allowed": "$27M",
+            "paid": "$23M",
+            "medicare": "$23M"
+          },
+          {
+            "methodology": "FQHC",
+            "claims": "4K",
+            "billed": "$14M",
+            "allowed": "$6M",
+            "paid": "$5M",
+            "medicare": "$5M"
+          },
+          {
+            "methodology": "ASC",
+            "claims": "100K",
+            "billed": "$239M",
+            "allowed": "$109M",
+            "paid": "$93M",
+            "medicare": "$91M",
+            "highlight": false
+          }
+        ]
+      },
+      {
+        "title": "Medicare Fee Schedules",
+        "color": "#449cfb",
+        "rows": [
+          {
+            "methodology": "PFS",
+            "claims": "1.4M",
+            "billed": "$2.68B",
+            "allowed": "$1.22B",
+            "paid": "$1.04B",
+            "medicare": "$1.02B"
+          },
+          {
+            "methodology": "Ambulance",
+            "claims": "6K",
+            "billed": "$26M",
+            "allowed": "$12M",
+            "paid": "$10M",
+            "medicare": "$10M"
+          },
+          {
+            "methodology": "DME",
+            "claims": "15K",
+            "billed": "$72M",
+            "allowed": "$33M",
+            "paid": "$28M",
+            "medicare": "$27M"
+          },
+          {
+            "methodology": "Clinical Lab",
+            "claims": "20K",
+            "billed": "$58M",
+            "allowed": "$26M",
+            "paid": "$22M",
+            "medicare": "$21M"
+          },
+          {
+            "methodology": "Anesthesia",
+            "claims": "25K",
+            "billed": "$51M",
+            "allowed": "$23M",
+            "paid": "$19M",
+            "medicare": "$19M"
+          }
+        ]
+      }
+    ]
+  },
+  "comparisonBarChart": {
+    "title": "Billed vs Allowed vs Medicare across Reimbursement Methodologies",
+    "data": [
+      {
+        "name": "IPPS",
+        "billedAmount": 5.38,
+        "allowedAmount": 2.45,
+        "medicareReference": 2.04
+      },
+      {
+        "name": "OPPS",
+        "billedAmount": 3.13,
+        "allowedAmount": 1.42,
+        "medicareReference": 1.18
+      },
+      {
+        "name": "PFS",
+        "billedAmount": 2.68,
+        "allowedAmount": 1.22,
+        "medicareReference": 1.02
+      },
+      {
+        "name": "ASC",
+        "billedAmount": 0.239,
+        "allowedAmount": 0.109,
+        "medicareReference": 0.091
+      },
+      {
+        "name": "IRF",
+        "billedAmount": 0.213,
+        "allowedAmount": 0.097,
+        "medicareReference": 0.081
+      }
+    ]
+  }
+}
