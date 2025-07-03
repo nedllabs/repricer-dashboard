@@ -40,6 +40,10 @@ export function CbsaMap({ title, metric, legendUnit, token }: ChoroplethProps) {
   const mapRef = useRef<Map>()
 
   useEffect(() => {
+    if (!token) {
+      return
+    }
+
     if (!mapContainer.current) return
     if (mapRef.current) return
 
@@ -199,30 +203,46 @@ export function CbsaMap({ title, metric, legendUnit, token }: ChoroplethProps) {
 
   return (
     <div className="bg-white rounded-xl p-4 shadow-sm border border-[#e5e7eb] flex flex-col relative">
-      <h4 className="font-semibold text-[#374151] mb-4 font-comfortaa">{title}</h4>
+      {token ? (
+        <>
+          <h4 className="font-semibold text-[#374151] mb-4 font-comfortaa">{title}</h4>
 
-      {/* Legend */}
-      <div className="absolute top-4 right-4 z-10 bg-white/95 backdrop-blur-sm rounded-lg p-3 shadow-lg border border-gray-200">
-        <div className="text-xs font-semibold text-gray-700 mb-2">
-          {metric === "claimsVolume" ? "Claims Volume" : "Rate Relativity (%)"}
-        </div>
-        <div className="space-y-1">
-          {cbsaMapConfig.legendRanges[metric].map((item, index) => (
-            <div key={index} className="flex items-center space-x-2">
-              <div className="w-3 h-3 rounded-full border border-white/50" style={{ backgroundColor: item.color }} />
-              <span className="text-xs text-gray-600">{item.range}</span>
+          {/* Legend */}
+          <div className="absolute top-4 right-4 z-10 bg-white/95 backdrop-blur-sm rounded-lg p-3 shadow-lg border border-gray-200">
+            <div className="text-xs font-semibold text-gray-700 mb-2">
+              {metric === "claimsVolume" ? "Claims Volume" : "Rate Relativity (%)"}
             </div>
-          ))}
-        </div>
-        <div className="text-xs text-gray-500 mt-2 pt-2 border-t border-gray-200">
-          Circle size = {metric === "claimsVolume" ? "volume" : "relativity"}
-        </div>
-      </div>
+            <div className="space-y-1">
+              {cbsaMapConfig.legendRanges[metric].map((item, index) => (
+                <div key={index} className="flex items-center space-x-2">
+                  <div
+                    className="w-3 h-3 rounded-full border border-white/50"
+                    style={{ backgroundColor: item.color }}
+                  />
+                  <span className="text-xs text-gray-600">{item.range}</span>
+                </div>
+              ))}
+            </div>
+            <div className="text-xs text-gray-500 mt-2 pt-2 border-t border-gray-200">
+              Circle size = {metric === "claimsVolume" ? "volume" : "relativity"}
+            </div>
+          </div>
 
-      <div ref={mapContainer} className="flex-grow rounded-lg overflow-hidden" style={{ minHeight: 400 }} />
+          <div ref={mapContainer} className="flex-grow rounded-lg overflow-hidden" style={{ minHeight: 400 }} />
 
-      {/* Map Attribution */}
-      <div className="text-xs text-gray-400 mt-2 text-right">© Mapbox © OpenStreetMap</div>
+          {/* Map Attribution */}
+          <div className="text-xs text-gray-400 mt-2 text-right">© Mapbox © OpenStreetMap</div>
+        </>
+      ) : (
+        <div className="bg-white rounded-xl p-4 shadow-sm border border-[#e5e7eb] flex flex-col items-center justify-center min-h-[400px] text-center space-y-3">
+          <h4 className="font-semibold text-[#374151] font-comfortaa">{title}</h4>
+          <p className="text-sm text-[#6b7280] max-w-xs">
+            Unable to display map – a Mapbox&nbsp;access token is required but was not provided. Add&nbsp;
+            <code className="px-1 py-0.5 bg-[#f1f5f9] rounded">MAPBOX_ACCESS_TOKEN</code> to your project&#39;s
+            environment variables and redeploy.
+          </p>
+        </div>
+      )}
     </div>
   )
 }
