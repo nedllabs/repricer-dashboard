@@ -1,5 +1,5 @@
 # NEDL Analytics Dashboard
-![https://reprice-dashboard.vercel.app/](https://reprice-dashboard.vercel.app/)
+[https://reprice-dashboard.vercel.app/](https://reprice-dashboard.vercel.app/)
 
 A comprehensive healthcare analytics dashboard built with Next.js, providing insights into claims repricing metrics, processing status, and reimbursement methodologies.
 
@@ -36,31 +36,6 @@ A comprehensive healthcare analytics dashboard built with Next.js, providing ins
 - **Maps**: [Mapbox GL JS](https://docs.mapbox.com/mapbox-gl-js/)
 - **Icons**: [Lucide React](https://lucide.dev/)
 - **Fonts**: Inter & Comfortaa (Google Fonts)
-
-## 📁 Project Structure
-
-\`\`\`
-├── app/
-│   ├── layout.tsx          # Root layout with metadata
-│   ├── page.tsx            # Main dashboard page
-│   ├── claims-process/     # Claims process summary page
-│   └── globals.css         # Global styles
-├── components/
-│   ├── ui/                 # shadcn/ui base components
-│   ├── charts/             # Chart components (pie, bar, trends)
-│   ├── tables/             # Data table components
-│   ├── filters/            # Filter and selector components
-│   └── navigation/         # Tab and mobile navigation
-├── data/
-│   ├── dashboard-data.json # Main dashboard data
-│   ├── inpatient-data.json # Inpatient-specific data
-│   ├── *-trend-data.json   # Various trend datasets
-│   └── *.json              # Configuration and options files
-└── public/
-    ├── favicon.ico         # Custom favicon
-    ├── og-image.png        # Open Graph image
-    └── site.webmanifest    # PWA manifest
-\`\`\`
 
 ## 🚀 Getting Started
 
