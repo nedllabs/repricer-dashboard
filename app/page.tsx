@@ -1,15 +1,16 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { EnhancedMetricCard } from "@/components/enhanced-metric-card"
-import { ModernPieChart } from "@/components/modern-pie-chart"
-import { ReimbursementTable } from "@/components/reimbursement-table"
-import { ComparisonBarChart } from "@/components/comparison-bar-chart"
-import { MobileDateFilters } from "@/components/mobile-date-filters"
-import { ModernSectionHeader } from "@/components/modern-section-header"
-import { MobileTabNavigation } from "@/components/mobile-tab-navigation"
-import { InpatientTab } from "@/components/inpatient-tab"
-import dashboardData from "@/data/dashboard-data.json"
+import { useState } from "react";
+import { EnhancedMetricCard } from "@/components/enhanced-metric-card";
+import { ModernPieChart } from "@/components/modern-pie-chart";
+import { ReimbursementTable } from "@/components/reimbursement-table";
+import { ComparisonBarChart } from "@/components/comparison-bar-chart";
+import { MobileDateFilters } from "@/components/mobile-date-filters";
+import { ModernSectionHeader } from "@/components/modern-section-header";
+import { MobileTabNavigation } from "@/components/mobile-tab-navigation";
+import { InpatientTab } from "@/components/inpatient-tab";
+import { OutpatientTab } from "@/components/outpatient-tab";
+import dashboardData from "@/data/dashboard-data.json";
 
 function SummaryTab() {
   return (
@@ -80,11 +81,11 @@ function SummaryTab() {
         </div>
       </div>
     </>
-  )
+  );
 }
 
 export default function Dashboard() {
-  const [activeTab, setActiveTab] = useState("summary")
+  const [activeTab, setActiveTab] = useState("summary");
 
   return (
     <main className="p-3 lg:p-6 space-y-4 lg:space-y-6">
@@ -93,11 +94,15 @@ export default function Dashboard() {
         subtitle="Overview of claims repricing metrics and analytics"
       />
       <MobileDateFilters />
-      <MobileTabNavigation tabs={dashboardData.tabs} onTabChange={setActiveTab} />
+      <MobileTabNavigation
+        tabs={dashboardData.tabs}
+        onTabChange={setActiveTab}
+      />
 
       {activeTab === "summary" && <SummaryTab />}
       {activeTab === "inpatient" && <InpatientTab />}
+      {activeTab === "outpatient" && <OutpatientTab />}
       {/* Add other tabs here as they are built */}
     </main>
-  )
+  );
 }

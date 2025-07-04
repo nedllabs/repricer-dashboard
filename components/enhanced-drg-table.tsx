@@ -1,35 +1,47 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Search, ChevronDown, Filter } from "lucide-react"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Input } from "@/components/ui/input"
-import drgFilterOptions from "@/data/drg-filter-options.json"
+import { useState } from "react";
+import { Search, ChevronDown, Filter } from "lucide-react";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Input } from "@/components/ui/input";
+import drgFilterOptions from "@/data/drg-filter-options.json";
 
 interface DrgTableRow {
-  drg: string
-  description: string
-  claimCount: string
-  avgBilled: string
-  avgAllowed: string
-  avgMrp: string
-  avgMrr: string
-  level1?: string
-  level2?: string
-  level3?: string
+  drg: string;
+  description: string;
+  claimCount: string;
+  avgBilled: string;
+  avgAllowed: string;
+  avgMrp: string;
+  avgMrr: string;
+  level1?: string;
+  level2?: string;
+  level3?: string;
 }
 
 interface EnhancedDrgTableProps {
-  title: string
-  headers: string[]
-  rows: string[][]
+  title: string;
+  headers: string[];
+  rows: string[][];
+  type: "inpatient" | "outpatient";
 }
 
-export function EnhancedDrgTable({ title, headers, rows }: EnhancedDrgTableProps) {
-  const [searchTerm, setSearchTerm] = useState("")
-  const [level1Filter, setLevel1Filter] = useState("All Categories")
-  const [level2Filter, setLevel2Filter] = useState("All Subcategories")
-  const [level3Filter, setLevel3Filter] = useState("All Procedures")
+export function EnhancedDrgTable({
+  title,
+  headers,
+  rows,
+  type,
+}: EnhancedDrgTableProps) {
+  const [searchTerm, setSearchTerm] = useState("");
+  const [level1Filter, setLevel1Filter] = useState("All Categories");
+  const [level2Filter, setLevel2Filter] = useState("All Subcategories");
+  const [level3Filter, setLevel3Filter] = useState("All Procedures");
 
   // Convert rows to structured data for easier filtering
   const tableData: DrgTableRow[] = rows.map((row) => ({
@@ -44,39 +56,44 @@ export function EnhancedDrgTable({ title, headers, rows }: EnhancedDrgTableProps
     level1: row[0] === "470" ? "Inpatient Surgery" : "Inpatient Medical",
     level2: row[0] === "470" ? "Orthopedic Surgery" : "Neurology",
     level3: row[0] === "470" ? "Spinal Disorders/Injuries" : "CVA w MCC",
-  }))
+  }));
 
   // Filter data based on search and level selections
   const filteredData = tableData.filter((row) => {
     const matchesSearch =
       row.drg.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      row.description.toLowerCase().includes(searchTerm.toLowerCase())
-    const matchesLevel1 = level1Filter === "All Categories" || row.level1 === level1Filter
-    const matchesLevel2 = level2Filter === "All Subcategories" || row.level2 === level2Filter
-    const matchesLevel3 = level3Filter === "All Procedures" || row.level3 === level3Filter
+      row.description.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesLevel1 =
+      level1Filter === "All Categories" || row.level1 === level1Filter;
+    const matchesLevel2 =
+      level2Filter === "All Subcategories" || row.level2 === level2Filter;
+    const matchesLevel3 =
+      level3Filter === "All Procedures" || row.level3 === level3Filter;
 
-    return matchesSearch && matchesLevel1 && matchesLevel2 && matchesLevel3
-  })
+    return matchesSearch && matchesLevel1 && matchesLevel2 && matchesLevel3;
+  });
 
   const clearFilters = () => {
-    setSearchTerm("")
-    setLevel1Filter("All Categories")
-    setLevel2Filter("All Subcategories")
-    setLevel3Filter("All Procedures")
-  }
+    setSearchTerm("");
+    setLevel1Filter("All Categories");
+    setLevel2Filter("All Subcategories");
+    setLevel3Filter("All Procedures");
+  };
 
   const hasActiveFilters =
     searchTerm !== "" ||
     level1Filter !== "All Categories" ||
     level2Filter !== "All Subcategories" ||
-    level3Filter !== "All Procedures"
+    level3Filter !== "All Procedures";
 
   return (
     <div className="bg-white rounded-xl shadow-sm border border-[#e5e7eb] overflow-hidden">
       {/* Table Header with Title */}
       <div className="p-4 bg-[#f9fafb] border-b border-[#e5e7eb]">
         <div className="flex items-center justify-between">
-          <h4 className="font-semibold text-[#374151] font-comfortaa">{title}</h4>
+          <h4 className="font-semibold text-[#374151] font-comfortaa">
+            {title}
+          </h4>
           <div className="flex items-center space-x-2">
             <Filter className="w-4 h-4 text-[#6b7280]" />
             <span className="text-sm text-[#6b7280]">
@@ -101,7 +118,7 @@ export function EnhancedDrgTable({ title, headers, rows }: EnhancedDrgTableProps
           </div>
 
           {/* Level Filters */}
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center space-x-2 z-50">
             <Select value={level1Filter} onValueChange={setLevel1Filter}>
               <SelectTrigger className="w-40 border-[#e5e7eb]">
                 <SelectValue placeholder="Level 1" />
@@ -128,18 +145,20 @@ export function EnhancedDrgTable({ title, headers, rows }: EnhancedDrgTableProps
               </SelectContent>
             </Select>
 
-            <Select value={level3Filter} onValueChange={setLevel3Filter}>
-              <SelectTrigger className="w-48 border-[#e5e7eb]">
-                <SelectValue placeholder="Level 3" />
-              </SelectTrigger>
-              <SelectContent className="max-h-60">
-                {drgFilterOptions.level3Options.map((option) => (
-                  <SelectItem key={option} value={option}>
-                    {option}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
+            {type === "inpatient" && (
+              <Select value={level3Filter} onValueChange={setLevel3Filter}>
+                <SelectTrigger className="w-48 border-[#e5e7eb]">
+                  <SelectValue placeholder="Level 3" />
+                </SelectTrigger>
+                <SelectContent className="max-h-60">
+                  {drgFilterOptions.level3Options.map((option) => (
+                    <SelectItem key={option} value={option}>
+                      {option}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            )}
 
             {hasActiveFilters && (
               <button
@@ -172,7 +191,10 @@ export function EnhancedDrgTable({ title, headers, rows }: EnhancedDrgTableProps
             )}
             {level3Filter !== "All Procedures" && (
               <span className="inline-flex items-center px-2 py-1 rounded-full text-xs bg-[#fce7f3] text-[#be185d] border border-[#f9a8d4]">
-                L3: {level3Filter.length > 30 ? level3Filter.substring(0, 30) + "..." : level3Filter}
+                L3:{" "}
+                {level3Filter.length > 30
+                  ? level3Filter.substring(0, 30) + "..."
+                  : level3Filter}
               </span>
             )}
           </div>
@@ -185,7 +207,10 @@ export function EnhancedDrgTable({ title, headers, rows }: EnhancedDrgTableProps
           <thead>
             <tr className="bg-[#f9fafb]">
               {headers.map((header, index) => (
-                <th key={index} className="p-3 text-left font-semibold text-[#6b7280]">
+                <th
+                  key={index}
+                  className="p-3 text-left font-semibold text-[#6b7280]"
+                >
                   <div className="flex items-center space-x-1">
                     <span>{header}</span>
                     <ChevronDown className="w-3 h-3" />
@@ -197,23 +222,40 @@ export function EnhancedDrgTable({ title, headers, rows }: EnhancedDrgTableProps
           <tbody className="divide-y divide-[#e5e7eb]">
             {filteredData.length > 0 ? (
               filteredData.map((row, rowIndex) => (
-                <tr key={rowIndex} className="hover:bg-[#f9fafb] transition-colors">
+                <tr
+                  key={rowIndex}
+                  className="hover:bg-[#f9fafb] transition-colors"
+                >
                   <td className="p-3 text-[#374151] font-medium">{row.drg}</td>
                   <td className="p-3 text-[#374151]">{row.description}</td>
-                  <td className="p-3 text-[#374151] font-mono">{row.claimCount}</td>
-                  <td className="p-3 text-[#374151] font-mono">{row.avgBilled}</td>
-                  <td className="p-3 text-[#374151] font-mono">{row.avgAllowed}</td>
+                  <td className="p-3 text-[#374151] font-mono">
+                    {row.claimCount}
+                  </td>
+                  <td className="p-3 text-[#374151] font-mono">
+                    {row.avgBilled}
+                  </td>
+                  <td className="p-3 text-[#374151] font-mono">
+                    {row.avgAllowed}
+                  </td>
                   <td className="p-3 text-[#374151] font-mono">{row.avgMrp}</td>
-                  <td className="p-3 text-[#374151] font-mono font-semibold">{row.avgMrr}</td>
+                  <td className="p-3 text-[#374151] font-mono font-semibold">
+                    {row.avgMrr}
+                  </td>
                 </tr>
               ))
             ) : (
               <tr>
-                <td colSpan={headers.length} className="p-8 text-center text-[#6b7280]">
+                <td
+                  colSpan={headers.length}
+                  className="p-8 text-center text-[#6b7280]"
+                >
                   <div className="flex flex-col items-center space-y-2">
                     <Search className="w-8 h-8 text-[#d1d5db]" />
                     <span>No records found matching your filters</span>
-                    <button onClick={clearFilters} className="text-sm text-[#449cfb] hover:text-[#2563eb] underline">
+                    <button
+                      onClick={clearFilters}
+                      className="text-sm text-[#449cfb] hover:text-[#2563eb] underline"
+                    >
                       Clear all filters
                     </button>
                   </div>
@@ -232,5 +274,5 @@ export function EnhancedDrgTable({ title, headers, rows }: EnhancedDrgTableProps
         </div>
       )}
     </div>
-  )
+  );
 }

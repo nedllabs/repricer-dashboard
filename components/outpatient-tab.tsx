@@ -12,7 +12,7 @@ import { MedicareRateTrendChart } from "@/components/medicare-rate-trend-chart";
 import { MrpChangeTrendChart } from "@/components/mrp-change-trend-chart";
 import { AllowedAmountChangeChart } from "@/components/allowed-amount-change-chart";
 import { StatisticalOutlierChart } from "@/components/statistical-outlier-chart";
-import inpatientData from "@/data/inpatient-data.json";
+import outpatientData from "@/data/outpatient-data.json";
 
 function SectionRow({
   title,
@@ -34,15 +34,15 @@ function SectionRow({
   );
 }
 
-export function InpatientTab() {
+export function OutpatientTab() {
   const {
     repricerMetrics,
-    ippsMetrics,
+    oppsMetrics,
     codeLevel,
     healthSystem,
     geographic,
     timeBased,
-  } = inpatientData;
+  } = outpatientData;
 
   return (
     <div className="bg-white rounded-xl shadow-sm border border-[#e5e7eb] mt-6 gap-2">
@@ -54,13 +54,13 @@ export function InpatientTab() {
           ))}
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-3 gap-4 mt-4">
-          {ippsMetrics.slice(0, 3).map((m, i) => (
+          {oppsMetrics.slice(0, 3).map((m, i) => (
             <EnhancedMetricCard key={i} {...m} color="#449cfb" />
           ))}
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 mt-4">
-          {ippsMetrics.slice(3, ippsMetrics.length).map((m, i) => (
+          {oppsMetrics.slice(3, oppsMetrics.length).map((m, i) => (
             <EnhancedMetricCard key={i} {...m} color="#449cfb" />
           ))}
         </div>
@@ -71,7 +71,7 @@ export function InpatientTab() {
         <div className="space-y-4">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
             <ModernPieChart
-              {...codeLevel.drgCategoriesPieChart}
+              {...codeLevel.apcCategoriesPieChart}
               layout="vertical"
             />
             <ComparisonBarChart
@@ -83,12 +83,12 @@ export function InpatientTab() {
                 medicareReference: 0,
               }))}
             />
-            <TopDrgChart {...codeLevel.top10DrgChart} />
+            <TopDrgChart {...codeLevel.top10ApcChart} />
           </div>
           <EnhancedDrgTable
-            title="DRG Details"
-            {...codeLevel.drgCodeTable}
-            type="inpatient"
+            title="APC Details"
+            {...codeLevel.apcCodeTable}
+            type="outpatient"
           />
         </div>
       </SectionRow>
