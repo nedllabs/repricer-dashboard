@@ -30,7 +30,7 @@ export function InpatientTab() {
   const { repricerMetrics, ippsMetrics, codeLevel, healthSystem, geographic, timeBased } = inpatientData
 
   return (
-    <div className="bg-white rounded-xl shadow-sm border border-[#e5e7eb] mt-6">
+    <div className="bg-white rounded-xl shadow-sm border border-[#e5e7eb] mt-6 gap-2">
       {/* Repricer metrics */}
       <SectionRow title="Repricer">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
@@ -38,13 +38,15 @@ export function InpatientTab() {
             <EnhancedMetricCard key={i} {...m} color="#449cfb" />
           ))}
         </div>
-      </SectionRow>
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-3 gap-4 mt-4">
+          {ippsMetrics.slice(0, 3).map((m, i) => (
+            <EnhancedMetricCard key={i} {...m} color="#449cfb" />
+          ))}
+        </div>
 
-      {/* IPPS metrics */}
-      <SectionRow title="IPPS">
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4">
-          {ippsMetrics.map((m, i) => (
-            <EnhancedMetricCard key={i} {...m} color="#5489c2" />
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 mt-4">
+          {ippsMetrics.slice(3, ippsMetrics.length).map((m, i) => (
+            <EnhancedMetricCard key={i} {...m} color="#449cfb" />
           ))}
         </div>
       </SectionRow>

@@ -125,22 +125,6 @@
             "medicare": "$81M"
           },
           {
-            "methodology": "Hospice",
-            "claims": "25K",
-            "billed": "$103M",
-            "allowed": "$47M",
-            "paid": "$40M",
-            "medicare": "$39M"
-          },
-          {
-            "methodology": "Home health",
-            "claims": "40K",
-            "billed": "$114M",
-            "allowed": "$52M",
-            "paid": "$44M",
-            "medicare": "$43M"
-          },
-          {
             "methodology": "LTCH",
             "claims": "12K",
             "billed": "$84M",
@@ -161,14 +145,6 @@
             "allowed": "$1.42B",
             "paid": "$1.21B",
             "medicare": "$1.18B"
-          },
-          {
-            "methodology": "ESRD",
-            "claims": "10K",
-            "billed": "$59M",
-            "allowed": "$27M",
-            "paid": "$23M",
-            "medicare": "$23M"
           },
           {
             "methodology": "FQHC",
@@ -232,6 +208,36 @@
             "allowed": "$23M",
             "paid": "$19M",
             "medicare": "$19M"
+          }
+        ]
+      },
+      {
+        "title": "Others",
+        "color": "#449cfb",
+        "rows": [
+          {
+            "methodology": "Hospice",
+            "claims": "25K",
+            "billed": "$103M",
+            "allowed": "$47M",
+            "paid": "$40M",
+            "medicare": "$39M"
+          },
+          {
+            "methodology": "Home health",
+            "claims": "40K",
+            "billed": "$114M",
+            "allowed": "$52M",
+            "paid": "$44M",
+            "medicare": "$43M"
+          },
+          {
+            "methodology": "ESRD",
+            "claims": "10K",
+            "billed": "$59M",
+            "allowed": "$27M",
+            "paid": "$23M",
+            "medicare": "$23M"
           }
         ]
       }

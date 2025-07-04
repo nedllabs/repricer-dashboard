@@ -60,7 +60,7 @@ export function EnhancedMetricCard({
         </div>
 
         <div className="mb-2">
-          <div className="text-3xl font-bold transition-all duration-300 group-hover:scale-105" style={{ color }}>
+          <div className="text-3xl font-bold" style={{ color }}>
             {value}
           </div>
         </div>

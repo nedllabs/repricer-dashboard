@@ -9,6 +9,7 @@
   "ippsMetrics": [
     { "label": "Avg. Medicare Rate Relativity", "value": "120%", "unit": "vs MRP" },
     { "label": "Average Length of Stay", "value": "4.5", "unit": "Days" },
+    { "label": "Total Medicare Rate Relativity", "value": "104%", "unit": "VS MRP" },
     { "label": "Avg. IME", "value": "$230", "unit": "Per Claim" },
     { "label": "Avg. DSH", "value": "$450", "unit": "Per Claim" },
     { "label": "Avg. Outliers", "value": "$120", "unit": "Per Claim" },
