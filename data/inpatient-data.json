@@ -20,11 +20,11 @@
     "drgCategoriesPieChart": {
       "title": "DRG Categories (Level 1) by Claim Volume",
       "data": [
-        { "name": "Cardiology", "value": 35, "color": "#A10839" },
-        { "name": "Orthopedics", "value": 25, "color": "#FB457F" },
-        { "name": "Neurology", "value": 15, "color": "#7A0485" },
-        { "name": "Oncology", "value": 15, "color": "#EC45FB" },
-        { "name": "Other", "value": 10, "color": "#3E0475" }
+        { "name": "Cardiology", "value": 35, "color": "#449CFB" },
+        { "name": "Orthopedics", "value": 25, "color": "#F08C76" },
+        { "name": "Neurology", "value": 15, "color": "#F5709A" },
+        { "name": "Oncology", "value": 15, "color": "#B782E8" },
+        { "name": "Other", "value": 10, "color": "#82F09A" }
       ]
     },
     "rateRelativityBarChart": {
@@ -74,11 +74,11 @@
     "topSystemsPieChart": {
       "title": "Top 5 Health Systems by Claim Volume",
       "data": [
-        { "name": "Ascension Health", "value": 28, "color": "#A10839" },
-        { "name": "HCA Healthcare", "value": 22, "color": "#FB457F" },
-        { "name": "CommonSpirit Health", "value": 18, "color": "#7A0485" },
-        { "name": "Trinity Health", "value": 15, "color": "#EC45FB" },
-        { "name": "Tenet Healthcare", "value": 17, "color": "#3E0475" }
+        { "name": "Ascension Health", "value": 28, "color": "#449CFB" },
+        { "name": "HCA Healthcare", "value": 22, "color": "#F08C76" },
+        { "name": "CommonSpirit Health", "value": 18, "color": "#F5709A" },
+        { "name": "Trinity Health", "value": 15, "color": "#B782E8" },
+        { "name": "Tenet Healthcare", "value": 17, "color": "#82F09A" }
       ]
     },
     "top10HealthSystemsChart": {

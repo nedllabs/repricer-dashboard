@@ -4,96 +4,141 @@
       "id": "ipps",
       "name": "IPPS",
       "description": "Inpatient Hospital",
-      "category": "Inpatient"
+      "category": "Inpatient",
+      "claimCount": 650000,
+      "totalAmount": 2450000000,
+      "avgAmount": 3769
     },
     {
       "id": "snf",
       "name": "SNF",
       "description": "Skilled Nursing Facility",
-      "category": "Inpatient"
+      "category": "Inpatient",
+      "claimCount": 60000,
+      "totalAmount": 97000000,
+      "avgAmount": 1617
     },
     {
       "id": "ipf",
       "name": "IPF",
       "description": "Inpatient Psychiatric Facility",
-      "category": "Inpatient"
+      "category": "Inpatient",
+      "claimCount": 18000,
+      "totalAmount": 58000000,
+      "avgAmount": 3222
     },
     {
       "id": "irf",
       "name": "IRF",
       "description": "Inpatient Rehabilitation Facility",
-      "category": "Inpatient"
+      "category": "Inpatient",
+      "claimCount": 30000,
+      "totalAmount": 97000000,
+      "avgAmount": 3233
     },
     {
       "id": "hospice",
       "name": "Hospice",
       "description": "Hospice Care",
-      "category": "Inpatient"
+      "category": "Inpatient",
+      "claimCount": 25000,
+      "totalAmount": 47000000,
+      "avgAmount": 1880
     },
     {
       "id": "home-health",
       "name": "Home Health",
       "description": "Home Health Agency services",
-      "category": "Inpatient"
+      "category": "Inpatient",
+      "claimCount": 40000,
+      "totalAmount": 52000000,
+      "avgAmount": 1300
     },
     {
       "id": "ltch",
       "name": "LTCH",
       "description": "Long-term Care Hospital",
-      "category": "Inpatient"
+      "category": "Inpatient",
+      "claimCount": 12000,
+      "totalAmount": 38000000,
+      "avgAmount": 3167
     },
     {
       "id": "opps",
       "name": "OPPS",
       "description": "Outpatient Hospital",
-      "category": "Outpatient"
+      "category": "Outpatient",
+      "claimCount": 1100000,
+      "totalAmount": 1420000000,
+      "avgAmount": 1291
     },
     {
       "id": "esrd",
       "name": "ESRD",
       "description": "End-Stage Renal Disease",
-      "category": "Outpatient"
+      "category": "Outpatient",
+      "claimCount": 10000,
+      "totalAmount": 27000000,
+      "avgAmount": 2700
     },
     {
       "id": "fqhc",
       "name": "FQHC",
       "description": "Federally Qualified Health Center",
-      "category": "Outpatient"
+      "category": "Outpatient",
+      "claimCount": 4000,
+      "totalAmount": 6000000,
+      "avgAmount": 1500
     },
     {
       "id": "asc",
       "name": "ASC",
       "description": "Ambulatory Surgery Center",
-      "category": "Outpatient"
+      "category": "Outpatient",
+      "claimCount": 100000,
+      "totalAmount": 109000000,
+      "avgAmount": 1090
     },
     {
       "id": "pfs",
       "name": "PFS",
       "description": "Physician Fee Schedule",
-      "category": "Medicare Fee Schedule"
+      "category": "Medicare Fee Schedule",
+      "claimCount": 1400000,
+      "totalAmount": 1220000000,
+      "avgAmount": 871
     },
     {
       "id": "dmepos",
       "name": "DMEPOS",
       "description": "Durable Medical Equipment, Prosthetics, Orthotics, and Supplies",
-      "category": "Medicare Fee Schedule"
+      "category": "Medicare Fee Schedule",
+      "claimCount": 15000,
+      "totalAmount": 33000000,
+      "avgAmount": 2200
     },
     {
       "id": "clinical-lab",
       "name": "Clinical Lab",
       "description": "Laboratory Services",
-      "category": "Medicare Fee Schedule"
+      "category": "Medicare Fee Schedule",
+      "claimCount": 20000,
+      "totalAmount": 26000000,
+      "avgAmount": 1300
     },
     {
       "id": "ambulance",
       "name": "Ambulance",
       "description": "Emergency Transport Services",
-      "category": "Medicare Fee Schedule"
+      "category": "Medicare Fee Schedule",
+      "claimCount": 6000,
+      "totalAmount": 12000000,
+      "avgAmount": 2000
     }
   ],
   "categoryColors": {
-    "Inpatient": "#449cfb",
-    "Outpatient": "#e679f2",
-    "Medicare Fee Schedule": "#22c55e"
+    "Inpatient": "#449CFB",
+    "Outpatient": "#F08C76",
+    "Medicare Fee Schedule": "#B782E8"
   }
 }

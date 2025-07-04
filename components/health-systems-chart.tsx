@@ -86,7 +86,7 @@ export function HealthSystemsChart({ title, data }: HealthSystemsChartProps) {
               tickFormatter={(value) => value.toFixed(2)}
             />
             <Tooltip content={<CustomTooltip />} />
-            <Bar dataKey="relativity" fill="#A10839" radius={[4, 4, 0, 0]} label={<CustomLabel />} />
+            <Bar dataKey="relativity" fill="#449CFB" radius={[4, 4, 0, 0]} label={<CustomLabel />} />
           </BarChart>
         </ResponsiveContainer>
       </div>
@@ -101,13 +101,13 @@ export function HealthSystemsChart({ title, data }: HealthSystemsChartProps) {
             <div className="text-xs text-[#6b7280]">Highest Rate</div>
           </div>
           <div>
-            <div className="text-lg font-bold text-[#22c55e]">
+            <div className="text-lg font-bold text-[#82F09A]">
               {(sortedData.reduce((sum, d) => sum + d.relativity, 0) / sortedData.length).toFixed(2)}
             </div>
             <div className="text-xs text-[#6b7280]">Average Rate</div>
           </div>
           <div>
-            <div className="text-lg font-bold text-[#f59e0b]">
+            <div className="text-lg font-bold text-[#ADA64B]">
               {Math.min(...sortedData.map((d) => d.relativity)).toFixed(2)}
             </div>
             <div className="text-xs text-[#6b7280]">Lowest Rate</div>

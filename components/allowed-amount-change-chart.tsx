@@ -52,10 +52,10 @@ export function AllowedAmountChangeChart({
     <div className="bg-white rounded-xl p-6 shadow-sm border border-[#e5e7eb] hover:shadow-lg transition-all duration-300">
       <div className="mb-6">
         <h3 className="text-lg font-semibold text-[#374151] mb-2 font-comfortaa text-center">{title}</h3>
-        <div className="w-16 h-1 bg-gradient-to-r from-[#8b5cf6] to-[#a855f7] rounded-full mx-auto mb-4"></div>
+        <div className="w-16 h-1 bg-gradient-to-r from-[#B782E8] to-[#943B9C] rounded-full mx-auto mb-4"></div>
 
         <div className="text-center">
-          <div className="text-3xl font-bold text-[#7A0485] mb-1">${currentActual.toLocaleString()}</div>
+          <div className="text-3xl font-bold text-[#B782E8] mb-1">${currentActual.toLocaleString()}</div>
           <div
             className={`flex items-center justify-center space-x-1 text-sm ${currentVariance >= 0 ? "text-green-500" : "text-red-500"}`}
           >
@@ -105,14 +105,14 @@ export function AllowedAmountChangeChart({
               name="Expected Amount"
               radius={[2, 2, 0, 0]}
             />
-            <Bar yAxisId="amount" dataKey="actualAmount" fill="#7A0485" name="Actual Amount" radius={[2, 2, 0, 0]} />
+            <Bar yAxisId="amount" dataKey="actualAmount" fill="#B782E8" name="Actual Amount" radius={[2, 2, 0, 0]} />
             <Line
               yAxisId="variance"
               type="monotone"
               dataKey="variance"
-              stroke="#877F08"
+              stroke="#ADA64B"
               strokeWidth={3}
-              dot={{ fill: "#877F08", strokeWidth: 2, r: 4 }}
+              dot={{ fill: "#ADA64B", strokeWidth: 2, r: 4 }}
               name="Variance %"
             />
           </ComposedChart>
@@ -123,19 +123,19 @@ export function AllowedAmountChangeChart({
       <div className="mt-4 pt-4 border-t border-[#e5e7eb]">
         <div className="grid grid-cols-3 gap-4 text-center">
           <div>
-            <div className="text-sm font-bold text-[#7A0485]">
+            <div className="text-sm font-bold text-[#B782E8]">
               ${Math.max(...data.map((d) => d.actualAmount)).toLocaleString()}
             </div>
             <div className="text-xs text-[#6b7280]">Peak Amount</div>
           </div>
           <div>
-            <div className="text-sm font-bold text-[#17800C]">
+            <div className="text-sm font-bold text-[#82F09A]">
               +{Math.max(...data.map((d) => d.variance)).toFixed(1)}%
             </div>
             <div className="text-xs text-[#6b7280]">Best Variance</div>
           </div>
           <div>
-            <div className="text-sm font-bold text-[#A10839]">
+            <div className="text-sm font-bold text-[#449CFB]">
               {(data.reduce((sum, d) => sum + d.variance, 0) / data.length).toFixed(1)}%
             </div>
             <div className="text-xs text-[#6b7280]">Avg Variance</div>

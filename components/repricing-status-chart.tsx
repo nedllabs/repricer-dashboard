@@ -50,9 +50,9 @@ export function RepricingStatusChart({ title, data }: RepricingStatusChartProps)
             />
             <Tooltip content={<CustomTooltip />} />
             <Legend wrapperStyle={{ fontSize: "12px", paddingTop: "20px" }} iconType="rect" />
-            <Bar dataKey="success" name="Success" fill="#17800C" radius={[0, 0, 0, 0]} />
-            <Bar dataKey="exclusions" name="Exclusions" fill="#877F08" radius={[0, 0, 0, 0]} />
-            <Bar dataKey="errors" name="Errors" fill="#D13B00" radius={[4, 4, 0, 0]} />
+            <Bar dataKey="success" name="Success" fill="#82F09A" radius={[0, 0, 0, 0]} />
+            <Bar dataKey="exclusions" name="Exclusions" fill="#ADA64B" radius={[0, 0, 0, 0]} />
+            <Bar dataKey="errors" name="Errors" fill="#BA3761" radius={[4, 4, 0, 0]} />
           </BarChart>
         </ResponsiveContainer>
       </div>

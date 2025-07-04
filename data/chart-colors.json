@@ -1,27 +1,27 @@
 {
   "palette": [
-    "#A10839",
-    "#FB457F",
-    "#7A0485",
-    "#EC45FB",
-    "#3E0475",
-    "#A345FB",
-    "#17800C",
-    "#45FB6C",
-    "#877F08",
-    "#FBEF45",
-    "#D13B00",
-    "#FB6645",
-    "#15477D",
-    "#449CFB"
+    "#449CFB",
+    "#F08C76",
+    "#F5709A",
+    "#B782E8",
+    "#82F09A",
+    "#2E5D8F",
+    "#943B9C",
+    "#9C5D45",
+    "#62915D",
+    "#ADA64B",
+    "#BA3761",
+    "#63348F",
+    "#FA84EC",
+    "#FAF061"
   ],
   "categories": {
-    "primary": "#A10839",
-    "secondary": "#FB457F",
-    "accent": "#7A0485",
-    "success": "#17800C",
-    "warning": "#877F08",
-    "danger": "#D13B00",
-    "info": "#15477D"
+    "primary": "#449CFB",
+    "secondary": "#F08C76",
+    "accent": "#B782E8",
+    "success": "#82F09A",
+    "warning": "#ADA64B",
+    "danger": "#BA3761",
+    "info": "#2E5D8F"
   }
 }

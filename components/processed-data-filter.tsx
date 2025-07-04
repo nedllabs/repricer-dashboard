@@ -200,15 +200,6 @@ export function ProcessedDataFilter() {
               </span>
             </div>
           </div>
-
-          <div className="text-right">
-            <div className="text-sm font-medium text-[#374151]">
-              {selectedOption === "all" ? "Complete Dataset" : "Current Session"}
-            </div>
-            <div className="text-xs text-[#6b7280]">
-              {selectedOption === "all" ? "All historical data" : "Most recent processing"}
-            </div>
-          </div>
         </div>
       </div>
     </div>

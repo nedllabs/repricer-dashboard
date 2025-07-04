@@ -41,11 +41,27 @@ export function MethodologySelector() {
     {} as Record<string, MethodologyOption[]>,
   )
 
+  // Get the selected methodology name for display
+  const getSelectedMethodologyName = () => {
+    if (selectedMethodology === "all") {
+      return "All Methodologies"
+    }
+    const methodology = methodologyOptions.methodologies.find((m) => m.id === selectedMethodology)
+    return methodology?.name || "Unknown"
+  }
+
   return (
     <div className="bg-white rounded-xl p-6 shadow-sm border border-[#e5e7eb]">
       <div className="mb-6">
         <h3 className="text-lg font-semibold text-[#374151] mb-2 font-comfortaa">SELECT REIMBURSEMENT METHODOLOGY</h3>
         <p className="text-sm text-[#6b7280]">Choose a methodology to filter the data</p>
+      </div>
+
+      {/* Selected Methodology Display */}
+      <div className="mb-4 p-3 bg-gradient-to-r from-[#f0f9ff] to-[#eff6ff] rounded-lg border border-[#93c6fd]">
+        <div className="text-sm font-medium text-[#449cfb]">
+          Now Selected: <span className="font-semibold">{getSelectedMethodologyName()}</span>
+        </div>
       </div>
 
       <div className="space-y-1">
@@ -136,7 +152,7 @@ export function MethodologySelector() {
         })}
       </div>
 
-      {/* Selected Summary */}
+      {/* Selected Summary - Keep the existing one at the bottom for additional details */}
       {selectedMethodology !== "all" && (
         <div className="mt-6 p-4 bg-gradient-to-r from-[#f0f9ff] to-[#eff6ff] rounded-lg border border-[#93c6fd]">
           <div className="text-sm font-medium text-[#449cfb] mb-1">Currently Selected:</div>

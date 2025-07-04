@@ -39,7 +39,7 @@ export function HeaderNavigation() {
               href="/"
               className={`relative px-4 xl:px-6 mx-2 py-3 text-sm font-semibold transition-all duration-300 rounded-xl ${
                 pathname === "/"
-                  ? "text-white bg-gradient-to-r from-[#449cfb] via-[#e679f2] to-[#f0c7f5] shadow-lg transform scale-105"
+                  ? "bg-[#f0f9ff] border border-[#93c6fd] shadow-lg transform scale-105"
                   : "text-[#6b7280] hover:text-[#374151] hover:bg-white/70"
               }`}
             >
@@ -53,7 +53,7 @@ export function HeaderNavigation() {
               href="/claims-process"
               className={`relative px-4 xl:px-8 py-3 text-sm font-semibold transition-all duration-300 rounded-xl ${
                 pathname === "/claims-process"
-                  ? "text-white bg-gradient-to-r from-[#449cfb] via-[#e679f2] to-[#f0c7f5] shadow-lg transform scale-105"
+                  ? "bg-[#f0f9ff] border border-[#93c6fd] shadow-lg transform scale-105"
                   : "text-[#6b7280] hover:text-[#374151] hover:bg-white/70"
               }`}
             >

@@ -16,11 +16,11 @@ const claimsProcessMetrics = [
 ]
 
 const claimVolumeData = [
-  { name: "PFS", value: 42.6, color: "#A10839" },
-  { name: "OPPS", value: 33.5, color: "#FB457F" },
-  { name: "IPPS", value: 19.8, color: "#7A0485" },
-  { name: "ASC", value: 3.1, color: "#EC45FB" },
-  { name: "IRF", value: 1.0, color: "#3E0475" },
+  { name: "PFS", value: 42.6, color: "#449CFB" },
+  { name: "OPPS", value: 33.5, color: "#F08C76" },
+  { name: "IPPS", value: 19.8, color: "#F5709A" },
+  { name: "ASC", value: 3.1, color: "#B782E8" },
+  { name: "IRF", value: 1.0, color: "#82F09A" },
 ]
 
 const repricingStatusData = [

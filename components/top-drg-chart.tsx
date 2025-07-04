@@ -64,7 +64,7 @@ export function TopDrgChart({ title, data }: TopDrgChartProps) {
               tickFormatter={(value) => value.toFixed(2)}
             />
             <Tooltip content={<CustomTooltip />} />
-            <Bar dataKey="relativity" fill="#A10839" radius={[4, 4, 0, 0]} label={<CustomLabel />} />
+            <Bar dataKey="relativity" fill="#449CFB" radius={[4, 4, 0, 0]} label={<CustomLabel />} />
           </BarChart>
         </ResponsiveContainer>
       </div>

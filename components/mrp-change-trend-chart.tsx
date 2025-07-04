@@ -46,7 +46,7 @@ export function MrpChangeTrendChart({ title, data = mrpChangeTrendData.data }: M
     <div className="bg-white rounded-xl p-6 shadow-sm border border-[#e5e7eb] hover:shadow-lg transition-all duration-300">
       <div className="mb-6">
         <h3 className="text-lg font-semibold text-[#374151] mb-2 font-comfortaa text-center">{title}</h3>
-        <div className="w-16 h-1 bg-gradient-to-r from-[#22c55e] to-[#16a34a] rounded-full mx-auto mb-4"></div>
+        <div className="w-16 h-1 bg-gradient-to-r from-[#82F09A] to-[#62915D] rounded-full mx-auto mb-4"></div>
 
         <div className="text-center">
           <div className={`text-3xl font-bold mb-1 ${currentChange >= 0 ? "text-green-500" : "text-red-500"}`}>
@@ -65,12 +65,12 @@ export function MrpChangeTrendChart({ title, data = mrpChangeTrendData.data }: M
           <AreaChart data={data} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
             <defs>
               <linearGradient id="changeGradient" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="#17800C" stopOpacity={0.3} />
-                <stop offset="95%" stopColor="#17800C" stopOpacity={0.05} />
+                <stop offset="5%" stopColor="#82F09A" stopOpacity={0.3} />
+                <stop offset="95%" stopColor="#82F09A" stopOpacity={0.05} />
               </linearGradient>
               <linearGradient id="negativeGradient" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="#D13B00" stopOpacity={0.3} />
-                <stop offset="95%" stopColor="#D13B00" stopOpacity={0.05} />
+                <stop offset="5%" stopColor="#BA3761" stopOpacity={0.3} />
+                <stop offset="95%" stopColor="#BA3761" stopOpacity={0.05} />
               </linearGradient>
             </defs>
             <CartesianGrid strokeDasharray="3 3" stroke="#f3f4f6" />
@@ -94,7 +94,7 @@ export function MrpChangeTrendChart({ title, data = mrpChangeTrendData.data }: M
             <Area
               type="monotone"
               dataKey="change"
-              stroke="#17800C"
+              stroke="#82F09A"
               strokeWidth={2}
               fill="url(#changeGradient)"
               name="Quarterly Change"
@@ -107,19 +107,19 @@ export function MrpChangeTrendChart({ title, data = mrpChangeTrendData.data }: M
       <div className="mt-4 pt-4 border-t border-[#e5e7eb]">
         <div className="grid grid-cols-3 gap-4 text-center">
           <div>
-            <div className="text-sm font-bold text-[#17800C]">
+            <div className="text-sm font-bold text-[#82F09A]">
               +{Math.max(...data.map((d) => d.change)).toFixed(1)}%
             </div>
             <div className="text-xs text-[#6b7280]">Best Quarter</div>
           </div>
           <div>
-            <div className="text-sm font-bold text-[#A10839]">
+            <div className="text-sm font-bold text-[#449CFB]">
               +{(data.reduce((sum, d) => sum + d.change, 0) / data.length).toFixed(1)}%
             </div>
             <div className="text-xs text-[#6b7280]">Avg Change</div>
           </div>
           <div>
-            <div className="text-sm font-bold text-[#45FB6C]">+{cumulativeChange.toFixed(1)}%</div>
+            <div className="text-sm font-bold text-[#82F09A]">+{cumulativeChange.toFixed(1)}%</div>
             <div className="text-xs text-[#6b7280]">Total Growth</div>
           </div>
         </div>

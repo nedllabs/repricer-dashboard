@@ -53,9 +53,9 @@ export function ComparisonBarChart({ title, data }: ComparisonBarChartProps) {
             />
             <Tooltip content={<CustomTooltip />} />
             <Legend wrapperStyle={{ fontSize: "12px", paddingTop: "20px" }} iconType="rect" />
-            <Bar dataKey="billedAmount" name="Billed Amount" fill="#A10839" radius={[2, 2, 0, 0]} />
-            <Bar dataKey="allowedAmount" name="Allowed Amount" fill="#FB457F" radius={[2, 2, 0, 0]} />
-            <Bar dataKey="medicareReference" name="Medicare Reference" fill="#7A0485" radius={[2, 2, 0, 0]} />
+            <Bar dataKey="billedAmount" name="Billed Amount" fill="#449CFB" radius={[2, 2, 0, 0]} />
+            <Bar dataKey="allowedAmount" name="Allowed Amount" fill="#F08C76" radius={[2, 2, 0, 0]} />
+            <Bar dataKey="medicareReference" name="Medicare Reference" fill="#F5709A" radius={[2, 2, 0, 0]} />
           </BarChart>
         </ResponsiveContainer>
       </div>

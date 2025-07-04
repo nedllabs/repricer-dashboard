@@ -2,35 +2,35 @@
   "colorScales": {
     "claimsVolume": [
       { "value": 0, "color": "#f0f9ff" },
-      { "value": 2000, "color": "#FB457F" },
-      { "value": 4000, "color": "#A10839" },
-      { "value": 6000, "color": "#7A0485" },
-      { "value": 8000, "color": "#3E0475" },
-      { "value": 10000, "color": "#A345FB" }
+      { "value": 2000, "color": "#F08C76" },
+      { "value": 4000, "color": "#449CFB" },
+      { "value": 6000, "color": "#F5709A" },
+      { "value": 8000, "color": "#2E5D8F" },
+      { "value": 10000, "color": "#B782E8" }
     ],
     "rateRelativity": [
       { "value": 76, "color": "#f0fdf4" },
-      { "value": 88, "color": "#45FB6C" },
-      { "value": 101, "color": "#17800C" },
-      { "value": 113, "color": "#877F08" },
-      { "value": 126, "color": "#FBEF45" },
-      { "value": 138, "color": "#D13B00" }
+      { "value": 88, "color": "#82F09A" },
+      { "value": 101, "color": "#62915D" },
+      { "value": 113, "color": "#ADA64B" },
+      { "value": 126, "color": "#FAF061" },
+      { "value": 138, "color": "#BA3761" }
     ]
   },
   "legendRanges": {
     "claimsVolume": [
       { "range": "0 - 2K", "color": "#f0f9ff" },
-      { "range": "2K - 4K", "color": "#FB457F" },
-      { "range": "4K - 6K", "color": "#A10839" },
-      { "range": "6K - 8K", "color": "#7A0485" },
-      { "range": "8K+", "color": "#3E0475" }
+      { "range": "2K - 4K", "color": "#F08C76" },
+      { "range": "4K - 6K", "color": "#449CFB" },
+      { "range": "6K - 8K", "color": "#F5709A" },
+      { "range": "8K+", "color": "#2E5D8F" }
     ],
     "rateRelativity": [
       { "range": "76 - 88", "color": "#f0fdf4" },
-      { "range": "88 - 101", "color": "#45FB6C" },
-      { "range": "101 - 113", "color": "#17800C" },
-      { "range": "113 - 126", "color": "#877F08" },
-      { "range": "126 - 138", "color": "#D13B00" }
+      { "range": "88 - 101", "color": "#82F09A" },
+      { "range": "101 - 113", "color": "#62915D" },
+      { "range": "113 - 126", "color": "#ADA64B" },
+      { "range": "126 - 138", "color": "#BA3761" }
     ]
   }
 }
