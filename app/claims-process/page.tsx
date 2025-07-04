@@ -9,7 +9,7 @@ import { ModernSectionHeader } from "@/components/modern-section-header"
 const claimsProcessMetrics = [
   { label: "Total Claims", value: "3.5M", unit: "#", color: "#449cfb" },
   { label: "Total Claim Lines", value: "52.5M", unit: "Lines", color: "#449cfb" },
-  { label: "Total Repriced Claims", value: "3.26M", unit: "Claims", color: "#999999" },
+  { label: "Total Repriced Claims", value: "3.26M", unit: "Claims", color: "#82F09A" },
   { label: "Total Exclusions", value: "140K", unit: "Claims", color: "#f59e0b" },
   { label: "Total Errors", value: "63K", unit: "Claims", color: "#ef4444" },
   { label: "Total Duplicates", value: "37K", unit: "Claims", color: "#8b5cf6" },
