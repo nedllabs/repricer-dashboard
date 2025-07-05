@@ -142,7 +142,7 @@ export function OutpatientTab() {
 
       {/* Statistical outlier analysis */}
       <SectionRow title="Statistical Outlier">
-        <StatisticalOutlierChart title="Provider Outlier Analysis" />
+        <StatisticalOutlierChart title="Statistical Outlier" />
       </SectionRow>
     </div>
   );

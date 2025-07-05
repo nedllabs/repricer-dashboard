@@ -40,7 +40,7 @@
       ]
     },
     "rateRelativityBarChart": {
-      "title": "Rate Relativity by APC Level 1",
+      "title": "Rate Relativity by APC Category",
       "data": [
         { "name": "Surgery", "relativity": 135 },
         { "name": "Radiology", "relativity": 115 },
@@ -50,7 +50,7 @@
       ]
     },
     "top10ApcChart": {
-      "title": "Top 10 APCs by Medicare Rate Relativity",
+      "title": "10 Medicare rate relativity HCPCS",
       "data": [
         { "drg": "5301", "relativity": 1.45 },
         { "drg": "5302", "relativity": 1.38 },
