@@ -11,6 +11,7 @@ import { MobileTabNavigation } from "@/components/mobile-tab-navigation";
 import { InpatientTab } from "@/components/inpatient-tab";
 import { OutpatientTab } from "@/components/outpatient-tab";
 import dashboardData from "@/data/dashboard-data.json";
+import { CompactDateFilters } from "@/components/compact-date-filters";
 
 function SummaryTab() {
   return (
@@ -93,7 +94,14 @@ export default function Dashboard() {
         title="Repricer Intelligence Dashboard"
         subtitle="Overview of claims repricing metrics and analytics"
       />
-      <MobileDateFilters />
+      {/* Desktop Date Filters */}
+      <div className="hidden lg:block">
+        <CompactDateFilters />
+      </div>
+      {/* Mobile Date Filters */}
+      <div className="lg:hidden">
+        <MobileDateFilters />
+      </div>
       <MobileTabNavigation
         tabs={dashboardData.tabs}
         onTabChange={setActiveTab}
