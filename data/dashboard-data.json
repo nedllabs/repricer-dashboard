@@ -9,7 +9,7 @@
     { "id": "summary", "label": "Summary", "active": true },
     { "id": "inpatient", "label": "Inpatient", "active": false },
     { "id": "outpatient", "label": "Outpatient", "active": false },
-    { "id": "fee-schedules", "label": "Fee Schedules", "active": false },
+    { "id": "professional", "label": "Professional", "active": false },
     { "id": "others", "label": "Others", "active": false }
   ],
   "metrics": [
@@ -166,7 +166,7 @@
         ]
       },
       {
-        "title": "Medicare Fee Schedules",
+        "title": "Medicare Professional",
         "color": "#B782E8",
         "rows": [
           {
