@@ -1,17 +1,22 @@
-"use client"
+"use client";
 
-import { TrendingUp, TrendingDown, Info } from "lucide-react"
-import { useState } from "react"
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
+import { TrendingUp, TrendingDown, Info } from "lucide-react";
+import { useState } from "react";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 interface EnhancedMetricCardProps {
-  label: string
-  value: string
-  unit: string
-  color: string
-  trend?: number
-  previousValue?: string
-  tooltip?: string
+  label: string;
+  value: string;
+  unit: string;
+  color: string;
+  trend?: number;
+  previousValue?: string;
+  tooltip?: string;
 }
 
 export function EnhancedMetricCard({
@@ -23,7 +28,7 @@ export function EnhancedMetricCard({
   previousValue,
   tooltip,
 }: EnhancedMetricCardProps) {
-  const [isHovered, setIsHovered] = useState(false)
+  const [isHovered, setIsHovered] = useState(false);
 
   const CardContent = () => (
     <div
@@ -34,7 +39,9 @@ export function EnhancedMetricCard({
       {/* Background Gradient */}
       <div
         className="absolute inset-0 opacity-0 group-hover:opacity-5 transition-opacity duration-300"
-        style={{ background: `linear-gradient(135deg, ${color}20, ${color}05)` }}
+        style={{
+          background: `linear-gradient(135deg, ${color}20, ${color}05)`,
+        }}
       />
 
       {/* Top Border Accent */}
@@ -52,8 +59,16 @@ export function EnhancedMetricCard({
             )}
           </div>
           {trend !== 0 && (
-            <div className={`flex items-center space-x-1 ${trend > 0 ? "text-green-500" : "text-red-500"}`}>
-              {trend > 0 ? <TrendingUp className="w-3 h-3" /> : <TrendingDown className="w-3 h-3" />}
+            <div
+              className={`hidden flex items-center space-x-1 ${
+                trend > 0 ? "text-green-500" : "text-red-500"
+              }`}
+            >
+              {trend > 0 ? (
+                <TrendingUp className="w-3 h-3" />
+              ) : (
+                <TrendingDown className="w-3 h-3" />
+              )}
               <span className="text-xs font-medium">{Math.abs(trend)}%</span>
             </div>
           )}
@@ -66,12 +81,16 @@ export function EnhancedMetricCard({
         </div>
 
         <div className="flex items-center justify-between">
-          <div className="text-xs font-medium text-[#9ca3af] uppercase tracking-wide">{unit}</div>
-          {previousValue && <div className="text-xs text-[#9ca3af]">vs {previousValue}</div>}
+          <div className="text-xs font-medium text-[#9ca3af] uppercase tracking-wide">
+            {unit}
+          </div>
+          {previousValue && (
+            <div className="text-xs text-[#9ca3af]">vs {previousValue}</div>
+          )}
         </div>
       </div>
     </div>
-  )
+  );
 
   if (tooltip) {
     return (
@@ -82,14 +101,17 @@ export function EnhancedMetricCard({
               <CardContent />
             </div>
           </TooltipTrigger>
-          <TooltipContent side="top" className="max-w-xs p-3 bg-[#374151] text-white text-sm rounded-lg shadow-lg">
+          <TooltipContent
+            side="top"
+            className="max-w-xs p-3 bg-[#374151] text-white text-sm rounded-lg shadow-lg"
+          >
             <div className="font-medium mb-1">Formula:</div>
             <div className="text-xs leading-relaxed">{tooltip}</div>
           </TooltipContent>
         </Tooltip>
       </TooltipProvider>
-    )
+    );
   }
 
-  return <CardContent />
+  return <CardContent />;
 }

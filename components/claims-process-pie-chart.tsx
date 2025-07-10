@@ -1,40 +1,60 @@
-"use client"
+"use client";
 
-import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from "recharts"
-import { useState } from "react"
+import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from "recharts";
+import { useState } from "react";
 
 interface ClaimsProcessPieChartProps {
-  title: string
+  title: string;
   data: Array<{
-    name: string
-    value: number
-    color: string
-  }>
+    name: string;
+    value: number;
+    claimVolume?: string;
+    allowedAmount?: string;
+    color: string;
+  }>;
 }
 
 const CustomTooltip = ({ active, payload }: any) => {
   if (active && payload && payload.length) {
-    const data = payload[0]
+    const data = payload[0];
     return (
       <div className="bg-white p-3 rounded-lg shadow-lg border border-[#e5e7eb]">
         <div className="flex items-center space-x-2">
-          <div className="w-3 h-3 rounded-full" style={{ backgroundColor: data.payload.color }} />
-          <span className="font-medium text-[#374151]">{data.payload.name}</span>
+          <div
+            className="w-3 h-3 rounded-full"
+            style={{ backgroundColor: data.payload.color }}
+          />
+          <span className="font-medium text-[#374151]">
+            {data.payload.name}
+          </span>
         </div>
-        <div className="text-sm text-[#6b7280] mt-1">{data.value.toFixed(1)}% of total</div>
+        <div className="text-sm text-[#6b7280] mt-1">
+          {data.payload.allowedAmount
+            ? `${data.payload.allowedAmount} allowed`
+            : data.payload.claimVolume
+            ? `${data.payload.claimVolume} claims`
+            : `${data.value.toFixed(1)}% of total`}
+        </div>
       </div>
-    )
+    );
   }
-  return null
-}
+  return null;
+};
 
-const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent }: any) => {
-  if (percent < 0.02) return null
+const renderCustomizedLabel = ({
+  cx,
+  cy,
+  midAngle,
+  innerRadius,
+  outerRadius,
+  percent,
+}: any) => {
+  if (percent < 0.02) return null;
 
-  const RADIAN = Math.PI / 180
-  const radius = innerRadius + (outerRadius - innerRadius) * 0.5
-  const x = cx + radius * Math.cos(-midAngle * RADIAN)
-  const y = cy + radius * Math.sin(-midAngle * RADIAN)
+  const RADIAN = Math.PI / 180;
+  const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
+  const x = cx + radius * Math.cos(-midAngle * RADIAN);
+  const y = cy + radius * Math.sin(-midAngle * RADIAN);
 
   return (
     <text
@@ -47,24 +67,29 @@ const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, per
     >
       {`${(percent * 100).toFixed(1)}%`}
     </text>
-  )
-}
+  );
+};
 
-export function ClaimsProcessPieChart({ title, data }: ClaimsProcessPieChartProps) {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null)
+export function ClaimsProcessPieChart({
+  title,
+  data,
+}: ClaimsProcessPieChartProps) {
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   const onPieEnter = (_: any, index: number) => {
-    setActiveIndex(index)
-  }
+    setActiveIndex(index);
+  };
 
   const onPieLeave = () => {
-    setActiveIndex(null)
-  }
+    setActiveIndex(null);
+  };
 
   return (
     <div className="bg-white rounded-xl p-4 lg:p-6 shadow-sm border border-[#e5e7eb] hover:shadow-lg transition-all duration-300">
       <div className="text-center mb-4 lg:mb-6">
-        <h3 className="text-base lg:text-lg font-semibold text-[#374151] mb-2 font-comfortaa">{title}</h3>
+        <h3 className="text-base lg:text-lg font-semibold text-[#374151] mb-2 font-comfortaa">
+          {title}
+        </h3>
         <div className="w-12 lg:w-16 h-1 bg-gradient-to-r from-[#449cfb] to-[#e679f2] rounded-full mx-auto"></div>
       </div>
 
@@ -94,8 +119,10 @@ export function ClaimsProcessPieChart({ title, data }: ClaimsProcessPieChartProp
                     stroke={activeIndex === index ? "#ffffff" : "none"}
                     strokeWidth={activeIndex === index ? 3 : 0}
                     style={{
-                      filter: activeIndex === index ? "brightness(1.1)" : "none",
-                      transform: activeIndex === index ? "scale(1.05)" : "scale(1)",
+                      filter:
+                        activeIndex === index ? "brightness(1.1)" : "none",
+                      transform:
+                        activeIndex === index ? "scale(1.05)" : "scale(1)",
                       transformOrigin: "center",
                       transition: "all 0.2s ease-in-out",
                     }}
@@ -113,18 +140,37 @@ export function ClaimsProcessPieChart({ title, data }: ClaimsProcessPieChartProp
             <div
               key={index}
               className={`flex items-center justify-between p-2 rounded-lg transition-all duration-200 cursor-pointer ${
-                activeIndex === index ? "bg-gray-50 shadow-sm" : "hover:bg-gray-50"
+                activeIndex === index
+                  ? "bg-gray-50 shadow-sm"
+                  : "hover:bg-gray-50"
               }`}
               onMouseEnter={() => setActiveIndex(index)}
               onMouseLeave={() => setActiveIndex(null)}
             >
               <div className="flex items-center space-x-2">
-                <div className="w-3 h-3 rounded-full shadow-sm" style={{ backgroundColor: entry.color }} />
+                <div
+                  className="w-3 h-3 rounded-full shadow-sm"
+                  style={{ backgroundColor: entry.color }}
+                />
                 <div>
-                  <div className="text-xs font-medium text-[#374151]">{entry.name}</div>
-                  <div className="text-xs text-[#6b7280]">{entry.value.toFixed(1)}%</div>
+                  <div className="text-xs font-medium text-[#374151]">
+                    {entry.name}
+                  </div>
+                  <div className="text-xs text-[#6b7280]">
+                    {entry.value.toFixed(1)}%
+                  </div>
                 </div>
               </div>
+              {(entry.allowedAmount || entry.claimVolume) && (
+                <div className="text-right">
+                  <div
+                    className="text-xs font-bold"
+                    style={{ color: entry.color }}
+                  >
+                    {entry.allowedAmount || entry.claimVolume}
+                  </div>
+                </div>
+              )}
             </div>
           ))}
         </div>
@@ -156,8 +202,10 @@ export function ClaimsProcessPieChart({ title, data }: ClaimsProcessPieChartProp
                     stroke={activeIndex === index ? "#ffffff" : "none"}
                     strokeWidth={activeIndex === index ? 3 : 0}
                     style={{
-                      filter: activeIndex === index ? "brightness(1.1)" : "none",
-                      transform: activeIndex === index ? "scale(1.05)" : "scale(1)",
+                      filter:
+                        activeIndex === index ? "brightness(1.1)" : "none",
+                      transform:
+                        activeIndex === index ? "scale(1.05)" : "scale(1)",
                       transformOrigin: "center",
                       transition: "all 0.2s ease-in-out",
                     }}
@@ -175,21 +223,33 @@ export function ClaimsProcessPieChart({ title, data }: ClaimsProcessPieChartProp
             <div
               key={index}
               className={`flex items-center justify-between p-2.5 rounded-lg transition-all duration-200 cursor-pointer ${
-                activeIndex === index ? "bg-gray-50 shadow-sm" : "hover:bg-gray-50"
+                activeIndex === index
+                  ? "bg-gray-50 shadow-sm"
+                  : "hover:bg-gray-50"
               }`}
               onMouseEnter={() => setActiveIndex(index)}
               onMouseLeave={() => setActiveIndex(null)}
             >
               <div className="flex items-center space-x-2">
-                <div className="w-3 h-3 rounded-full shadow-sm" style={{ backgroundColor: entry.color }} />
+                <div
+                  className="w-3 h-3 rounded-full shadow-sm"
+                  style={{ backgroundColor: entry.color }}
+                />
                 <div>
-                  <div className="text-xs font-medium text-[#374151]">{entry.name}</div>
-                  <div className="text-xs text-[#6b7280]">{entry.value.toFixed(1)}% of total</div>
+                  <div className="text-xs font-medium text-[#374151]">
+                    {entry.name}
+                  </div>
+                  <div className="text-xs text-[#6b7280]">
+                    {entry.value.toFixed(1)}% of total
+                  </div>
                 </div>
               </div>
               <div className="text-right">
-                <div className="text-sm font-bold" style={{ color: entry.color }}>
-                  {entry.value.toFixed(1)}%
+                <div
+                  className="text-sm font-bold"
+                  style={{ color: entry.color }}
+                >
+                  {entry.allowedAmount || entry.claimVolume || `${entry.value.toFixed(1)}%`}
                 </div>
               </div>
             </div>
@@ -197,5 +257,5 @@ export function ClaimsProcessPieChart({ title, data }: ClaimsProcessPieChartProp
         </div>
       </div>
     </div>
-  )
+  );
 }

@@ -76,12 +76,8 @@ export function InpatientTab() {
             />
             <ComparisonBarChart
               title={codeLevel.rateRelativityBarChart.title}
-              data={codeLevel.rateRelativityBarChart.data.map((d) => ({
-                name: d.name,
-                billedAmount: d.relativity,
-                allowedAmount: 0,
-                medicareReference: 0,
-              }))}
+              data={codeLevel.rateRelativityBarChart.data}
+              type="rateRelativity"
             />
             <TopDrgChart {...codeLevel.top10DrgChart} />
           </div>

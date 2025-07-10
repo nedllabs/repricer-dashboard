@@ -61,26 +61,81 @@
   "claimVolumePieChart": {
     "title": "Claim Volume across Reimbursement Methodologies",
     "data": [
-      { "name": "PPS", "value": 42.3, "color": "#449CFB" },
-      { "name": "OPPS", "value": 33.2, "color": "#F08C76" },
-      { "name": "IPPS", "value": 19.6, "color": "#F5709A" },
-      { "name": "ASC", "value": 3.6, "color": "#B782E8" },
-      { "name": "SNF", "value": 1.3, "color": "#82F09A" }
+      {
+        "name": "PPS",
+        "value": 42.3,
+        "claimVolume": "1.48M",
+        "color": "#449CFB"
+      },
+      {
+        "name": "OPPS",
+        "value": 33.2,
+        "claimVolume": "1.16M",
+        "color": "#F08C76"
+      },
+      {
+        "name": "IPPS",
+        "value": 19.6,
+        "claimVolume": "686K",
+        "color": "#F5709A"
+      },
+      {
+        "name": "ASC",
+        "value": 3.6,
+        "claimVolume": "126K",
+        "color": "#B782E8"
+      },
+      {
+        "name": "SNF",
+        "value": 1.3,
+        "claimVolume": "45.5K",
+        "color": "#82F09A"
+      }
     ]
   },
   "allowedAmountPieChart": {
     "title": "Allowed Amount across Reimbursement Methodologies",
     "data": [
-      { "name": "IPPS", "value": 46.4, "color": "#F5709A" },
-      { "name": "OPPS", "value": 26.9, "color": "#F08C76" },
-      { "name": "PPS", "value": 22.8, "color": "#449CFB" },
-      { "name": "ASC", "value": 2.5, "color": "#B782E8" },
-      { "name": "SNF", "value": 1.4, "color": "#82F09A" }
+      {
+        "name": "IPPS",
+        "value": 46.4,
+        "claimVolume": "686K",
+        "allowedAmount": "$2.64B",
+        "color": "#F5709A"
+      },
+      {
+        "name": "OPPS",
+        "value": 26.9,
+        "claimVolume": "1.16M",
+        "allowedAmount": "$1.53B",
+        "color": "#F08C76"
+      },
+      {
+        "name": "PPS",
+        "value": 22.8,
+        "claimVolume": "1.48M",
+        "allowedAmount": "$1.30B",
+        "color": "#449CFB"
+      },
+      {
+        "name": "ASC",
+        "value": 2.5,
+        "claimVolume": "126K",
+        "allowedAmount": "$142M",
+        "color": "#B782E8"
+      },
+      {
+        "name": "SNF",
+        "value": 1.4,
+        "claimVolume": "45.5K",
+        "allowedAmount": "$80M",
+        "color": "#82F09A"
+      }
     ]
   },
   "reimbursementTable": {
     "headers": [
-      "Reimbursement Methodology",
+      "Claim Type",
       "Claims",
       "Billed Amount",
       "Allowed Amount",
@@ -166,7 +221,7 @@
         ]
       },
       {
-        "title": "Medicare Professional",
+        "title": "Professional",
         "color": "#B782E8",
         "rows": [
           {

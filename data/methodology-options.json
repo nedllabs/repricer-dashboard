@@ -37,24 +37,6 @@
       "avgAmount": 3233
     },
     {
-      "id": "hospice",
-      "name": "Hospice",
-      "description": "Hospice Care",
-      "category": "Inpatient",
-      "claimCount": 25000,
-      "totalAmount": 47000000,
-      "avgAmount": 1880
-    },
-    {
-      "id": "home-health",
-      "name": "Home Health",
-      "description": "Home Health Agency services",
-      "category": "Inpatient",
-      "claimCount": 40000,
-      "totalAmount": 52000000,
-      "avgAmount": 1300
-    },
-    {
       "id": "ltch",
       "name": "LTCH",
       "description": "Long-term Care Hospital",
@@ -71,15 +53,6 @@
       "claimCount": 1100000,
       "totalAmount": 1420000000,
       "avgAmount": 1291
-    },
-    {
-      "id": "esrd",
-      "name": "ESRD",
-      "description": "End-Stage Renal Disease",
-      "category": "Outpatient",
-      "claimCount": 10000,
-      "totalAmount": 27000000,
-      "avgAmount": 2700
     },
     {
       "id": "fqhc",
@@ -103,7 +76,7 @@
       "id": "pfs",
       "name": "PFS",
       "description": "Physician Fee Schedule",
-      "category": "Medicare Fee Schedule",
+      "category": "Professional",
       "claimCount": 1400000,
       "totalAmount": 1220000000,
       "avgAmount": 871
@@ -112,7 +85,7 @@
       "id": "dmepos",
       "name": "DMEPOS",
       "description": "Durable Medical Equipment, Prosthetics, Orthotics, and Supplies",
-      "category": "Medicare Fee Schedule",
+      "category": "Professional",
       "claimCount": 15000,
       "totalAmount": 33000000,
       "avgAmount": 2200
@@ -121,7 +94,7 @@
       "id": "clinical-lab",
       "name": "Clinical Lab",
       "description": "Laboratory Services",
-      "category": "Medicare Fee Schedule",
+      "category": "Professional",
       "claimCount": 20000,
       "totalAmount": 26000000,
       "avgAmount": 1300
@@ -130,15 +103,43 @@
       "id": "ambulance",
       "name": "Ambulance",
       "description": "Emergency Transport Services",
-      "category": "Medicare Fee Schedule",
+      "category": "Professional",
       "claimCount": 6000,
       "totalAmount": 12000000,
       "avgAmount": 2000
+    },
+    {
+      "id": "hospice",
+      "name": "Hospice",
+      "description": "Hospice Care",
+      "category": "Others",
+      "claimCount": 25000,
+      "totalAmount": 47000000,
+      "avgAmount": 1880
+    },
+    {
+      "id": "home-health",
+      "name": "Home Health",
+      "description": "Home Health Agency services",
+      "category": "Others",
+      "claimCount": 40000,
+      "totalAmount": 52000000,
+      "avgAmount": 1300
+    },
+    {
+      "id": "esrd",
+      "name": "ESRD",
+      "description": "End-Stage Renal Disease",
+      "category": "Others",
+      "claimCount": 10000,
+      "totalAmount": 27000000,
+      "avgAmount": 2700
     }
   ],
   "categoryColors": {
     "Inpatient": "#449CFB",
     "Outpatient": "#F08C76",
-    "Medicare Fee Schedule": "#B782E8"
+    "Professional": "#B782E8",
+    "Others": "#82F09A"
   }
 }

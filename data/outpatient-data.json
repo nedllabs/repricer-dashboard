@@ -12,19 +12,19 @@
       "value": "128%",
       "unit": "vs MRP"
     },
-    { "label": "Average Visit Duration", "value": "2.8", "unit": "Hours" },
     {
       "label": "Total Medicare Rate Relativity",
       "value": "112%",
       "unit": "VS MRP"
     },
+    { "label": "Average Visit Duration", "value": "2.8", "unit": "Hours" },
     {
       "label": "Avg. Pass-through Payments",
       "value": "$85",
       "unit": "Per Claim"
     },
     { "label": "Avg. Outlier Payments", "value": "$145", "unit": "Per Claim" },
-    { "label": "Avg. New Tech Add-on", "value": "$95", "unit": "Per Claim" },
+    { "label": "Avg. New Tech add-ons", "value": "$95", "unit": "Per Claim" },
     { "label": "Avg. Quality Prog Adj", "value": "-$8", "unit": "Per Claim" },
     { "label": "Avg. Packaging Adj", "value": "$12", "unit": "Per Claim" }
   ],
@@ -32,11 +32,36 @@
     "apcCategoriesPieChart": {
       "title": "APC Categories (Level 1) by Claim Volume",
       "data": [
-        { "name": "Surgery", "value": 30, "color": "#449CFB" },
-        { "name": "Radiology", "value": 20, "color": "#F08C76" },
-        { "name": "Emergency Dept", "value": 18, "color": "#F5709A" },
-        { "name": "Clinic Visits", "value": 22, "color": "#B782E8" },
-        { "name": "Other", "value": 10, "color": "#82F09A" }
+        {
+          "name": "Surgery",
+          "value": 30,
+          "claimVolume": "360K",
+          "color": "#449CFB"
+        },
+        {
+          "name": "Radiology",
+          "value": 20,
+          "claimVolume": "240K",
+          "color": "#F08C76"
+        },
+        {
+          "name": "Emergency",
+          "value": 18,
+          "claimVolume": "216K",
+          "color": "#F5709A"
+        },
+        {
+          "name": "Clinic Visits",
+          "value": 22,
+          "claimVolume": "264K",
+          "color": "#B782E8"
+        },
+        {
+          "name": "Other",
+          "value": 10,
+          "claimVolume": "120K",
+          "color": "#82F09A"
+        }
       ]
     },
     "rateRelativityBarChart": {
@@ -44,7 +69,7 @@
       "data": [
         { "name": "Surgery", "relativity": 135 },
         { "name": "Radiology", "relativity": 115 },
-        { "name": "Emergency Dept", "relativity": 125 },
+        { "name": "Emergency", "relativity": 125 },
         { "name": "Clinic Visits", "relativity": 120 },
         { "name": "Other", "relativity": 108 }
       ]
@@ -136,11 +161,36 @@
     "topSystemsPieChart": {
       "title": "Top 5 Health Systems by Claim Volume",
       "data": [
-        { "name": "Kaiser Permanente", "value": 25, "color": "#449CFB" },
-        { "name": "HCA Healthcare", "value": 20, "color": "#F08C76" },
-        { "name": "Ascension Health", "value": 18, "color": "#F5709A" },
-        { "name": "CommonSpirit Health", "value": 16, "color": "#B782E8" },
-        { "name": "Tenet Healthcare", "value": 21, "color": "#82F09A" }
+        {
+          "name": "Kaiser Permanente",
+          "value": 25,
+          "claimVolume": "300K",
+          "color": "#449CFB"
+        },
+        {
+          "name": "HCA Healthcare",
+          "value": 20,
+          "claimVolume": "240K",
+          "color": "#F08C76"
+        },
+        {
+          "name": "Ascension Health",
+          "value": 18,
+          "claimVolume": "216K",
+          "color": "#F5709A"
+        },
+        {
+          "name": "CommonSpirit Health",
+          "value": 16,
+          "claimVolume": "192K",
+          "color": "#B782E8"
+        },
+        {
+          "name": "Tenet Healthcare",
+          "value": 21,
+          "claimVolume": "252K",
+          "color": "#82F09A"
+        }
       ]
     },
     "top10HealthSystemsChart": {
