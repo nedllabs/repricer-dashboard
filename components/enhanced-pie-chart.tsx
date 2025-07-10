@@ -1,40 +1,51 @@
-"use client"
+"use client";
 
-import { PieChart, Pie, Cell, ResponsiveContainer, Legend } from "recharts"
+import { PieChart, Pie, Cell, ResponsiveContainer, Legend } from "recharts";
 
 interface PieChartData {
-  name: string
-  value: number
-  color: string
+  name: string;
+  value: number;
+  color: string;
 }
 
 interface EnhancedPieChartProps {
-  title: string
-  data: PieChartData[]
+  title: string;
+  data: PieChartData[];
 }
 
 const CustomLegend = ({ payload }: { payload?: unknown[] }) => {
   if (!payload?.length) {
-    return null
+    return null;
   }
 
   return (
     <div className="flex flex-wrap justify-center gap-4 mt-4">
       {payload.map((entry: any, index: number) => (
         <div key={index} className="flex items-center space-x-2">
-          <div className="w-3 h-3 rounded-full" style={{ backgroundColor: entry.color }} />
-          <span className="text-sm text-[#4d4d4d] font-medium">{entry.value}</span>
+          <div
+            className="w-3 h-3 rounded-full"
+            style={{ backgroundColor: entry.color }}
+          />
+          <span className="text-sm text-[#4d4d4d] font-medium">
+            {entry.value}
+          </span>
         </div>
       ))}
     </div>
-  )
-}
+  );
+};
 
-const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent }: any) => {
-  const RADIAN = Math.PI / 180
-  const radius = innerRadius + (outerRadius - innerRadius) * 0.5
-  const x = cx + radius * Math.cos(-midAngle * RADIAN)
-  const y = cy + radius * Math.sin(-midAngle * RADIAN)
+const renderCustomizedLabel = ({
+  cx,
+  cy,
+  midAngle,
+  outerRadius,
+  percent,
+}: any) => {
+  const RADIAN = Math.PI / 180;
+  const radius = outerRadius * 0.6; // Position labels at 60% of the radius
+  const x = cx + radius * Math.cos(-midAngle * RADIAN);
+  const y = cy + radius * Math.sin(-midAngle * RADIAN);
 
   return (
     <text
@@ -47,13 +58,15 @@ const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, per
     >
       {`${(percent * 100).toFixed(1)}%`}
     </text>
-  )
-}
+  );
+};
 
 export function EnhancedPieChart({ title, data }: EnhancedPieChartProps) {
   return (
     <div className="bg-white rounded-lg p-6 shadow-sm border border-[#d9d9d9]">
-      <h3 className="text-lg font-medium text-[#4d4d4d] text-center mb-6">{title}</h3>
+      <h3 className="text-lg font-medium text-[#4d4d4d] text-center mb-6">
+        {title}
+      </h3>
       <div className="h-80">
         <ResponsiveContainer width="100%" height="100%">
           <PieChart>
@@ -76,5 +89,5 @@ export function EnhancedPieChart({ title, data }: EnhancedPieChartProps) {
         </ResponsiveContainer>
       </div>
     </div>
-  )
+  );
 }

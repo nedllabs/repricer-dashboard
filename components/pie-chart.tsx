@@ -1,16 +1,16 @@
-"use client"
+"use client";
 
-import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts"
+import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 
 interface PieChartData {
-  name: string
-  value: number
-  color: string
+  name: string;
+  value: number;
+  color: string;
 }
 
 interface CustomPieChartProps {
-  title: string
-  data: PieChartData[]
+  title: string;
+  data: PieChartData[];
 }
 
 export function CustomPieChart({ title, data }: CustomPieChartProps) {
@@ -30,7 +30,14 @@ export function CustomPieChart({ title, data }: CustomPieChartProps) {
         <div className="w-48 h-48">
           <ResponsiveContainer width="100%" height="100%">
             <PieChart>
-              <Pie data={data} cx="50%" cy="50%" innerRadius={40} outerRadius={80} paddingAngle={2} dataKey="value">
+              <Pie
+                data={data}
+                cx="50%"
+                cy="50%"
+                outerRadius={80}
+                paddingAngle={2}
+                dataKey="value"
+              >
                 {data.map((entry, index) => (
                   <Cell key={`cell-${index}`} fill={entry.color} />
                 ))}
@@ -41,12 +48,15 @@ export function CustomPieChart({ title, data }: CustomPieChartProps) {
         <div className="ml-6 flex-1">
           {data.map((item, index) => (
             <div key={index} className="flex items-center mb-2">
-              <div className="w-3 h-3 rounded-full mr-3" style={{ backgroundColor: item.color }} />
+              <div
+                className="w-3 h-3 rounded-full mr-3"
+                style={{ backgroundColor: item.color }}
+              />
               <span className="text-sm text-[#858585]">{item.name}</span>
             </div>
           ))}
         </div>
       </div>
     </div>
-  )
+  );
 }

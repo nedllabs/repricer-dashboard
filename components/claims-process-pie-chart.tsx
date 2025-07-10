@@ -45,14 +45,13 @@ const renderCustomizedLabel = ({
   cx,
   cy,
   midAngle,
-  innerRadius,
   outerRadius,
   percent,
 }: any) => {
-  if (percent < 0.02) return null;
+  if (percent < 0.05) return null; // Don't show labels for very small slices
 
   const RADIAN = Math.PI / 180;
-  const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
+  const radius = outerRadius * 0.6; // Position labels at 60% of the radius
   const x = cx + radius * Math.cos(-midAngle * RADIAN);
   const y = cy + radius * Math.sin(-midAngle * RADIAN);
 
@@ -106,7 +105,6 @@ export function ClaimsProcessPieChart({
                 labelLine={false}
                 label={renderCustomizedLabel}
                 outerRadius={100}
-                innerRadius={50}
                 fill="#8884d8"
                 dataKey="value"
                 onMouseEnter={onPieEnter}
@@ -189,7 +187,6 @@ export function ClaimsProcessPieChart({
                 labelLine={false}
                 label={renderCustomizedLabel}
                 outerRadius={140}
-                innerRadius={60}
                 fill="#8884d8"
                 dataKey="value"
                 onMouseEnter={onPieEnter}
@@ -249,7 +246,9 @@ export function ClaimsProcessPieChart({
                   className="text-sm font-bold"
                   style={{ color: entry.color }}
                 >
-                  {entry.allowedAmount || entry.claimVolume || `${entry.value.toFixed(1)}%`}
+                  {entry.allowedAmount ||
+                    entry.claimVolume ||
+                    `${entry.value.toFixed(1)}%`}
                 </div>
               </div>
             </div>
