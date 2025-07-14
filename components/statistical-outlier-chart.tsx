@@ -182,7 +182,7 @@ export function StatisticalOutlierChart({
         <h3 className="text-lg font-semibold text-[#374151] mb-2 font-comfortaa text-center">
           {title || "Claims Distribution by Medicare Rate Relativity"}
         </h3>
-        <div className="w-16 h-1 bg-gradient-to-r from-[#449cfb] to-[#BA3761] rounded-full mx-auto mb-4"></div>
+        <div className="w-16 h-1 bg-gradient-to-r from-[#449cfb] to-[#f087fb] rounded-full mx-auto mb-4"></div>
 
         <div className="text-center">
           <div className="text-3xl font-bold text-[#449cfb] mb-1">

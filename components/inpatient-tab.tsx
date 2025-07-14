@@ -27,7 +27,7 @@ function SectionRow({
         <h3 className="text-2xl font-bold text-[#374151] font-comfortaa mb-2">
           {title}
         </h3>
-        <div className="w-16 h-1 bg-gradient-to-r from-[#449cfb] to-[#e679f2] rounded-full"></div>
+        <div className="w-16 h-1 bg-gradient-to-r from-[#449cfb] to-[#f087fb] rounded-full"></div>
       </div>
       {children}
     </div>

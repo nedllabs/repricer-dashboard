@@ -22,10 +22,10 @@ export function HeaderNavigation() {
           </button>
 
           <div className="flex items-center space-x-2 lg:space-x-3">
-            <div className="p-1.5 lg:p-2 bg-gradient-to-r from-[#449cfb] to-[#e679f2] rounded-lg lg:rounded-xl shadow-lg">
+            <div className="p-1.5 lg:p-2 bg-gradient-to-r from-[#449cfb] to-[#f087fb] rounded-lg lg:rounded-xl shadow-lg">
               <BarChart3 className="w-4 h-4 lg:w-6 lg:h-6 text-white" />
             </div>
-            <div className="text-lg lg:text-xl font-bold bg-gradient-to-r from-[#449cfb] to-[#e679f2] bg-clip-text text-transparent font-comfortaa">
+            <div className="text-lg lg:text-xl font-bold bg-gradient-to-r from-[#449cfb] to-[#f087fb] bg-clip-text text-transparent font-comfortaa">
               <span className="hidden sm:inline">NEDL Analytics</span>
               <span className="sm:hidden">NEDL</span>
             </div>
@@ -39,7 +39,7 @@ export function HeaderNavigation() {
               href="/"
               className={`relative px-4 xl:px-6 mx-2 py-3 text-sm font-semibold transition-all duration-300 rounded-xl ${
                 pathname === "/"
-                  ? "bg-[#f0f9ff] border border-[#93c6fd] shadow-lg transform scale-105"
+                  ? "bg-gradient-to-r from-[#449cfb] to-[#f087fb] text-white shadow-lg transform scale-105"
                   : "text-[#6b7280] hover:text-[#374151] hover:bg-white/70"
               }`}
             >
@@ -53,7 +53,7 @@ export function HeaderNavigation() {
               href="/claims-process"
               className={`relative px-4 xl:px-8 py-3 text-sm font-semibold transition-all duration-300 rounded-xl ${
                 pathname === "/claims-process"
-                  ? "bg-[#f0f9ff] border border-[#93c6fd] shadow-lg transform scale-105"
+                  ? "bg-gradient-to-r from-[#449cfb] to-[#f087fb] text-white shadow-lg transform scale-105"
                   : "text-[#6b7280] hover:text-[#374151] hover:bg-white/70"
               }`}
             >
@@ -69,12 +69,12 @@ export function HeaderNavigation() {
         <div className="flex items-center justify-end space-x-2 lg:space-x-4 flex-1">
           <button className="relative p-2 lg:p-3 hover:bg-[#f3f4f6] rounded-xl transition-all duration-200 group">
             <Bell className="w-4 h-4 lg:w-5 lg:h-5 text-[#6b7280] group-hover:text-[#374151]" />
-            <div className="absolute -top-1 -right-1 w-2 h-2 lg:w-3 lg:h-3 bg-gradient-to-r from-[#ef4444] to-[#f87171] rounded-full shadow-sm animate-pulse"></div>
+            <div className="absolute -top-1 -right-1 w-2 h-2 lg:w-3 lg:h-3 bg-[#FA1717] rounded-full shadow-sm animate-pulse" style={{ animationDuration: '1s' }}></div>
           </button>
 
           <div className="flex items-center space-x-2 lg:space-x-3 bg-white/70 backdrop-blur-sm rounded-xl lg:rounded-2xl px-2 lg:px-4 py-1.5 lg:py-2 hover:bg-white/90 transition-all duration-200 cursor-pointer border border-[#e5e7eb]/50 shadow-sm">
             <span className="text-xs lg:text-sm font-medium text-[#374151] hidden sm:inline">Analytics User</span>
-            <div className="w-7 h-7 lg:w-9 lg:h-9 bg-gradient-to-r from-[#449cfb] to-[#e679f2] rounded-lg lg:rounded-xl flex items-center justify-center text-white text-xs lg:text-sm font-bold shadow-md">
+            <div className="w-7 h-7 lg:w-9 lg:h-9 bg-gradient-to-r from-[#449cfb] to-[#f087fb] rounded-lg lg:rounded-xl flex items-center justify-center text-white text-xs lg:text-sm font-bold shadow-md">
               A
             </div>
             <ChevronDown className="w-3 h-3 lg:w-4 lg:h-4 text-[#6b7280] hidden sm:inline" />
@@ -91,7 +91,7 @@ export function HeaderNavigation() {
               onClick={() => setIsMobileMenuOpen(false)}
               className={`block w-full p-4 rounded-xl text-sm font-semibold transition-all duration-300 ${
                 pathname === "/"
-                  ? "text-white bg-gradient-to-r from-[#449cfb] via-[#e679f2] to-[#f0c7f5] shadow-lg"
+                  ? "text-white bg-gradient-to-r from-[#449cfb] to-[#f087fb] shadow-lg"
                   : "text-[#6b7280] hover:text-[#374151] hover:bg-[#f3f4f6]"
               }`}
             >
@@ -102,7 +102,7 @@ export function HeaderNavigation() {
               onClick={() => setIsMobileMenuOpen(false)}
               className={`block w-full p-4 rounded-xl text-sm font-semibold transition-all duration-300 ${
                 pathname === "/claims-process"
-                  ? "text-white bg-gradient-to-r from-[#449cfb] via-[#e679f2] to-[#f0c7f5] shadow-lg"
+                  ? "text-white bg-gradient-to-r from-[#449cfb] to-[#f087fb] shadow-lg"
                   : "text-[#6b7280] hover:text-[#374151] hover:bg-[#f3f4f6]"
               }`}
             >

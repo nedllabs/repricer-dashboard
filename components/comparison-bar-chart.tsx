@@ -36,7 +36,7 @@ const CustomTooltip = ({ active, payload, label, type }: any) => {
         <div className="bg-white p-4 rounded-lg shadow-lg border border-[#e5e7eb]">
           <p className="font-semibold text-[#374151] mb-2">{label}</p>
           <div className="flex items-center space-x-2">
-            <div className="w-3 h-3 rounded-full bg-[#449CFB]" />
+            <div className="w-3 h-3 rounded-full bg-[#f087fb]" />
             <span className="text-sm text-[#6b7280]">Rate Relativity:</span>
             <span className="text-sm font-medium text-[#374151]">
               {payload[0].value}%
@@ -78,7 +78,7 @@ export function ComparisonBarChart({
         <h3 className="text-lg font-semibold text-[#374151] mb-2 font-comfortaa">
           {title}
         </h3>
-        <div className="w-16 h-1 bg-gradient-to-r from-[#449cfb] to-[#e679f2] rounded-full mx-auto"></div>
+        <div className="w-16 h-1 bg-gradient-to-r from-[#449cfb] to-[#f087fb] rounded-full mx-auto"></div>
       </div>
 
       <div className="h-80">
@@ -111,7 +111,7 @@ export function ComparisonBarChart({
               <Bar
                 dataKey="relativity"
                 name="Rate Relativity"
-                fill="#449CFB"
+                fill="#f087fb"
                 radius={[2, 2, 0, 0]}
               />
             ) : (

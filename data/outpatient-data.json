@@ -1,32 +1,49 @@
 {
   "repricerMetrics": [
-    { "label": "Total Claims", "value": "1.2M", "unit": "#" },
-    { "label": "Avg. Billed Amount", "value": "$2,450", "unit": "USD" },
-    { "label": "Avg. Allowed Amount", "value": "$1,180", "unit": "USD" },
-    { "label": "Avg. Paid Amount", "value": "$945", "unit": "USD" },
-    { "label": "Avg. Medicare Reference Price", "value": "$920", "unit": "USD" }
+    {
+      "label": "Total Claims",
+      "value": "1.2M",
+      "unit": "#",
+      "tooltip": "Count of unique OPPS input claims for the selected service period"
+    },
+    {
+      "label": "Avg. Billed Amount",
+      "value": "$2,450",
+      "unit": "USD",
+      "tooltip": "Avg. Billed Amount = Total Billed Amount/Total Claims"
+    },
+    {
+      "label": "Avg. Allowed Amount",
+      "value": "$1,180",
+      "unit": "USD",
+      "tooltip": "Avg. Allowed Amount = Total Allowed Amount/Total Claims"
+    },
+    {
+      "label": "Avg. Paid Amount",
+      "value": "$945",
+      "unit": "USD",
+      "tooltip": "Avg. Paid Amount = Total Paid Amount/Total Claims"
+    },
+    {
+      "label": "Avg. Medicare Reference Price",
+      "value": "$920",
+      "unit": "USD",
+      "tooltip": "Avg. Medicare Reference Price = Total Medicare Reference Price/Total Claims"
+    }
   ],
   "oppsMetrics": [
     {
       "label": "Avg. Medicare Rate Relativity",
       "value": "128%",
-      "unit": "vs MRP"
+      "unit": "vs MRP",
+      "tooltip": "Avg. rate relativity = Σ (Allowed Amount / Medicare Reference Price) / Total Claims"
     },
     {
       "label": "Total Medicare Rate Relativity",
       "value": "112%",
-      "unit": "VS MRP"
-    },
-    { "label": "Average Visit Duration", "value": "2.8", "unit": "Hours" },
-    {
-      "label": "Avg. Pass-through Payments",
-      "value": "$85",
-      "unit": "Per Claim"
-    },
-    { "label": "Avg. Outlier Payments", "value": "$145", "unit": "Per Claim" },
-    { "label": "Avg. New Tech add-ons", "value": "$95", "unit": "Per Claim" },
-    { "label": "Avg. Quality Prog Adj", "value": "-$8", "unit": "Per Claim" },
-    { "label": "Avg. Packaging Adj", "value": "$12", "unit": "Per Claim" }
+      "unit": "VS MRP",
+      "tooltip": "Total rate relativity = Σ Allowed Amount / Σ Medicare Reference Price"
+    }
   ],
   "codeLevel": {
     "apcCategoriesPieChart": {

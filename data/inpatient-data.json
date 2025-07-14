@@ -1,33 +1,86 @@
 {
   "repricerMetrics": [
-    { "label": "Total Claims", "value": "650K", "unit": "#" },
-    { "label": "Avg. Billed Amount", "value": "$8,276", "unit": "USD" },
-    { "label": "Avg. Allowed Amount", "value": "$3,770", "unit": "USD" },
-    { "label": "Avg. Paid Amount", "value": "$3,205", "unit": "USD" },
+    {
+      "label": "Total Claims",
+      "value": "650K",
+      "unit": "#",
+      "tooltip": "Count of unique IPPS input claims for the selected service period"
+    },
+    {
+      "label": "Avg. Billed Amount",
+      "value": "$8,276",
+      "unit": "USD",
+      "tooltip": "Avg. Billed Amount = Total Billed Amount/Total Claims"
+    },
+    {
+      "label": "Avg. Allowed Amount",
+      "value": "$3,770",
+      "unit": "USD",
+      "tooltip": "Avg. Allowed Amount = Total Allowed Amount/Total Claims"
+    },
+    {
+      "label": "Avg. Paid Amount",
+      "value": "$3,205",
+      "unit": "USD",
+      "tooltip": "Avg. Paid Amount = Total Paid Amount/Total Claims"
+    },
     {
       "label": "Avg. Medicare Reference Price",
       "value": "$3,141",
-      "unit": "USD"
+      "unit": "USD",
+      "tooltip": "Avg. Medicare Reference Price = Total Medicare Reference Price/Total Claims"
     }
   ],
   "ippsMetrics": [
     {
       "label": "Avg. Medicare Rate Relativity",
       "value": "120%",
-      "unit": "vs MRP"
+      "unit": "vs MRP",
+      "tooltip": "Avg. rate relativity = Σ (Allowed Amount / Medicare Reference Price) / Total Claims"
     },
     {
       "label": "Total Medicare Rate Relativity",
       "value": "104%",
-      "unit": "VS MRP"
+      "unit": "VS MRP",
+      "tooltip": "Total rate relativity = Σ Allowed Amount / Σ Medicare Reference Price"
     },
-    { "label": "Average Length of Stay", "value": "4.5", "unit": "Days" },
+    {
+      "label": "Avg. Length of Stay",
+      "value": "4.5",
+      "unit": "Days",
+      "tooltip": "Avg. Length of Stay = Total Length of stay / Total Claims"
+    },
 
-    { "label": "Avg. IME", "value": "$230", "unit": "Per Claim" },
-    { "label": "Avg. DSH", "value": "$450", "unit": "Per Claim" },
-    { "label": "Avg. Outliers", "value": "$120", "unit": "Per Claim" },
-    { "label": "Avg. New tech add-", "value": "$50", "unit": "Per Claim" },
-    { "label": "Avg. Quality Prog adj", "value": "-$15", "unit": "Per Claim" }
+    {
+      "label": "Avg. IME",
+      "value": "$230",
+      "unit": "Per Claim",
+      "tooltip": "Avg. IME = Total IME / Total Claims"
+    },
+    {
+      "label": "Avg. DSH",
+      "value": "$450",
+      "unit": "Per Claim",
+      "tooltip": "Avg. DSH = Total DSH / Total Claims"
+    },
+    {
+      "label": "Avg. Outliers",
+      "value": "$120",
+      "unit": "Per Claim",
+      "tooltip": "Avg. Outliers = Total Outliers / Total Claims"
+    },
+    {
+      "label": "Avg. New tech add-ons",
+      "value": "$50",
+      "unit": "Per Claim",
+      "tooltip": "Avg. New tech add-ons = Total New tech add-ons / Total Claims"
+    },
+    {
+      "label": "Avg. Quality Prog adj",
+      "value": "-$15",
+      "unit": "Per Claim",
+      "tooltip": "Avg. Quality Prog adj = Total Quality Prog adj / Total Claims"
+    }
   ],
   "codeLevel": {
     "drgCategoriesPieChart": {
@@ -46,19 +99,19 @@
           "color": "#F08C76"
         },
         {
-          "name": "Cardiology",
+          "name": "Maternity",
           "value": 15,
           "claimVolume": "98K",
           "color": "#F5709A"
         },
         {
-          "name": "Neurology",
+          "name": "New Born",
           "value": 8,
           "claimVolume": "52K",
           "color": "#B782E8"
         },
         {
-          "name": "Other",
+          "name": "Psychiatry",
           "value": 2,
           "claimVolume": "13K",
           "color": "#82F09A"
@@ -70,9 +123,9 @@
       "data": [
         { "name": "Surgery", "relativity": 125 },
         { "name": "Medical", "relativity": 118 },
-        { "name": "Cardiology", "relativity": 135 },
-        { "name": "Neurology", "relativity": 140 },
-        { "name": "Other", "relativity": 110 }
+        { "name": "Maternity", "relativity": 135 },
+        { "name": "New Born", "relativity": 140 },
+        { "name": "Psychiatry", "relativity": 110 }
       ]
     },
     "top10DrgChart": {

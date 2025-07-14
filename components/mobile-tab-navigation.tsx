@@ -1,25 +1,30 @@
-"use client"
+"use client";
 
-import { useState } from "react"
+import { useState } from "react";
 
 interface Tab {
-  id: string
-  label: string
-  active: boolean
+  id: string;
+  label: string;
+  active: boolean;
 }
 
 interface MobileTabNavigationProps {
-  tabs: Tab[]
-  onTabChange?: (tabId: string) => void
+  tabs: Tab[];
+  onTabChange?: (tabId: string) => void;
 }
 
-export function MobileTabNavigation({ tabs, onTabChange }: MobileTabNavigationProps) {
-  const [activeTab, setActiveTab] = useState(tabs.find((tab) => tab.active)?.id || tabs[0]?.id)
+export function MobileTabNavigation({
+  tabs,
+  onTabChange,
+}: MobileTabNavigationProps) {
+  const [activeTab, setActiveTab] = useState(
+    tabs.find((tab) => tab.active)?.id || tabs[0]?.id
+  );
 
   const handleTabClick = (tabId: string) => {
-    setActiveTab(tabId)
-    onTabChange?.(tabId)
-  }
+    setActiveTab(tabId);
+    onTabChange?.(tabId);
+  };
 
   return (
     <>
@@ -39,7 +44,7 @@ export function MobileTabNavigation({ tabs, onTabChange }: MobileTabNavigationPr
               {tab.label}
               {activeTab === tab.id && (
                 <div className="absolute bottom-0 left-0 right-0">
-                  <div className="h-1 bg-gradient-to-r from-[#449cfb] via-[#e679f2] to-[#f0c7f5] rounded-t-full"></div>
+                  <div className="h-1 bg-gradient-to-r from-[#449cfb] to-[#e679f2] rounded-t-full"></div>
                 </div>
               )}
             </button>
@@ -63,7 +68,7 @@ export function MobileTabNavigation({ tabs, onTabChange }: MobileTabNavigationPr
               {tab.label}
               {activeTab === tab.id && (
                 <div className="absolute bottom-0 left-0 right-0">
-                  <div className="h-1 bg-gradient-to-r from-[#449cfb] via-[#e679f2] to-[#f0c7f5] rounded-t-full"></div>
+                  <div className="h-1 bg-gradient-to-r from-[#449cfb] to-[#e679f2] rounded-t-full"></div>
                 </div>
               )}
             </button>
@@ -71,5 +76,5 @@ export function MobileTabNavigation({ tabs, onTabChange }: MobileTabNavigationPr
         </div>
       </div>
     </>
-  )
+  );
 }

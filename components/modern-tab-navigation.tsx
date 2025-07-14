@@ -35,7 +35,7 @@ export function ModernTabNavigation({ tabs, onTabChange }: ModernTabNavigationPr
             {tab.label}
             {activeTab === tab.id && (
               <div className="absolute bottom-0 left-0 right-0">
-                <div className="h-1 bg-gradient-to-r from-[#449cfb] via-[#e679f2] to-[#f0c7f5] rounded-t-full"></div>
+                <div className="h-1 bg-gradient-to-r from-[#449cfb] to-[#e679f2] rounded-t-full"></div>
               </div>
             )}
           </button>

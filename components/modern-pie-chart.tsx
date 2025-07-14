@@ -93,7 +93,7 @@ export function ModernPieChart({
         <h3 className="text-base lg:text-lg font-semibold text-[#374151] mb-2 font-comfortaa">
           {title}
         </h3>
-        <div className="w-12 lg:w-16 h-1 bg-gradient-to-r from-[#449cfb] to-[#e679f2] rounded-full mx-auto"></div>
+        <div className="w-12 lg:w-16 h-1 bg-gradient-to-r from-[#449cfb] to-[#f087fb] rounded-full mx-auto"></div>
       </div>
 
       {/* Mobile: Always use vertical layout (< lg breakpoint) */}

@@ -130,13 +130,13 @@ export function MobileDateFilters() {
   };
 
   return (
-    <div className="bg-white rounded-lg p-4 lg:p-6 shadow-sm border border-[#e5e7eb] mb-6">
+    <div className="bg-white rounded-xl p-4 lg:p-6 shadow-sm border border-[#e5e7eb] mb-6">
       <div className="space-y-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <Calendar className="w-4 h-4 text-[#449cfb]" />
             <span className="text-sm font-medium text-[#374151]">
-              Date Range
+              Quarter Range
             </span>
           </div>
           <div className="text-right">

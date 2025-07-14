@@ -1,0 +1,310 @@
+{
+  "repricerMetrics": [
+    {
+      "label": "Total Claims",
+      "value": "2.8M",
+      "unit": "#",
+      "tooltip": "Count of unique professional service claims for the selected service period"
+    },
+    {
+      "label": "Avg. Billed Amount",
+      "value": "$185",
+      "unit": "USD",
+      "tooltip": "Avg. Billed Amount = Total Billed Amount/Total Claims"
+    },
+    {
+      "label": "Avg. Allowed Amount",
+      "value": "$95",
+      "unit": "USD",
+      "tooltip": "Avg. Allowed Amount = Total Allowed Amount/Total Claims"
+    },
+    {
+      "label": "Avg. Paid Amount",
+      "value": "$78",
+      "unit": "USD",
+      "tooltip": "Avg. Paid Amount = Total Paid Amount/Total Claims"
+    },
+    {
+      "label": "Avg. Medicare Reference Price",
+      "value": "$82",
+      "unit": "USD",
+      "tooltip": "Avg. Medicare Reference Price = Total Medicare Reference Price/Total Claims"
+    }
+  ],
+  "professionalMetrics": [
+    {
+      "label": "Avg. Medicare Rate Relativity",
+      "value": "116%",
+      "unit": "vs MRP",
+      "tooltip": "Avg. rate relativity = Σ (Allowed Amount / Medicare Reference Price) / Total Claims"
+    },
+    {
+      "label": "Total Medicare Rate Relativity",
+      "value": "108%",
+      "unit": "VS MRP",
+      "tooltip": "Total rate relativity = Σ Allowed Amount / Σ Medicare Reference Price"
+    }
+  ],
+  "codeLevel": {
+    "cptCategoriesPieChart": {
+      "title": "HCPCS Categories by Claim Volume",
+      "data": [
+        {
+          "name": "Evaluation & Management",
+          "value": 35,
+          "claimVolume": "980K",
+          "color": "#449CFB"
+        },
+        {
+          "name": "Surgery",
+          "value": 25,
+          "claimVolume": "700K",
+          "color": "#F08C76"
+        },
+        {
+          "name": "Radiology",
+          "value": 20,
+          "claimVolume": "560K",
+          "color": "#F5709A"
+        },
+        {
+          "name": "Pathology & Laboratory",
+          "value": 15,
+          "claimVolume": "420K",
+          "color": "#B782E8"
+        },
+        {
+          "name": "Medicine",
+          "value": 5,
+          "claimVolume": "140K",
+          "color": "#82F09A"
+        }
+      ]
+    },
+    "rateRelativityBarChart": {
+      "title": "Rate Relativity by HCPCS Category",
+      "data": [
+        { "name": "Evaluation & Management", "relativity": 118 },
+        { "name": "Surgery", "relativity": 125 },
+        { "name": "Radiology", "relativity": 112 },
+        { "name": "Pathology & Laboratory", "relativity": 108 },
+        { "name": "Medicine", "relativity": 115 }
+      ]
+    },
+    "top10CptChart": {
+      "title": "10 Medicare rate relativity HCPCS codes",
+      "data": [
+        { "cpt": "99213", "relativity": 1.25 },
+        { "cpt": "99214", "relativity": 1.22 },
+        { "cpt": "99215", "relativity": 1.28 },
+        { "cpt": "99232", "relativity": 1.18 },
+        { "cpt": "99233", "relativity": 1.2 },
+        { "cpt": "99204", "relativity": 1.3 },
+        { "cpt": "99205", "relativity": 1.32 },
+        { "cpt": "99223", "relativity": 1.25 },
+        { "cpt": "99224", "relativity": 1.27 },
+        { "cpt": "99225", "relativity": 1.29 }
+      ]
+    },
+    "cptCodeTable": {
+      "headers": [
+        "HCPCS",
+        "HCPCS Description",
+        "Claim count",
+        "Avg. Billed",
+        "Avg. Allowed",
+        "Avg. MRP",
+        "Avg. MRR"
+      ],
+      "rows": [
+        [
+          "99213",
+          "Office/outpatient visit established patient, 20-29 minutes",
+          "285,000",
+          "$125",
+          "$65",
+          "$58",
+          "112%"
+        ],
+        [
+          "99214",
+          "Office/outpatient visit established patient, 30-39 minutes",
+          "245,000",
+          "$185",
+          "$95",
+          "$88",
+          "108%"
+        ],
+        [
+          "99215",
+          "Office/outpatient visit established patient, 40-54 minutes",
+          "185,000",
+          "$245",
+          "$125",
+          "$115",
+          "109%"
+        ],
+        [
+          "99232",
+          "Subsequent hospital care, 25 minutes",
+          "165,000",
+          "$165",
+          "$85",
+          "$78",
+          "109%"
+        ],
+        [
+          "99233",
+          "Subsequent hospital care, 35 minutes",
+          "145,000",
+          "$225",
+          "$115",
+          "$105",
+          "110%"
+        ],
+        [
+          "99204",
+          "Office/outpatient visit new patient, 45-59 minutes",
+          "125,000",
+          "$285",
+          "$145",
+          "$135",
+          "107%"
+        ]
+      ]
+    }
+  },
+  "healthSystem": {
+    "topSystemsPieChart": {
+      "title": "Top 5 Medical Group by Claim Volume",
+      "data": [
+        {
+          "name": "Kaiser Permanente",
+          "value": 28,
+          "claimVolume": "784K",
+          "color": "#449CFB"
+        },
+        {
+          "name": "HCA Healthcare",
+          "value": 22,
+          "claimVolume": "616K",
+          "color": "#F08C76"
+        },
+        {
+          "name": "Ascension Health",
+          "value": 18,
+          "claimVolume": "504K",
+          "color": "#F5709A"
+        },
+        {
+          "name": "CommonSpirit Health",
+          "value": 16,
+          "claimVolume": "448K",
+          "color": "#B782E8"
+        },
+        {
+          "name": "Tenet Healthcare",
+          "value": 16,
+          "claimVolume": "448K",
+          "color": "#82F09A"
+        }
+      ]
+    },
+    "top10HealthSystemsChart": {
+      "title": "10 Medical Group by Medicare Rate Relativity",
+      "data": [
+        { "name": "Mayo Clinic", "relativity": 1.35, "claims": "285K" },
+        { "name": "Cleveland Clinic", "relativity": 1.28, "claims": "265K" },
+        { "name": "Johns Hopkins", "relativity": 1.25, "claims": "245K" },
+        { "name": "Kaiser Permanente", "relativity": 1.22, "claims": "785K" },
+        { "name": "Ascension Health", "relativity": 1.18, "claims": "505K" },
+        { "name": "HCA Healthcare", "relativity": 1.15, "claims": "618K" },
+        { "name": "CommonSpirit Health", "relativity": 1.12, "claims": "450K" },
+        { "name": "Trinity Health", "relativity": 1.08, "claims": "385K" },
+        { "name": "Tenet Healthcare", "relativity": 1.05, "claims": "450K" },
+        { "name": "Universal Health", "relativity": 1.02, "claims": "325K" }
+      ]
+    },
+    "providerTable": {
+      "headers": [
+        "Classification",
+        "Specialization",
+        "Claim count",
+        "Avg. Billed",
+        "Avg. Allowed",
+        "Avg. MRP",
+        "Avg. MRR"
+      ],
+      "rows": [
+        ["Physician", "Primary Care", "45,200", "$165", "$85", "$78", "109%"],
+        ["Physician", "Cardiology", "38,500", "$225", "$115", "$105", "110%"],
+        ["Physician", "Orthopedics", "32,800", "$285", "$145", "$135", "107%"],
+        [
+          "Nurse Practitioner",
+          "Primary Care",
+          "28,900",
+          "$125",
+          "$65",
+          "$58",
+          "112%"
+        ],
+        [
+          "Physician Assistant",
+          "Emergency Medicine",
+          "25,600",
+          "$185",
+          "$95",
+          "$88",
+          "108%"
+        ],
+        ["Physician", "Dermatology", "22,400", "$195", "$100", "$92", "109%"],
+        [
+          "Nurse Practitioner",
+          "Cardiology",
+          "19,800",
+          "$175",
+          "$90",
+          "$82",
+          "110%"
+        ],
+        ["Physician", "Neurology", "18,500", "$245", "$125", "$115", "109%"]
+      ]
+    }
+  },
+  "geographic": {
+    "countyTable": {
+      "headers": [
+        "County",
+        "Code",
+        "Claim count",
+        "Avg. Billed",
+        "Avg. Allowed",
+        "Avg. MRP",
+        "Avg. MRR"
+      ],
+      "rows": [
+        [
+          "Los Angeles County",
+          "06037",
+          "185,000",
+          "$195",
+          "$100",
+          "$92",
+          "109%"
+        ],
+        ["Cook County", "17031", "165,000", "$185", "$95", "$88", "108%"],
+        ["Harris County", "48201", "145,000", "$175", "$90", "$82", "110%"],
+        ["Maricopa County", "04013", "125,000", "$165", "$85", "$78", "109%"],
+        ["San Diego County", "06073", "115,000", "$185", "$95", "$88", "108%"],
+        ["Orange County", "06059", "105,000", "$195", "$100", "$92", "109%"],
+        ["King County", "53033", "95,000", "$175", "$90", "$82", "110%"],
+        ["Miami-Dade County", "12086", "85,000", "$185", "$95", "$88", "108%"]
+      ]
+    }
+  },
+  "timeBased": {
+    "mrrTrend": { "title": "Medicare Rate Relativity Trend" },
+    "mrpChangeTrend": { "title": "Change in Medicare Reference Price Trend" },
+    "allowedAmountChange": { "title": "Expected Allowed Amount Change" }
+  }
+}

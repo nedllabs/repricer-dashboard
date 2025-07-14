@@ -1,18 +1,27 @@
-"use client"
+"use client";
 
-import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, ReferenceLine } from "recharts"
-import { DollarSign } from "lucide-react"
-import mrpChangeTrendData from "@/data/mrp-change-trend-data.json"
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+  ReferenceLine,
+} from "recharts";
+import { DollarSign } from "lucide-react";
+import mrpChangeTrendData from "@/data/mrp-change-trend-data.json";
 
 interface MrpChangeData {
-  quarter: string
-  change: number
-  cumulative: number
+  quarter: string;
+  change: number;
+  cumulative: number;
 }
 
 interface MrpChangeTrendChartProps {
-  title: string
-  data?: MrpChangeData[]
+  title: string;
+  data?: MrpChangeData[];
 }
 
 const CustomTooltip = ({ active, payload, label }: any) => {
@@ -21,9 +30,15 @@ const CustomTooltip = ({ active, payload, label }: any) => {
       <div className="bg-white p-4 rounded-lg shadow-lg border border-[#e5e7eb]">
         <p className="font-semibold text-[#374151] mb-2">{label}</p>
         {payload.map((entry: any, index: number) => (
-          <div key={index} className="flex items-center justify-between space-x-4 mb-1">
+          <div
+            key={index}
+            className="flex items-center justify-between space-x-4 mb-1"
+          >
             <div className="flex items-center space-x-2">
-              <div className="w-3 h-3 rounded-full" style={{ backgroundColor: entry.color }} />
+              <div
+                className="w-3 h-3 rounded-full"
+                style={{ backgroundColor: entry.color }}
+              />
               <span className="text-sm text-[#6b7280]">{entry.name}:</span>
             </div>
             <span className="text-sm font-medium text-[#374151]">
@@ -33,23 +48,32 @@ const CustomTooltip = ({ active, payload, label }: any) => {
           </div>
         ))}
       </div>
-    )
+    );
   }
-  return null
-}
+  return null;
+};
 
-export function MrpChangeTrendChart({ title, data = mrpChangeTrendData.data }: MrpChangeTrendChartProps) {
-  const currentChange = data[data.length - 1]?.change || 0
-  const cumulativeChange = data[data.length - 1]?.cumulative || 0
+export function MrpChangeTrendChart({
+  title,
+  data = mrpChangeTrendData.data,
+}: MrpChangeTrendChartProps) {
+  const currentChange = data[data.length - 1]?.change || 0;
+  const cumulativeChange = data[data.length - 1]?.cumulative || 0;
 
   return (
     <div className="bg-white rounded-xl p-6 shadow-sm border border-[#e5e7eb] hover:shadow-lg transition-all duration-300">
       <div className="mb-6">
-        <h3 className="text-lg font-semibold text-[#374151] mb-2 font-comfortaa text-center">{title}</h3>
+        <h3 className="text-lg font-semibold text-[#374151] mb-2 font-comfortaa text-center">
+          {title}
+        </h3>
         <div className="w-16 h-1 bg-gradient-to-r from-[#82F09A] to-[#62915D] rounded-full mx-auto mb-4"></div>
 
         <div className="text-center">
-          <div className={`text-3xl font-bold mb-1 ${currentChange >= 0 ? "text-green-500" : "text-red-500"}`}>
+          <div
+            className={`text-3xl font-bold mb-1 ${
+              currentChange >= 0 ? "text-green-500" : "text-red-500"
+            }`}
+          >
             {currentChange > 0 ? "+" : ""}
             {currentChange.toFixed(1)}%
           </div>
@@ -62,17 +86,10 @@ export function MrpChangeTrendChart({ title, data = mrpChangeTrendData.data }: M
 
       <div className="h-64">
         <ResponsiveContainer width="100%" height="100%">
-          <AreaChart data={data} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
-            <defs>
-              <linearGradient id="changeGradient" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="#82F09A" stopOpacity={0.3} />
-                <stop offset="95%" stopColor="#82F09A" stopOpacity={0.05} />
-              </linearGradient>
-              <linearGradient id="negativeGradient" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="#BA3761" stopOpacity={0.3} />
-                <stop offset="95%" stopColor="#BA3761" stopOpacity={0.05} />
-              </linearGradient>
-            </defs>
+          <BarChart
+            data={data}
+            margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
+          >
             <CartesianGrid strokeDasharray="3 3" stroke="#f3f4f6" />
             <XAxis
               dataKey="quarter"
@@ -91,15 +108,15 @@ export function MrpChangeTrendChart({ title, data = mrpChangeTrendData.data }: M
             />
             <Tooltip content={<CustomTooltip />} />
             <ReferenceLine y={0} stroke="#6b7280" strokeDasharray="2 2" />
-            <Area
-              type="monotone"
+            <Bar
               dataKey="change"
+              fill="#82F09A"
               stroke="#82F09A"
-              strokeWidth={2}
-              fill="url(#changeGradient)"
+              strokeWidth={1}
+              radius={[2, 2, 0, 0]}
               name="Quarterly Change"
             />
-          </AreaChart>
+          </BarChart>
         </ResponsiveContainer>
       </div>
 
@@ -114,16 +131,22 @@ export function MrpChangeTrendChart({ title, data = mrpChangeTrendData.data }: M
           </div>
           <div>
             <div className="text-sm font-bold text-[#449CFB]">
-              +{(data.reduce((sum, d) => sum + d.change, 0) / data.length).toFixed(1)}%
+              +
+              {(
+                data.reduce((sum, d) => sum + d.change, 0) / data.length
+              ).toFixed(1)}
+              %
             </div>
             <div className="text-xs text-[#6b7280]">Avg Change</div>
           </div>
           <div>
-            <div className="text-sm font-bold text-[#82F09A]">+{cumulativeChange.toFixed(1)}%</div>
+            <div className="text-sm font-bold text-[#82F09A]">
+              +{cumulativeChange.toFixed(1)}%
+            </div>
             <div className="text-xs text-[#6b7280]">Total Growth</div>
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }

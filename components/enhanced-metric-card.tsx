@@ -52,7 +52,7 @@ export function EnhancedMetricCard({
 
       <div className="relative z-10">
         <div className="flex items-start justify-between mb-4 min-h-12">
-          <div className="text-sm font-medium text-[#6b7280] leading-tight font-comfortaa flex items-center space-x-2">
+          <div className="text-sm font-medium text-[#4d4d4d] leading-tight font-opensans flex items-center space-x-2">
             <span>{label}</span>
             {tooltip && (
               <Info className="w-3 h-3 text-[#9ca3af] opacity-60 group-hover:opacity-100 transition-opacity" />
@@ -75,17 +75,17 @@ export function EnhancedMetricCard({
         </div>
 
         <div className="mb-2">
-          <div className="text-3xl font-bold" style={{ color }}>
+          <div className="text-3xl font-bold font-comfortaa" style={{ color }}>
             {value}
           </div>
         </div>
 
         <div className="flex items-center justify-between">
-          <div className="text-xs font-medium text-[#9ca3af] uppercase tracking-wide">
+          <div className="text-xs font-medium text-[#858585] uppercase tracking-wide">
             {unit}
           </div>
           {previousValue && (
-            <div className="text-xs text-[#9ca3af]">vs {previousValue}</div>
+            <div className="text-xs text-[#c0c0c0]">vs {previousValue}</div>
           )}
         </div>
       </div>

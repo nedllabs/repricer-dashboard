@@ -10,6 +10,7 @@ import { ModernSectionHeader } from "@/components/modern-section-header";
 import { MobileTabNavigation } from "@/components/mobile-tab-navigation";
 import { InpatientTab } from "@/components/inpatient-tab";
 import { OutpatientTab } from "@/components/outpatient-tab";
+import { ProfessionalTab } from "@/components/professional-tab";
 import dashboardData from "@/data/dashboard-data.json";
 import { CompactDateFilters } from "@/components/compact-date-filters";
 
@@ -110,6 +111,7 @@ export default function Dashboard() {
       {activeTab === "summary" && <SummaryTab />}
       {activeTab === "inpatient" && <InpatientTab />}
       {activeTab === "outpatient" && <OutpatientTab />}
+      {activeTab === "professional" && <ProfessionalTab />}
       {/* Add other tabs here as they are built */}
     </main>
   );

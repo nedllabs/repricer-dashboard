@@ -5,14 +5,14 @@ import { ComparisonBarChart } from "@/components/comparison-bar-chart";
 import { TopDrgChart } from "@/components/top-drg-chart";
 import { EnhancedDrgTable } from "@/components/enhanced-drg-table";
 import { HealthSystemsChart } from "@/components/health-systems-chart";
-import { EnhancedProviderTable } from "@/components/enhanced-provider-table";
-import { EnhancedCbsaTable } from "@/components/enhanced-cbsa-table";
+import { EnhancedProfessionalProviderTable } from "@/components/enhanced-professional-provider-table";
+import { EnhancedCountyTable } from "@/components/enhanced-county-table";
 import CbsaMap from "@/components/cbsa-map-wrapper";
 import { MedicareRateTrendChart } from "@/components/medicare-rate-trend-chart";
 import { MrpChangeTrendChart } from "@/components/mrp-change-trend-chart";
 import { AllowedAmountChangeChart } from "@/components/allowed-amount-change-chart";
 import { StatisticalOutlierChart } from "@/components/statistical-outlier-chart";
-import outpatientData from "@/data/outpatient-data.json";
+import professionalData from "@/data/professional-data.json";
 
 function SectionRow({
   title,
@@ -34,15 +34,15 @@ function SectionRow({
   );
 }
 
-export function OutpatientTab() {
+export function ProfessionalTab() {
   const {
     repricerMetrics,
-    oppsMetrics,
+    professionalMetrics,
     codeLevel,
     healthSystem,
     geographic,
     timeBased,
-  } = outpatientData;
+  } = professionalData;
 
   return (
     <div className="bg-white rounded-xl shadow-sm border border-[#e5e7eb] mt-6 gap-2">
@@ -54,7 +54,7 @@ export function OutpatientTab() {
           ))}
         </div>
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4 mt-4">
-          {oppsMetrics.slice(0, 2).map((m, i) => (
+          {professionalMetrics.slice(0, 2).map((m, i) => (
             <EnhancedMetricCard key={i} {...m} color="#449cfb" />
           ))}
         </div>
@@ -65,7 +65,7 @@ export function OutpatientTab() {
         <div className="space-y-4">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
             <ModernPieChart
-              {...codeLevel.apcCategoriesPieChart}
+              {...codeLevel.cptCategoriesPieChart}
               layout="vertical"
             />
             <ComparisonBarChart
@@ -73,18 +73,18 @@ export function OutpatientTab() {
               data={codeLevel.rateRelativityBarChart.data}
               type="rateRelativity"
             />
-            <TopDrgChart {...codeLevel.top10ApcChart} />
+            <TopDrgChart {...codeLevel.top10CptChart} codeType="cpt" />
           </div>
           <EnhancedDrgTable
-            title="APC Details"
-            {...codeLevel.apcCodeTable}
-            type="outpatient"
+            title="HCPCS Details"
+            {...codeLevel.cptCodeTable}
+            type="professional"
           />
         </div>
       </SectionRow>
 
       {/* Health system */}
-      <SectionRow title="Health System">
+      <SectionRow title="Medical Groups">
         <div className="space-y-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
             <ModernPieChart
@@ -93,7 +93,7 @@ export function OutpatientTab() {
             />
             <HealthSystemsChart {...healthSystem.top10HealthSystemsChart} />
           </div>
-          <EnhancedProviderTable
+          <EnhancedProfessionalProviderTable
             title="Provider Details"
             {...healthSystem.providerTable}
           />
@@ -105,17 +105,20 @@ export function OutpatientTab() {
         <div className="space-y-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
             <CbsaMap
-              title="CBSA by Claims Volume"
+              title="County by Claims Volume"
               metric="claimsVolume"
               legendUnit=""
             />
             <CbsaMap
-              title="Avg. Rate Relativity by CBSA"
+              title="Avg. Rate Relativity by County"
               metric="rateRelativity"
               legendUnit="%"
             />
           </div>
-          <EnhancedCbsaTable title="CBSA Details" {...geographic.cbsaTable} />
+          <EnhancedCountyTable
+            title="County Details"
+            {...geographic.countyTable}
+          />
         </div>
       </SectionRow>
 

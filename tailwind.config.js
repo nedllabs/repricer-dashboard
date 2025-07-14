@@ -19,7 +19,8 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        sans: ["var(--font-inter)"],
+        sans: ["var(--font-opensans)"],
+        opensans: ["var(--font-opensans)"],
         comfortaa: ["var(--font-comfortaa)"],
       },
       colors: {

@@ -18,51 +18,56 @@
       "value": "3.5M",
       "unit": "#",
       "color": "#449CFB",
-      "tooltip": "Avg. rate relativity = Σ (Allowed / Medicare Reference Price) / Total # of claims"
+      "tooltip": "Count of unique input claims across claim types for the selected service period"
     },
     {
       "label": "Total Billed Amount",
       "value": "$11.38B",
       "unit": "USD",
       "color": "#449CFB",
-      "tooltip": "Avg. rate relativity = Σ (Allowed / Medicare Reference Price) / Total # of claims"
+      "tooltip": "Sum of Billed amount across claim types for the selected service period"
     },
     {
       "label": "Total Allowed Amount",
       "value": "$5.69B",
       "unit": "USD",
-      "color": "#449CFB"
+      "color": "#449CFB",
+      "tooltip": "Sum of Allowed amount across claim types for the selected service period"
     },
     {
       "label": "Total Paid Amount",
       "value": "$4.83B",
       "unit": "USD",
-      "color": "#449CFB"
+      "color": "#449CFB",
+      "tooltip": "Sum of Paid amount across claim types for the selected service period"
     },
     {
       "label": "Total Medicare Reference Price",
       "value": "$4.74B",
       "unit": "USD",
-      "color": "#449CFB"
+      "color": "#449CFB",
+      "tooltip": "Sum of Medicare Reference Price across claim types for the selected service period"
     },
     {
       "label": "Total Exclusion Amount",
       "value": "1.69M",
       "unit": "#",
-      "color": "#449CFB"
+      "color": "#449CFB",
+      "tooltip": "Sum of Allowed Amount across claim types for claims excluded from analytics for the selected service period"
     },
     {
       "label": "Avg. Rate Relativity",
       "value": "120%",
       "unit": "USD",
-      "color": "#449CFB"
+      "color": "#449CFB",
+      "tooltip": "Σ (Allowed Amount / Medicare Reference Price) / Total Claims"
     }
   ],
   "claimVolumePieChart": {
-    "title": "Claim Volume across Reimbursement Methodologies",
+    "title": "Claim Volume across Claim Types",
     "data": [
       {
-        "name": "PPS",
+        "name": "PFS",
         "value": 42.3,
         "claimVolume": "1.48M",
         "color": "#449CFB"
@@ -94,7 +99,7 @@
     ]
   },
   "allowedAmountPieChart": {
-    "title": "Allowed Amount across Reimbursement Methodologies",
+    "title": "Allowed Amount across Claim Types",
     "data": [
       {
         "name": "IPPS",
@@ -140,7 +145,7 @@
       "Billed Amount",
       "Allowed Amount",
       "Paid Amount",
-      "Medicare Ref Price"
+      "Medicare Reference Price"
     ],
     "sections": [
       {
@@ -299,7 +304,7 @@
     ]
   },
   "comparisonBarChart": {
-    "title": "Billed vs Allowed vs Medicare across Reimbursement Methodologies",
+    "title": "Billed vs Allowed vs Medicare across Claim Types",
     "data": [
       {
         "name": "IPPS",
