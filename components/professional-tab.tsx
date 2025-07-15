@@ -84,7 +84,7 @@ export function ProfessionalTab() {
       </SectionRow>
 
       {/* Health system */}
-      <SectionRow title="Medical Groups">
+      <SectionRow title="Provider Specializations">
         <div className="space-y-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
             <ModernPieChart

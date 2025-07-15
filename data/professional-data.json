@@ -176,53 +176,51 @@
   },
   "healthSystem": {
     "topSystemsPieChart": {
-      "title": "Top 5 Medical Group by Claim Volume",
+      "title": "Top 5 Provider Specializations by Claim Volume",
       "data": [
         {
-          "name": "Kaiser Permanente",
+          "name": "Physician - Primary Care",
           "value": 28,
-          "claimVolume": "784K",
+          "claimVolume": "45.2K",
           "color": "#449CFB"
         },
         {
-          "name": "HCA Healthcare",
+          "name": "Physician - Cardiology",
           "value": 22,
-          "claimVolume": "616K",
+          "claimVolume": "38.5K",
           "color": "#F08C76"
         },
         {
-          "name": "Ascension Health",
+          "name": "Physician - Orthopedics",
           "value": 18,
-          "claimVolume": "504K",
+          "claimVolume": "32.8K",
           "color": "#F5709A"
         },
         {
-          "name": "CommonSpirit Health",
+          "name": "Nurse Practitioner - Primary Care",
           "value": 16,
-          "claimVolume": "448K",
+          "claimVolume": "28.9K",
           "color": "#B782E8"
         },
         {
-          "name": "Tenet Healthcare",
+          "name": "Physician Assistant - Emergency Medicine",
           "value": 16,
-          "claimVolume": "448K",
+          "claimVolume": "25.6K",
           "color": "#82F09A"
         }
       ]
     },
     "top10HealthSystemsChart": {
-      "title": "10 Medical Group by Medicare Rate Relativity",
+      "title": "10 Provider Specializations by Medicare Rate Relativity",
       "data": [
-        { "name": "Mayo Clinic", "relativity": 1.35, "claims": "285K" },
-        { "name": "Cleveland Clinic", "relativity": 1.28, "claims": "265K" },
-        { "name": "Johns Hopkins", "relativity": 1.25, "claims": "245K" },
-        { "name": "Kaiser Permanente", "relativity": 1.22, "claims": "785K" },
-        { "name": "Ascension Health", "relativity": 1.18, "claims": "505K" },
-        { "name": "HCA Healthcare", "relativity": 1.15, "claims": "618K" },
-        { "name": "CommonSpirit Health", "relativity": 1.12, "claims": "450K" },
-        { "name": "Trinity Health", "relativity": 1.08, "claims": "385K" },
-        { "name": "Tenet Healthcare", "relativity": 1.05, "claims": "450K" },
-        { "name": "Universal Health", "relativity": 1.02, "claims": "325K" }
+        { "name": "Nurse Practitioner - Primary Care", "relativity": 1.12, "claims": "28.9K" },
+        { "name": "Physician - Cardiology", "relativity": 1.10, "claims": "38.5K" },
+        { "name": "Nurse Practitioner - Cardiology", "relativity": 1.10, "claims": "19.8K" },
+        { "name": "Physician - Primary Care", "relativity": 1.09, "claims": "45.2K" },
+        { "name": "Physician - Neurology", "relativity": 1.09, "claims": "18.5K" },
+        { "name": "Physician - Dermatology", "relativity": 1.09, "claims": "22.4K" },
+        { "name": "Physician - Orthopedics", "relativity": 1.07, "claims": "32.8K" },
+        { "name": "Physician Assistant - Emergency Medicine", "relativity": 1.08, "claims": "25.6K" }
       ]
     },
     "providerTable": {
