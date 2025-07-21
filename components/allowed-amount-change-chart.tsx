@@ -39,7 +39,7 @@ const CustomTooltip = ({ active, payload, label }: any) => {
               }`}
             >
               {data.variance > 0 ? "+" : ""}
-              {data.variance.toFixed(1)}%
+              {data.variance.toFixed(3)}
             </span>
           </div>
           <div className="flex justify-between space-x-4">
@@ -84,7 +84,7 @@ export function AllowedAmountChangeChart({
             }`}
           >
             {currentVariance > 0 ? "+" : ""}
-            {currentVariance.toFixed(1)}%
+            {currentVariance.toFixed(3)}
           </div>
           <div className="flex items-center justify-center space-x-1 text-sm text-[#6b7280]">
             <Calculator className="w-4 h-4" />
@@ -113,7 +113,7 @@ export function AllowedAmountChangeChart({
               axisLine={false}
               tickLine={false}
               tick={{ fontSize: 12, fill: "#6b7280" }}
-              tickFormatter={(value) => `${value > 0 ? "+" : ""}${value}%`}
+              tickFormatter={(value) => `${value > 0 ? "+" : ""}${value.toFixed(3)}`}
             />
             <Tooltip content={<CustomTooltip />} />
             <Bar dataKey="variance" fill="#F5709A" radius={[2, 2, 0, 0]} />
@@ -126,7 +126,7 @@ export function AllowedAmountChangeChart({
         <div className="grid grid-cols-3 gap-4 text-center">
           <div>
             <div className="text-sm font-bold text-[#82F09A]">
-              +{Math.max(...data.map((d) => d.variance)).toFixed(1)}%
+              +{Math.max(...data.map((d) => d.variance)).toFixed(3)}
             </div>
             <div className="text-xs text-[#6b7280]">Best Quarter</div>
           </div>
@@ -137,13 +137,13 @@ export function AllowedAmountChangeChart({
               }`}
             >
               {avgVariance > 0 ? "+" : ""}
-              {avgVariance.toFixed(1)}%
+              {avgVariance.toFixed(3)}
             </div>
             <div className="text-xs text-[#6b7280]">Avg Change</div>
           </div>
           <div>
             <div className="text-sm font-bold text-[#BA3761]">
-              {Math.min(...data.map((d) => d.variance)).toFixed(1)}%
+              {Math.min(...data.map((d) => d.variance)).toFixed(3)}
             </div>
             <div className="text-xs text-[#6b7280]">Worst Quarter</div>
           </div>

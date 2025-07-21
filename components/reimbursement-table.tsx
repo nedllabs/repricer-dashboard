@@ -6,6 +6,7 @@ interface TableRow {
   paid: string
   medicare: string
   highlight?: boolean
+  relativity: string
 }
 
 interface TableSection {
@@ -24,7 +25,7 @@ export function ReimbursementTable({ headers, sections }: ReimbursementTableProp
     <div className="bg-white rounded-xl shadow-sm border border-[#e5e7eb] overflow-hidden">
       {/* Table Header */}
       <div className="bg-[#f9fafb] border-b border-[#e5e7eb]">
-        <div className="grid grid-cols-6 gap-4 p-4">
+        <div className="grid grid-cols-7 gap-4 p-4">
           {headers.map((header, index) => (
             <div key={index} className="text-sm font-semibold text-[#374151] text-center">
               {header}
@@ -50,7 +51,7 @@ export function ReimbursementTable({ headers, sections }: ReimbursementTableProp
             {section.rows.map((row, rowIndex) => (
               <div
                 key={rowIndex}
-                className={`grid grid-cols-6 gap-4 p-4 hover:bg-[#f9fafb] transition-colors ${
+                className={`grid grid-cols-7 gap-4 p-4 hover:bg-[#f9fafb] transition-colors ${
                   row.highlight ? "bg-[#eff6ff]" : ""
                 }`}
               >
@@ -64,6 +65,7 @@ export function ReimbursementTable({ headers, sections }: ReimbursementTableProp
                 <div className="text-sm text-[#6b7280] text-center">{row.allowed}</div>
                 <div className="text-sm text-[#6b7280] text-center">{row.paid}</div>
                 <div className="text-sm text-[#6b7280] text-center">{row.medicare}</div>
+                <div className="text-sm text-[#6b7280] text-center">{row.relativity}</div>
               </div>
             ))}
           </div>

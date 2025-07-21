@@ -1,98 +1,82 @@
 [
   {
-    "cbsa": "Asheville, NC",
-    "code": "11700",
-    "claimsVolume": 4200,
-    "rateRelativity": 138,
-    "lat": 35.5951,
-    "lng": -82.5515
-  },
-  {
-    "cbsa": "Hickory-Lenoir-Morganton, NC",
-    "code": "25860",
-    "claimsVolume": 3600,
-    "rateRelativity": 88,
-    "lat": 35.7344,
-    "lng": -81.3412
-  },
-  {
-    "cbsa": "Greensboro-High Point, NC",
-    "code": "24660",
-    "claimsVolume": 6200,
-    "rateRelativity": 101,
-    "lat": 36.0726,
-    "lng": -79.792
-  },
-  {
-    "cbsa": "Durham-Chapel Hill, NC",
-    "code": "20500",
-    "claimsVolume": 5100,
-    "rateRelativity": 113,
-    "lat": 35.994,
-    "lng": -78.8986
+    "cbsa": "Charlotte-Concord-Gastonia, NC-SC",
+    "code": "16740",
+    "claimsVolume": 800000,
+    "rateRelativity": 108,
+    "lat": 35.2271,
+    "lng": -80.8431
   },
   {
     "cbsa": "Raleigh-Cary, NC",
     "code": "39580",
-    "claimsVolume": 7200,
+    "claimsVolume": 500000,
     "rateRelativity": 113,
     "lat": 35.7796,
     "lng": -78.6382
   },
   {
-    "cbsa": "Jacksonville, NC",
-    "code": "27340",
-    "claimsVolume": 2700,
-    "rateRelativity": 113,
-    "lat": 34.754,
-    "lng": -77.4302
-  },
-  {
-    "cbsa": "Wilmington, NC",
-    "code": "48900",
-    "claimsVolume": 5400,
-    "rateRelativity": 126,
-    "lat": 34.2257,
-    "lng": -77.9447
-  },
-  {
-    "cbsa": "Charlotte-Concord-Gastonia, NC-SC",
-    "code": "16740",
-    "claimsVolume": 8900,
-    "rateRelativity": 118,
-    "lat": 35.2271,
-    "lng": -80.8431
+    "cbsa": "Greensboro-High Point, NC",
+    "code": "24660",
+    "claimsVolume": 350000,
+    "rateRelativity": 110,
+    "lat": 36.0726,
+    "lng": -79.7920
   },
   {
     "cbsa": "Winston-Salem, NC",
     "code": "49180",
-    "claimsVolume": 4800,
-    "rateRelativity": 95,
+    "claimsVolume": 300000,
+    "rateRelativity": 109,
     "lat": 36.0999,
     "lng": -80.2442
   },
   {
+    "cbsa": "Durham-Chapel Hill, NC",
+    "code": "20500",
+    "claimsVolume": 250000,
+    "rateRelativity": 112,
+    "lat": 35.9940,
+    "lng": -78.8986
+  },
+  {
     "cbsa": "Fayetteville, NC",
     "code": "22180",
-    "claimsVolume": 3200,
-    "rateRelativity": 108,
+    "claimsVolume": 200000,
+    "rateRelativity": 106,
     "lat": 35.0527,
     "lng": -78.8784
   },
   {
-    "cbsa": "Goldsboro, NC",
-    "code": "24140",
-    "claimsVolume": 1800,
-    "rateRelativity": 92,
-    "lat": 35.3849,
-    "lng": -77.9928
+    "cbsa": "Asheville, NC",
+    "code": "11700",
+    "claimsVolume": 180000,
+    "rateRelativity": 107,
+    "lat": 35.5951,
+    "lng": -82.5515
   },
   {
-    "cbsa": "Rocky Mount, NC",
-    "code": "40580",
-    "claimsVolume": 2100,
+    "cbsa": "Wilmington, NC",
+    "code": "49180",
+    "claimsVolume": 150000,
     "rateRelativity": 105,
-    "lat": 35.9382,
-    "lng": -77.7905
+    "lat": 34.2100,
+    "lng": -77.8868
+  },
+  {
+    "cbsa": "Hickory-Lenoir-Morganton, NC",
+    "code": "25860",
+    "claimsVolume": 120000,
+    "rateRelativity": 104,
+    "lat": 35.7332,
+    "lng": -81.3412
+  },
+  {
+    "cbsa": "Burlington, NC",
+    "code": "15500",
+    "claimsVolume": 100000,
+    "rateRelativity": 103,
+    "lat": 36.0957,
+    "lng": -79.4378
   }
 ]

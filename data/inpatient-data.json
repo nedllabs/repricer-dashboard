@@ -2,31 +2,31 @@
   "repricerMetrics": [
     {
       "label": "Total Claims",
-      "value": "650K",
+      "value": "24.7M",
       "unit": "#",
       "tooltip": "Count of unique IPPS input claims for the selected service period"
     },
     {
       "label": "Avg. Billed Amount",
-      "value": "$8,276",
+      "value": "$8,907",
       "unit": "USD",
       "tooltip": "Avg. Billed Amount = Total Billed Amount/Total Claims"
     },
     {
       "label": "Avg. Allowed Amount",
-      "value": "$3,770",
+      "value": "$4,049",
       "unit": "USD",
       "tooltip": "Avg. Allowed Amount = Total Allowed Amount/Total Claims"
     },
     {
       "label": "Avg. Paid Amount",
-      "value": "$3,205",
+      "value": "$3,441",
       "unit": "USD",
       "tooltip": "Avg. Paid Amount = Total Paid Amount/Total Claims"
     },
     {
       "label": "Avg. Medicare Reference Price",
-      "value": "$3,141",
+      "value": "$3,372",
       "unit": "USD",
       "tooltip": "Avg. Medicare Reference Price = Total Medicare Reference Price/Total Claims"
     }
@@ -40,7 +40,7 @@
     },
     {
       "label": "Total Medicare Rate Relativity",
-      "value": "104%",
+      "value": "120%",
       "unit": "VS MRP",
       "tooltip": "Total rate relativity = Σ Allowed Amount / Σ Medicare Reference Price"
     },
@@ -89,31 +89,31 @@
         {
           "name": "Surgery",
           "value": 40,
-          "claimVolume": "260K",
+          "claimVolume": "9.9M",
           "color": "#449CFB"
         },
         {
           "name": "Medical",
           "value": 35,
-          "claimVolume": "228K",
+          "claimVolume": "8.6M",
           "color": "#F08C76"
         },
         {
           "name": "Maternity",
           "value": 15,
-          "claimVolume": "98K",
+          "claimVolume": "3.7M",
           "color": "#F5709A"
         },
         {
           "name": "New Born",
           "value": 8,
-          "claimVolume": "52K",
+          "claimVolume": "2.0M",
           "color": "#B782E8"
         },
         {
           "name": "Psychiatry",
           "value": 2,
-          "claimVolume": "13K",
+          "claimVolume": "500K",
           "color": "#82F09A"
         }
       ]
@@ -157,7 +157,7 @@
         [
           "470",
           "Major Joint Replacement or Reattachment of Lower Extremity",
-          "12,500",
+          "475K",
           "$15,200",
           "$7,500",
           "$7,200",
@@ -166,7 +166,7 @@
         [
           "291",
           "Heart Failure & Shock w MCC",
-          "10,200",
+          "388K",
           "$9,800",
           "$4,200",
           "$4,000",
@@ -175,7 +175,7 @@
         [
           "871",
           "Septicemia or Severe Sepsis w/o MV >96 Hours w MCC",
-          "8,900",
+          "338K",
           "$12,300",
           "$6,100",
           "$5,900",
@@ -184,7 +184,7 @@
         [
           "193",
           "Simple Pneumonia & Pleurisy w MCC",
-          "7,600",
+          "289K",
           "$6,500",
           "$3,100",
           "$3,000",
@@ -198,53 +198,116 @@
       "title": "Top 5 Health Systems by Claim Volume",
       "data": [
         {
-          "name": "Ascension Health",
-          "value": 28,
-          "claimVolume": "182K",
+          "name": "HCA Healthcare",
+          "value": 25,
+          "claimVolume": "6.2M",
           "color": "#449CFB"
         },
         {
-          "name": "HCA Healthcare",
-          "value": 22,
-          "claimVolume": "143K",
+          "name": "Ascension Health",
+          "value": 20,
+          "claimVolume": "4.9M",
           "color": "#F08C76"
         },
         {
           "name": "CommonSpirit Health",
           "value": 18,
-          "claimVolume": "117K",
+          "claimVolume": "4.4M",
           "color": "#F5709A"
         },
         {
-          "name": "Trinity Health",
+          "name": "Tenet Healthcare",
           "value": 15,
-          "claimVolume": "98K",
+          "claimVolume": "3.7M",
           "color": "#B782E8"
         },
         {
-          "name": "Tenet Healthcare",
-          "value": 17,
-          "claimVolume": "110K",
+          "name": "Providence St. Joseph Health",
+          "value": 12,
+          "claimVolume": "3.0M",
           "color": "#82F09A"
         }
       ]
     },
-    "top10HealthSystemsChart": {
-      "title": "10 Health Systems by Medicare Rate Relativity",
+    "rateRelativityBarChart": {
+      "title": "Rate Relativity by Health System",
       "data": [
-        { "name": "Mayo Clinic", "relativity": 1.35, "claims": "45K" },
-        { "name": "Cleveland Clinic", "relativity": 1.28, "claims": "38K" },
-        { "name": "Johns Hopkins", "relativity": 1.24, "claims": "42K" },
-        { "name": "Kaiser Permanente", "relativity": 1.18, "claims": "65K" },
-        { "name": "Ascension Health", "relativity": 1.15, "claims": "78K" },
-        { "name": "HCA Healthcare", "relativity": 1.12, "claims": "85K" },
-        { "name": "CommonSpirit Health", "relativity": 1.08, "claims": "72K" },
-        { "name": "Trinity Health", "relativity": 1.05, "claims": "58K" },
-        { "name": "Tenet Healthcare", "relativity": 1.02, "claims": "48K" },
-        { "name": "Universal Health", "relativity": 0.98, "claims": "35K" }
+        { "name": "HCA Healthcare", "relativity": 125 },
+        { "name": "Ascension Health", "relativity": 118 },
+        { "name": "CommonSpirit Health", "relativity": 122 },
+        { "name": "Tenet Healthcare", "relativity": 115 },
+        { "name": "Providence St. Joseph Health", "relativity": 120 }
+      ]
+    },
+    "top10HealthSystemsChart": {
+      "title": "Top 10 Health Systems by Medicare Rate Relativity",
+      "data": [
+        { "name": "HCA Healthcare", "relativity": 1.25, "claims": "6.2M" },
+        { "name": "Ascension Health", "relativity": 1.18, "claims": "4.9M" },
+        { "name": "CommonSpirit Health", "relativity": 1.22, "claims": "4.4M" },
+        { "name": "Tenet Healthcare", "relativity": 1.15, "claims": "3.7M" },
+        { "name": "Providence St. Joseph Health", "relativity": 1.20, "claims": "3.0M" },
+        { "name": "Kaiser Permanente", "relativity": 1.28, "claims": "2.8M" },
+        { "name": "Mayo Clinic", "relativity": 1.35, "claims": "2.5M" },
+        { "name": "Cleveland Clinic", "relativity": 1.32, "claims": "2.2M" },
+        { "name": "Johns Hopkins", "relativity": 1.30, "claims": "2.0M" },
+        { "name": "UPMC", "relativity": 1.26, "claims": "1.8M" }
+      ]
+    },
+    "topSystemsTable": {
+      "headers": [
+        "Health System",
+        "Claim count",
+        "Avg. Billed",
+        "Avg. Allowed",
+        "Avg. MRP",
+        "Avg. MRR"
+      ],
+      "rows": [
+        [
+          "HCA Healthcare",
+          "6.2M",
+          "$9,200",
+          "$4,500",
+          "$4,200",
+          "107%"
+        ],
+        [
+          "Ascension Health",
+          "4.9M",
+          "$8,800",
+          "$4,200",
+          "$4,000",
+          "105%"
+        ],
+        [
+          "CommonSpirit Health",
+          "4.4M",
+          "$9,000",
+          "$4,300",
+          "$4,100",
+          "105%"
+        ],
+        [
+          "Tenet Healthcare",
+          "3.7M",
+          "$8,500",
+          "$4,000",
+          "$3,800",
+          "105%"
+        ],
+        [
+          "Providence St. Joseph Health",
+          "3.0M",
+          "$8,900",
+          "$4,250",
+          "$4,050",
+          "105%"
+        ]
       ]
     },
     "providerTable": {
+      "title": "Provider Details",
       "headers": [
         "Provider",
         "Claim count",
@@ -257,36 +320,119 @@
       "rows": [
         [
           "General Hospital",
-          "5,400",
+          "185K",
           "$10,500",
           "$5,100",
           "$4,900",
           "104%",
-          "Ascension Health"
+          "Atrium Health"
         ],
         [
           "City Medical Center",
-          "4,800",
+          "165K",
           "$9,200",
           "$4,500",
           "$4,300",
           "105%",
-          "HCA Healthcare"
+          "UNC Health"
         ],
         [
           "Community Hospital",
-          "4,500",
+          "148K",
           "$8,900",
           "$4,300",
           "$4,100",
           "105%",
-          "CommonSpirit Health"
+          "Duke Health"
+        ],
+        [
+          "Regional Medical Center",
+          "132K",
+          "$8,500",
+          "$4,000",
+          "$3,800",
+          "105%",
+          "Novant Health"
+        ],
+        [
+          "University Hospital",
+          "115K",
+          "$11,200",
+          "$5,400",
+          "$5,200",
+          "104%",
+          "Cone Health"
+        ],
+        [
+          "Metro Health Center",
+          "98K",
+          "$7,800",
+          "$3,800",
+          "$3,600",
+          "106%",
+          "WakeMed"
+        ],
+        [
+          "Central Hospital",
+          "85K",
+          "$9,600",
+          "$4,600",
+          "$4,400",
+          "105%",
+          "Vidant Health"
+        ],
+        [
+          "Specialty Medical Center",
+          "72K",
+          "$12,800",
+          "$6,200",
+          "$5,900",
+          "105%",
+          "Cape Fear Valley Health"
         ]
       ]
     }
   },
   "geographic": {
+    "topCbsaPieChart": {
+      "title": "Top 5 CBSAs by Claim Volume",
+      "data": [
+        { "name": "Charlotte-Concord-Gastonia", "value": 25, "claimVolume": "800K", "color": "#449CFB" },
+        { "name": "Raleigh-Cary", "value": 20, "claimVolume": "500K", "color": "#F08C76" },
+        { "name": "Greensboro-High Point", "value": 18, "claimVolume": "350K", "color": "#F5709A" },
+        { "name": "Winston-Salem", "value": 15, "claimVolume": "300K", "color": "#B782E8" },
+        { "name": "Durham-Chapel Hill", "value": 12, "claimVolume": "250K", "color": "#82F09A" }
+      ]
+    },
+    "rateRelativityBarChart": {
+      "title": "Rate Relativity by CBSA",
+      "data": [
+        { "name": "Charlotte-Concord-Gastonia", "relativity": 108 },
+        { "name": "Raleigh-Cary", "relativity": 113 },
+        { "name": "Greensboro-High Point", "relativity": 110 },
+        { "name": "Winston-Salem", "relativity": 109 },
+        { "name": "Durham-Chapel Hill", "relativity": 112 }
+      ]
+    },
+    "topCbsaTable": {
+      "headers": [
+        "CBSA",
+        "Claim count",
+        "Avg. Billed",
+        "Avg. Allowed",
+        "Avg. MRP",
+        "Avg. MRR"
+      ],
+      "rows": [
+        ["Charlotte-Concord-Gastonia", "800K", "$10,500", "$5,200", "$4,900", "106%"],
+        ["Raleigh-Cary", "500K", "$9,800", "$4,800", "$4,500", "107%"],
+        ["Greensboro-High Point", "350K", "$9,200", "$4,500", "$4,200", "107%"],
+        ["Winston-Salem", "300K", "$8,800", "$4,300", "$4,000", "108%"],
+        ["Durham-Chapel Hill", "250K", "$9,000", "$4,400", "$4,100", "107%"]
+      ]
+    },
     "cbsaTable": {
+      "title": "CBSA Details",
       "headers": [
         "CBSA Name",
         "CBSA Code",
@@ -297,33 +443,16 @@
         "Avg. MRR"
       ],
       "rows": [
-        [
-          "New York-Newark-Jersey City, NY-NJ-PA",
-          "35620",
-          "25,000",
-          "$12,000",
-          "$6,000",
-          "$5,800",
-          "103%"
-        ],
-        [
-          "Los Angeles-Long Beach-Anaheim, CA",
-          "31080",
-          "22,000",
-          "$15,000",
-          "$7,200",
-          "$6,900",
-          "104%"
-        ],
-        [
-          "Chicago-Naperville-Elgin, IL-IN-WI",
-          "16980",
-          "18,000",
-          "$10,000",
-          "$4,800",
-          "$4,600",
-          "104%"
-        ]
+        ["Mecklenburg County", "37119", "120K", "$10,500", "$5,200", "$4,900", "106%"],
+        ["Wake County", "37183", "100K", "$9,800", "$4,800", "$4,500", "107%"],
+        ["Guilford County", "37081", "80K", "$9,200", "$4,500", "$4,200", "107%"],
+        ["Forsyth County", "37067", "70K", "$8,800", "$4,300", "$4,000", "108%"],
+        ["Durham County", "37063", "60K", "$9,000", "$4,400", "$4,100", "107%"],
+        ["Cumberland County", "37051", "50K", "$8,500", "$4,200", "$4,000", "105%"],
+        ["Buncombe County", "37021", "40K", "$8,900", "$4,250", "$4,050", "105%"],
+        ["New Hanover County", "37129", "30K", "$9,600", "$4,600", "$4,400", "105%"],
+        ["Catawba County", "37035", "20K", "$7,800", "$3,800", "$3,600", "106%"],
+        ["Alamance County", "37001", "10K", "$12,800", "$6,200", "$5,900", "105%"]
       ]
     }
   },

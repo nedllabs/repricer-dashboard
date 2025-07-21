@@ -1,12 +1,12 @@
 {
   "data": [
-    { "quarter": "Q1 2023", "change": 2.1, "cumulative": 2.1 },
-    { "quarter": "Q2 2023", "change": 1.8, "cumulative": 3.9 },
-    { "quarter": "Q3 2023", "change": -0.5, "cumulative": 3.4 },
-    { "quarter": "Q4 2023", "change": 3.2, "cumulative": 6.6 },
-    { "quarter": "Q1 2024", "change": 1.9, "cumulative": 8.5 },
-    { "quarter": "Q2 2024", "change": -1.2, "cumulative": 7.3 },
-    { "quarter": "Q3 2024", "change": 2.8, "cumulative": 10.1 },
-    { "quarter": "Q4 2024", "change": 1.5, "cumulative": 11.6 }
+    { "quarter": "Q1 2023", "change": 0.021, "cumulative": 1.021 },
+    { "quarter": "Q2 2023", "change": 0.018, "cumulative": 1.039 },
+    { "quarter": "Q3 2023", "change": -0.005, "cumulative": 1.034 },
+    { "quarter": "Q4 2023", "change": 0.032, "cumulative": 1.066 },
+    { "quarter": "Q1 2024", "change": 0.019, "cumulative": 1.085 },
+    { "quarter": "Q2 2024", "change": -0.012, "cumulative": 1.073 },
+    { "quarter": "Q3 2024", "change": 0.028, "cumulative": 1.101 },
+    { "quarter": "Q4 2024", "change": 0.015, "cumulative": 1.116 }
   ]
 }

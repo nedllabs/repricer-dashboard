@@ -43,7 +43,7 @@ const CustomTooltip = ({ active, payload, label }: any) => {
             </div>
             <span className="text-sm font-medium text-[#374151]">
               {entry.value > 0 ? "+" : ""}
-              {entry.value.toFixed(1)}%
+              {entry.value.toFixed(3)}
             </span>
           </div>
         ))}
@@ -75,11 +75,11 @@ export function MrpChangeTrendChart({
             }`}
           >
             {currentChange > 0 ? "+" : ""}
-            {currentChange.toFixed(1)}%
+            {currentChange.toFixed(3)}
           </div>
           <div className="flex items-center justify-center space-x-1 text-sm text-[#6b7280]">
             <DollarSign className="w-4 h-4" />
-            <span>Cumulative: +{cumulativeChange.toFixed(1)}%</span>
+            <span>Cumulative: {cumulativeChange.toFixed(3)}</span>
           </div>
         </div>
       </div>
@@ -104,7 +104,7 @@ export function MrpChangeTrendChart({
               axisLine={false}
               tickLine={false}
               tick={{ fontSize: 12, fill: "#6b7280" }}
-              tickFormatter={(value) => `${value > 0 ? "+" : ""}${value}%`}
+              tickFormatter={(value) => `${value > 0 ? "+" : ""}${value.toFixed(3)}`}
             />
             <Tooltip content={<CustomTooltip />} />
             <ReferenceLine y={0} stroke="#6b7280" strokeDasharray="2 2" />
@@ -125,7 +125,7 @@ export function MrpChangeTrendChart({
         <div className="grid grid-cols-3 gap-4 text-center">
           <div>
             <div className="text-sm font-bold text-[#82F09A]">
-              +{Math.max(...data.map((d) => d.change)).toFixed(1)}%
+              +{Math.max(...data.map((d) => d.change)).toFixed(3)}
             </div>
             <div className="text-xs text-[#6b7280]">Best Quarter</div>
           </div>
@@ -134,14 +134,13 @@ export function MrpChangeTrendChart({
               +
               {(
                 data.reduce((sum, d) => sum + d.change, 0) / data.length
-              ).toFixed(1)}
-              %
+              ).toFixed(3)}
             </div>
             <div className="text-xs text-[#6b7280]">Avg Change</div>
           </div>
           <div>
             <div className="text-sm font-bold text-[#82F09A]">
-              +{cumulativeChange.toFixed(1)}%
+              {cumulativeChange.toFixed(3)}
             </div>
             <div className="text-xs text-[#6b7280]">Total Growth</div>
           </div>

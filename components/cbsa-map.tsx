@@ -28,10 +28,11 @@ function getColorForValue(value: number, metric: MetricKey): string {
 function getRadiusForValue(value: number, metric: MetricKey): number {
   if (metric === "claimsVolume") {
     // Scale radius based on claims volume (min: 8px, max: 25px)
-    return Math.max(8, Math.min(25, (value / 10000) * 25 + 8));
+    // Updated for larger claim volumes (up to 6.2M)
+    return Math.max(8, Math.min(25, (value / 1000000) * 17 + 8));
   } else {
     // Scale radius based on rate relativity (min: 10px, max: 22px)
-    return Math.max(10, Math.min(22, ((value - 76) / (138 - 76)) * 12 + 10));
+    return Math.max(10, Math.min(22, ((value - 98) / (145 - 98)) * 12 + 10));
   }
 }
 
@@ -42,6 +43,14 @@ export function CbsaMap({ title, metric, legendUnit, token }: ChoroplethProps) {
   useEffect(() => {
     if (!mapContainer.current) return;
     if (mapRef.current) return;
+
+    console.log("Map token:", token ? "Token present" : "Token missing");
+    console.log("CBSA metrics data:", cbsaMetrics.length, "entries");
+    
+    if (!token) {
+      console.error("Mapbox access token is missing!");
+      return;
+    }
 
     mapboxgl.accessToken = token;
 
@@ -55,30 +64,44 @@ export function CbsaMap({ title, metric, legendUnit, token }: ChoroplethProps) {
       },
     }));
 
+    console.log("Point features created:", pointFeatures.length);
+    console.log("Sample feature:", pointFeatures[0]);
+
     const featureCollection = {
       type: "FeatureCollection" as const,
       features: pointFeatures,
     };
 
+    console.log("Creating map with container:", mapContainer.current);
+    console.log("Container dimensions:", mapContainer.current?.offsetWidth, "x", mapContainer.current?.offsetHeight);
+    
     const map = new mapboxgl.Map({
       container: mapContainer.current,
       style: "mapbox://styles/mapbox/light-v11",
-      center: [-79.5, 35.5],
-      zoom: 6.5,
+      center: [-98.5795, 39.8283],
+      zoom: 4,
       pitch: 0,
       bearing: 0,
     });
     mapRef.current = map;
 
-    map.on("load", () => {
+    map.on("error", (e) => {
+      console.error("Mapbox error:", e);
+    });
+
+    const addMapLayers = () => {
+      console.log("Adding map layers...");
+      
       // Add source for circles
       map.addSource("cbsa-points", {
         type: "geojson",
         data: featureCollection,
       });
-
+      
+      console.log("Source added successfully");
+      
       const colorScale = cbsaMapConfig.colorScales[metric];
-
+      
       // Add outer glow layer (largest, most transparent)
       map.addLayer({
         id: "cbsa-glow",
@@ -152,6 +175,19 @@ export function CbsaMap({ title, metric, legendUnit, token }: ChoroplethProps) {
           "circle-opacity": 0.4,
         },
       });
+
+      console.log("All layers added successfully");
+    };
+
+    map.on("load", () => {
+      console.log("Map loaded successfully");
+      addMapLayers();
+      
+      // Add a timeout to check if map is still loading
+      setTimeout(() => {
+        console.log("Map state after 2 seconds:", map.isStyleLoaded() ? "Style loaded" : "Style not loaded");
+        console.log("Map container:", map.getContainer());
+      }, 2000);
 
       // Tooltip interactions
       const popup = new mapboxgl.Popup({
@@ -240,7 +276,7 @@ export function CbsaMap({ title, metric, legendUnit, token }: ChoroplethProps) {
       <div
         ref={mapContainer}
         className="flex-grow rounded-lg overflow-hidden"
-        style={{ minHeight: 400 }}
+        style={{ minHeight: 400, width: "100%", height: "400px", position: "relative" }}
       />
 
       {/* Map Attribution */}

@@ -2,35 +2,35 @@
   "colorScales": {
     "claimsVolume": [
       { "value": 0, "color": "#f0f9ff" },
-      { "value": 2000, "color": "#F08C76" },
-      { "value": 4000, "color": "#449CFB" },
-      { "value": 6000, "color": "#F5709A" },
-      { "value": 8000, "color": "#2E5D8F" },
-      { "value": 10000, "color": "#B782E8" }
+      { "value": 500000, "color": "#F08C76" },
+      { "value": 1000000, "color": "#449CFB" },
+      { "value": 2000000, "color": "#F5709A" },
+      { "value": 4000000, "color": "#2E5D8F" },
+      { "value": 6000000, "color": "#B782E8" }
     ],
     "rateRelativity": [
-      { "value": 76, "color": "#f0fdf4" },
-      { "value": 88, "color": "#82F09A" },
-      { "value": 101, "color": "#62915D" },
-      { "value": 113, "color": "#ADA64B" },
-      { "value": 126, "color": "#FAF061" },
-      { "value": 138, "color": "#BA3761" }
+      { "value": 98, "color": "#f0fdf4" },
+      { "value": 105, "color": "#82F09A" },
+      { "value": 115, "color": "#62915D" },
+      { "value": 125, "color": "#ADA64B" },
+      { "value": 135, "color": "#FAF061" },
+      { "value": 145, "color": "#BA3761" }
     ]
   },
   "legendRanges": {
     "claimsVolume": [
-      { "range": "0 - 2K", "color": "#f0f9ff" },
-      { "range": "2K - 4K", "color": "#F08C76" },
-      { "range": "4K - 6K", "color": "#449CFB" },
-      { "range": "6K - 8K", "color": "#F5709A" },
-      { "range": "8K+", "color": "#2E5D8F" }
+      { "range": "0 - 500K", "color": "#f0f9ff" },
+      { "range": "500K - 1M", "color": "#F08C76" },
+      { "range": "1M - 2M", "color": "#449CFB" },
+      { "range": "2M - 4M", "color": "#F5709A" },
+      { "range": "4M+", "color": "#2E5D8F" }
     ],
     "rateRelativity": [
-      { "range": "76 - 88", "color": "#f0fdf4" },
-      { "range": "88 - 101", "color": "#82F09A" },
-      { "range": "101 - 113", "color": "#62915D" },
-      { "range": "113 - 126", "color": "#ADA64B" },
-      { "range": "126 - 138", "color": "#BA3761" }
+      { "range": "98 - 105", "color": "#f0fdf4" },
+      { "range": "105 - 115", "color": "#82F09A" },
+      { "range": "115 - 125", "color": "#62915D" },
+      { "range": "125 - 135", "color": "#ADA64B" },
+      { "range": "135 - 145", "color": "#BA3761" }
     ]
   }
 }
