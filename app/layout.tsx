@@ -2,7 +2,7 @@ import type React from "react";
 import type { Metadata } from "next";
 import { Open_Sans, Comfortaa } from "next/font/google";
 import "./globals.css";
-import { HeaderNavigation } from "@/components/header-navigation";
+import { SidebarWrapper } from "@/components/sidebar/sidebar-wrapper";
 import "mapbox-gl/dist/mapbox-gl.css";
 
 const openSans = Open_Sans({
@@ -93,8 +93,7 @@ export default function RootLayout({
         className={`${openSans.variable} ${comfortaa.variable} font-sans antialiased`}
       >
         <div className="min-h-screen bg-linear-to-br">
-          <HeaderNavigation />
-          {children}
+          <SidebarWrapper>{children}</SidebarWrapper>
         </div>
       </body>
     </html>

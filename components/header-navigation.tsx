@@ -6,7 +6,11 @@ import { Bell, ChevronDown, Menu, X, BarChart3, FileText } from "lucide-react";
 import { useState } from "react";
 import { NedlLogo } from "./nedl-logo";
 
-export function HeaderNavigation() {
+interface HeaderNavigationProps {
+  onSidebarToggle?: () => void;
+}
+
+export function HeaderNavigation({ onSidebarToggle }: HeaderNavigationProps) {
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -34,13 +38,9 @@ export function HeaderNavigation() {
         <div className="flex items-center space-x-2 lg:space-x-4 flex-1">
           <button
             className="p-2 hover:bg-[#f3f4f6] rounded-xl transition-all duration-200 lg:hidden"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            onClick={onSidebarToggle}
           >
-            {isMobileMenuOpen ? (
-              <X className="w-5 h-5 text-[#6b7280]" />
-            ) : (
-              <Menu className="w-5 h-5 text-[#6b7280]" />
-            )}
+            <Menu className="w-5 h-5 text-[#6b7280]" />
           </button>
 
           <div className="flex items-center">
