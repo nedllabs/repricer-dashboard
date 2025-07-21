@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@config "../tailwind.config.js";
+
 .recharts-pie *,
 .recharts-surface {
   outline: none !important;
