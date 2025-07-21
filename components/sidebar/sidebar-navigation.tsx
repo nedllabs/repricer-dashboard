@@ -40,7 +40,7 @@ export function SidebarNavigation({
 }: SidebarNavigationProps) {
   const [isMobile, setIsMobile] = useState(false);
   const [expandedCategories, setExpandedCategories] = useState<Set<string>>(
-    new Set(["policy-intelligence"])
+    new Set(["claim-repricer"])
   );
   const router = useRouter();
   const pathname = usePathname();
