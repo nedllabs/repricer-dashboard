@@ -1,12 +1,12 @@
 {
   "data": [
-    { "quarter": "Q1 2023", "expectedAmount": 3650, "actualAmount": 3720, "variance": 1.9 },
-    { "quarter": "Q2 2023", "expectedAmount": 3680, "actualAmount": 3745, "variance": 1.8 },
-    { "quarter": "Q3 2023", "expectedAmount": 3710, "actualAmount": 3680, "variance": -0.8 },
-    { "quarter": "Q4 2023", "expectedAmount": 3740, "actualAmount": 3850, "variance": 2.9 },
-    { "quarter": "Q1 2024", "expectedAmount": 3770, "actualAmount": 3820, "variance": 1.3 },
-    { "quarter": "Q2 2024", "expectedAmount": 3800, "actualAmount": 3765, "variance": -0.9 },
-    { "quarter": "Q3 2024", "expectedAmount": 3830, "actualAmount": 3920, "variance": 2.3 },
-    { "quarter": "Q4 2024", "expectedAmount": 3860, "actualAmount": 3895, "variance": 0.9 }
+    { "quarter": "Q1 2023", "expectedAmount": 3650, "actualAmount": 3720, "variance": 0.019 },
+    { "quarter": "Q2 2023", "expectedAmount": 3680, "actualAmount": 3745, "variance": 0.018 },
+    { "quarter": "Q3 2023", "expectedAmount": 3710, "actualAmount": 3680, "variance": -0.008 },
+    { "quarter": "Q4 2023", "expectedAmount": 3740, "actualAmount": 3850, "variance": 0.029 },
+    { "quarter": "Q1 2024", "expectedAmount": 3770, "actualAmount": 3820, "variance": 0.013 },
+    { "quarter": "Q2 2024", "expectedAmount": 3800, "actualAmount": 3765, "variance": -0.009 },
+    { "quarter": "Q3 2024", "expectedAmount": 3830, "actualAmount": 3920, "variance": 0.023 },
+    { "quarter": "Q4 2024", "expectedAmount": 3860, "actualAmount": 3895, "variance": 0.009 }
   ]
 }

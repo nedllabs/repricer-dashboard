@@ -67,6 +67,28 @@ const CustomTooltip = ({ active, payload, label, type }: any) => {
   return null;
 };
 
+const customLegendOrder = [
+  { dataKey: "billedAmount", color: "#449CFB", label: "Billed Amount" },
+  { dataKey: "allowedAmount", color: "#F08C76", label: "Allowed Amount" },
+  { dataKey: "medicareReference", color: "#F5709A", label: "Medicare Reference" },
+];
+
+function CustomLegend() {
+  return (
+    <ul className="flex flex-row justify-center gap-6 mt-2">
+      {customLegendOrder.map((item) => (
+        <li key={item.dataKey} className="flex items-center space-x-2">
+          <span
+            className="inline-block w-4 h-4 rounded"
+            style={{ backgroundColor: item.color }}
+          />
+          <span className="text-xs text-[#374151]">{item.label}</span>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
 export function ComparisonBarChart({
   title,
   data,
@@ -116,10 +138,7 @@ export function ComparisonBarChart({
               />
             ) : (
               <>
-                <Legend
-                  wrapperStyle={{ fontSize: "12px", paddingTop: "20px" }}
-                  iconType="rect"
-                />
+                <Legend content={<CustomLegend />} />
                 <Bar
                   dataKey="billedAmount"
                   name="Billed Amount"

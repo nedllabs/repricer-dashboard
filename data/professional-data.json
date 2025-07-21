@@ -2,31 +2,31 @@
   "repricerMetrics": [
     {
       "label": "Total Claims",
-      "value": "2.8M",
+      "value": "65.5M",
       "unit": "#",
       "tooltip": "Count of unique professional service claims for the selected service period"
     },
     {
       "label": "Avg. Billed Amount",
-      "value": "$185",
+      "value": "$1,679",
       "unit": "USD",
       "tooltip": "Avg. Billed Amount = Total Billed Amount/Total Claims"
     },
     {
       "label": "Avg. Allowed Amount",
-      "value": "$95",
+      "value": "$873",
       "unit": "USD",
       "tooltip": "Avg. Allowed Amount = Total Allowed Amount/Total Claims"
     },
     {
       "label": "Avg. Paid Amount",
-      "value": "$78",
+      "value": "$742",
       "unit": "USD",
       "tooltip": "Avg. Paid Amount = Total Paid Amount/Total Claims"
     },
     {
       "label": "Avg. Medicare Reference Price",
-      "value": "$82",
+      "value": "$728",
       "unit": "USD",
       "tooltip": "Avg. Medicare Reference Price = Total Medicare Reference Price/Total Claims"
     }
@@ -34,13 +34,13 @@
   "professionalMetrics": [
     {
       "label": "Avg. Medicare Rate Relativity",
-      "value": "116%",
+      "value": "120%",
       "unit": "vs MRP",
       "tooltip": "Avg. rate relativity = Σ (Allowed Amount / Medicare Reference Price) / Total Claims"
     },
     {
       "label": "Total Medicare Rate Relativity",
-      "value": "108%",
+      "value": "120%",
       "unit": "VS MRP",
       "tooltip": "Total rate relativity = Σ Allowed Amount / Σ Medicare Reference Price"
     }
@@ -52,31 +52,31 @@
         {
           "name": "Evaluation & Management",
           "value": 35,
-          "claimVolume": "980K",
+          "claimVolume": "22.9M",
           "color": "#449CFB"
         },
         {
           "name": "Surgery",
           "value": 25,
-          "claimVolume": "700K",
+          "claimVolume": "16.4M",
           "color": "#F08C76"
         },
         {
           "name": "Radiology",
           "value": 20,
-          "claimVolume": "560K",
+          "claimVolume": "13.1M",
           "color": "#F5709A"
         },
         {
           "name": "Pathology & Laboratory",
           "value": 15,
-          "claimVolume": "420K",
+          "claimVolume": "9.8M",
           "color": "#B782E8"
         },
         {
           "name": "Medicine",
           "value": 5,
-          "claimVolume": "140K",
+          "claimVolume": "3.3M",
           "color": "#82F09A"
         }
       ]
@@ -120,7 +120,7 @@
         [
           "99213",
           "Office/outpatient visit established patient, 20-29 minutes",
-          "285,000",
+          "10.8M",
           "$125",
           "$65",
           "$58",
@@ -129,7 +129,7 @@
         [
           "99214",
           "Office/outpatient visit established patient, 30-39 minutes",
-          "245,000",
+          "9.3M",
           "$185",
           "$95",
           "$88",
@@ -138,7 +138,7 @@
         [
           "99215",
           "Office/outpatient visit established patient, 40-54 minutes",
-          "185,000",
+          "7.0M",
           "$245",
           "$125",
           "$115",
@@ -147,7 +147,7 @@
         [
           "99232",
           "Subsequent hospital care, 25 minutes",
-          "165,000",
+          "6.3M",
           "$165",
           "$85",
           "$78",
@@ -156,7 +156,7 @@
         [
           "99233",
           "Subsequent hospital care, 35 minutes",
-          "145,000",
+          "5.5M",
           "$225",
           "$115",
           "$105",
@@ -165,7 +165,7 @@
         [
           "99204",
           "Office/outpatient visit new patient, 45-59 minutes",
-          "125,000",
+          "4.8M",
           "$285",
           "$145",
           "$135",
@@ -181,52 +181,63 @@
         {
           "name": "Physician - Primary Care",
           "value": 28,
-          "claimVolume": "45.2K",
+          "claimVolume": "18.3M",
           "color": "#449CFB"
         },
         {
           "name": "Physician - Cardiology",
           "value": 22,
-          "claimVolume": "38.5K",
+          "claimVolume": "14.4M",
           "color": "#F08C76"
         },
         {
           "name": "Physician - Orthopedics",
           "value": 18,
-          "claimVolume": "32.8K",
+          "claimVolume": "11.8M",
           "color": "#F5709A"
         },
         {
           "name": "Nurse Practitioner - Primary Care",
-          "value": 16,
-          "claimVolume": "28.9K",
+          "value": 15,
+          "claimVolume": "9.8M",
           "color": "#B782E8"
         },
         {
-          "name": "Physician Assistant - Emergency Medicine",
-          "value": 16,
-          "claimVolume": "25.6K",
+          "name": "Physician - Internal Medicine",
+          "value": 12,
+          "claimVolume": "7.9M",
           "color": "#82F09A"
         }
       ]
     },
-    "top10HealthSystemsChart": {
-      "title": "10 Provider Specializations by Medicare Rate Relativity",
+    "rateRelativityBarChart": {
+      "title": "Rate Relativity by Provider Specialization",
       "data": [
-        { "name": "Nurse Practitioner - Primary Care", "relativity": 1.12, "claims": "28.9K" },
-        { "name": "Physician - Cardiology", "relativity": 1.10, "claims": "38.5K" },
-        { "name": "Nurse Practitioner - Cardiology", "relativity": 1.10, "claims": "19.8K" },
-        { "name": "Physician - Primary Care", "relativity": 1.09, "claims": "45.2K" },
-        { "name": "Physician - Neurology", "relativity": 1.09, "claims": "18.5K" },
-        { "name": "Physician - Dermatology", "relativity": 1.09, "claims": "22.4K" },
-        { "name": "Physician - Orthopedics", "relativity": 1.07, "claims": "32.8K" },
-        { "name": "Physician Assistant - Emergency Medicine", "relativity": 1.08, "claims": "25.6K" }
+        { "name": "Physician - Primary Care", "relativity": 118 },
+        { "name": "Physician - Cardiology", "relativity": 125 },
+        { "name": "Physician - Orthopedics", "relativity": 122 },
+        { "name": "Nurse Practitioner - Primary Care", "relativity": 115 },
+        { "name": "Physician - Internal Medicine", "relativity": 120 }
       ]
     },
-    "providerTable": {
+    "top10HealthSystemsChart": {
+      "title": "Top 10 Health Systems by Medicare Rate Relativity",
+      "data": [
+        { "name": "HCA Healthcare", "relativity": 1.25, "claims": "16.4M" },
+        { "name": "Ascension Health", "relativity": 1.18, "claims": "13.1M" },
+        { "name": "CommonSpirit Health", "relativity": 1.22, "claims": "11.8M" },
+        { "name": "Tenet Healthcare", "relativity": 1.15, "claims": "9.8M" },
+        { "name": "Providence St. Joseph Health", "relativity": 1.20, "claims": "7.9M" },
+        { "name": "Kaiser Permanente", "relativity": 1.28, "claims": "7.2M" },
+        { "name": "Mayo Clinic", "relativity": 1.35, "claims": "6.8M" },
+        { "name": "Cleveland Clinic", "relativity": 1.32, "claims": "6.1M" },
+        { "name": "Johns Hopkins", "relativity": 1.30, "claims": "5.5M" },
+        { "name": "UPMC", "relativity": 1.26, "claims": "5.0M" }
+      ]
+    },
+    "topSystemsTable": {
       "headers": [
-        "Classification",
-        "Specialization",
+        "Provider Specialization",
         "Claim count",
         "Avg. Billed",
         "Avg. Allowed",
@@ -234,43 +245,194 @@
         "Avg. MRR"
       ],
       "rows": [
-        ["Physician", "Primary Care", "45,200", "$165", "$85", "$78", "109%"],
-        ["Physician", "Cardiology", "38,500", "$225", "$115", "$105", "110%"],
-        ["Physician", "Orthopedics", "32,800", "$285", "$145", "$135", "107%"],
         [
-          "Nurse Practitioner",
-          "Primary Care",
-          "28,900",
-          "$125",
-          "$65",
-          "$58",
-          "112%"
+          "Physician - Primary Care",
+          "18.3M",
+          "$150",
+          "$78",
+          "$70",
+          "111%"
         ],
         [
-          "Physician Assistant",
-          "Emergency Medicine",
-          "25,600",
-          "$185",
+          "Physician - Cardiology",
+          "14.4M",
+          "$2,200",
+          "$1,150",
+          "$1,080",
+          "106%"
+        ],
+        [
+          "Physician - Orthopedics",
+          "11.8M",
+          "$1,800",
+          "$950",
+          "$890",
+          "107%"
+        ],
+        [
+          "Nurse Practitioner - Primary Care",
+          "9.8M",
+          "$120",
+          "$62",
+          "$55",
+          "113%"
+        ],
+        [
+          "Physician - Internal Medicine",
+          "7.9M",
+          "$180",
           "$95",
           "$88",
           "108%"
+        ]
+      ]
+    },
+    "providerTable": {
+      "title": "Provider Details",
+      "headers": [
+        "Provider",
+        "Claim count",
+        "Avg. Billed",
+        "Avg. Allowed",
+        "Avg. MRP",
+        "Avg. MRR",
+        "Health System"
+      ],
+      "rows": [
+        [
+          "Primary Care Physician",
+          "285K",
+          "$165",
+          "$85",
+          "$78",
+          "109%",
+          "Atrium Health"
         ],
-        ["Physician", "Dermatology", "22,400", "$195", "$100", "$92", "109%"],
+        [
+          "Cardiology Specialist",
+          "245K",
+          "$225",
+          "$115",
+          "$105",
+          "110%",
+          "UNC Health"
+        ],
+        [
+          "Orthopedic Surgeon",
+          "228K",
+          "$285",
+          "$145",
+          "$135",
+          "107%",
+          "Duke Health"
+        ],
         [
           "Nurse Practitioner",
-          "Cardiology",
-          "19,800",
+          "198K",
+          "$125",
+          "$65",
+          "$58",
+          "112%",
+          "Novant Health"
+        ],
+        [
+          "Internal Medicine",
+          "185K",
+          "$185",
+          "$95",
+          "$88",
+          "108%",
+          "Cone Health"
+        ],
+        [
+          "Emergency Medicine",
+          "165K",
+          "$195",
+          "$100",
+          "$92",
+          "109%",
+          "WakeMed"
+        ],
+        [
+          "Dermatology Specialist",
+          "148K",
           "$175",
           "$90",
           "$82",
-          "110%"
+          "110%",
+          "Vidant Health"
         ],
-        ["Physician", "Neurology", "18,500", "$245", "$125", "$115", "109%"]
+        [
+          "Neurology Specialist",
+          "132K",
+          "$245",
+          "$125",
+          "$115",
+          "109%",
+          "Cape Fear Valley Health"
+        ]
       ]
     }
   },
   "geographic": {
+    "topCbsaPieChart": {
+      "title": "Top 5 CBSAs by Claim Volume",
+      "data": [
+        { "name": "Charlotte-Concord-Gastonia", "value": 25, "claimVolume": "800K", "color": "#449CFB" },
+        { "name": "Raleigh-Cary", "value": 20, "claimVolume": "500K", "color": "#F08C76" },
+        { "name": "Greensboro-High Point", "value": 18, "claimVolume": "350K", "color": "#F5709A" },
+        { "name": "Winston-Salem", "value": 15, "claimVolume": "300K", "color": "#B782E8" },
+        { "name": "Durham-Chapel Hill", "value": 12, "claimVolume": "250K", "color": "#82F09A" }
+      ]
+    },
+    "rateRelativityBarChart": {
+      "title": "Rate Relativity by CBSA",
+      "data": [
+        { "name": "Charlotte-Concord-Gastonia", "relativity": 108 },
+        { "name": "Raleigh-Cary", "relativity": 113 },
+        { "name": "Greensboro-High Point", "relativity": 110 },
+        { "name": "Winston-Salem", "relativity": 109 },
+        { "name": "Durham-Chapel Hill", "relativity": 112 }
+      ]
+    },
+    "topCbsaTable": {
+      "headers": [
+        "CBSA",
+        "Claim count",
+        "Avg. Billed",
+        "Avg. Allowed",
+        "Avg. MRP",
+        "Avg. MRR"
+      ],
+      "rows": [
+        ["Charlotte-Concord-Gastonia", "800K", "$2,000", "$1,050", "$980", "107%"],
+        ["Raleigh-Cary", "500K", "$1,800", "$950", "$890", "107%"],
+        ["Greensboro-High Point", "350K", "$1,700", "$900", "$840", "107%"],
+        ["Winston-Salem", "300K", "$1,600", "$850", "$790", "108%"],
+        ["Durham-Chapel Hill", "250K", "$1,900", "$1,000", "$930", "108%"]
+      ]
+    },
+    "cbsaTable": {
+      "title": "CBSA Details",
+      "headers": [
+        "CBSA Name",
+        "CBSA Code",
+        "Claim count",
+        "Avg. Billed",
+        "Avg. Allowed",
+        "Avg. MRP",
+        "Avg. MRR"
+      ],
+      "rows": [
+        ["Charlotte-Concord-Gastonia, NC-SC", "16740", "800K", "$2,000", "$1,050", "$980", "107%"],
+        ["Raleigh-Cary, NC", "39580", "500K", "$1,800", "$950", "$890", "107%"],
+        ["Greensboro-High Point, NC", "24660", "350K", "$1,700", "$900", "$840", "107%"],
+        ["Winston-Salem, NC", "49180", "300K", "$1,600", "$850", "$790", "108%"],
+        ["Durham-Chapel Hill, NC", "20500", "250K", "$1,900", "$1,000", "$930", "108%"]
+      ]
+    },
     "countyTable": {
+      "title": "County Details",
       "headers": [
         "County",
         "Code",
@@ -281,22 +443,16 @@
         "Avg. MRR"
       ],
       "rows": [
-        [
-          "Los Angeles County",
-          "06037",
-          "185,000",
-          "$195",
-          "$100",
-          "$92",
-          "109%"
-        ],
-        ["Cook County", "17031", "165,000", "$185", "$95", "$88", "108%"],
-        ["Harris County", "48201", "145,000", "$175", "$90", "$82", "110%"],
-        ["Maricopa County", "04013", "125,000", "$165", "$85", "$78", "109%"],
-        ["San Diego County", "06073", "115,000", "$185", "$95", "$88", "108%"],
-        ["Orange County", "06059", "105,000", "$195", "$100", "$92", "109%"],
-        ["King County", "53033", "95,000", "$175", "$90", "$82", "110%"],
-        ["Miami-Dade County", "12086", "85,000", "$185", "$95", "$88", "108%"]
+        ["Mecklenburg County", "37119", "120K", "$2,000", "$1,050", "$980", "107%"],
+        ["Wake County", "37183", "100K", "$1,800", "$950", "$890", "107%"],
+        ["Guilford County", "37081", "80K", "$1,700", "$900", "$840", "107%"],
+        ["Forsyth County", "37067", "70K", "$1,600", "$850", "$790", "108%"],
+        ["Durham County", "37063", "60K", "$1,900", "$1,000", "$930", "108%"],
+        ["Cumberland County", "37051", "50K", "$1,200", "$600", "$550", "105%"],
+        ["Buncombe County", "37021", "40K", "$1,300", "$650", "$600", "105%"],
+        ["New Hanover County", "37129", "30K", "$1,400", "$700", "$650", "105%"],
+        ["Catawba County", "37035", "20K", "$1,100", "$550", "$500", "106%"],
+        ["Alamance County", "37001", "10K", "$1,250", "$625", "$575", "105%"]
       ]
     }
   },
