@@ -211,7 +211,7 @@ export function SidebarNavigation({
         {/* Mobile Sidebar */}
         <div
           className={cn(
-            "fixed left-0 top-0 h-full w-64 z-50 font-title transform transition-transform duration-300 ease-in-out",
+            "fixed left-0 top-0 h-full w-64 z-50 font-comfortaa transform transition-transform duration-300 ease-in-out",
             "bg-[#F5F5F5] shadow-[3px_0px_25px_0px_rgba(0,0,0,0.15)]",
             isOpen ? "translate-x-0" : "-translate-x-full",
             className
@@ -346,7 +346,7 @@ export function SidebarNavigation({
   return (
     <div
       className={cn(
-        "fixed left-0 top-16 h-[calc(100vh-5rem)] w-64 z-10 font-title",
+        "fixed left-0 top-16 h-[calc(100vh-5rem)] w-64 z-10 font-comfortaa",
         "bg-[#F5F5F5] shadow-[3px_0px_25px_0px_rgba(0,0,0,0.15)]",
         className
       )}
