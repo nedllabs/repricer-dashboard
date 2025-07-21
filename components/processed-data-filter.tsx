@@ -3,9 +3,7 @@
 import { useState } from "react"
 import { Database, Clock, CheckCircle2 } from "lucide-react"
 
-export function ProcessedDataFilter() {
-  const [selectedOption, setSelectedOption] = useState<"all" | "last">("last")
-
+export function ProcessedDataFilter({ value, onChange }: { value: "all" | "last", onChange: (val: "all" | "last") => void }) {
   return (
     <div className="bg-white rounded-xl p-4 lg:p-6 shadow-sm border border-[#e5e7eb] mb-6">
       {/* Mobile Layout */}
@@ -24,7 +22,7 @@ export function ProcessedDataFilter() {
         <div className="space-y-3">
           <label
             className={`flex items-center space-x-3 p-4 rounded-xl cursor-pointer transition-all duration-300 border-2 ${
-              selectedOption === "all"
+              value === "all"
                 ? "bg-white text-[#374151] shadow-md border-[#449cfb] transform scale-[1.02]"
                 : "text-[#6b7280] hover:text-[#374151] hover:bg-[#f9fafb] border-[#e5e7eb]"
             }`}
@@ -34,16 +32,16 @@ export function ProcessedDataFilter() {
                 type="radio"
                 name="processedData"
                 value="all"
-                checked={selectedOption === "all"}
-                onChange={() => setSelectedOption("all")}
+                checked={value === "all"}
+                onChange={() => onChange("all")}
                 className="sr-only"
               />
               <div
                 className={`w-5 h-5 rounded-full border-2 transition-all duration-200 ${
-                  selectedOption === "all" ? "border-[#449cfb] bg-[#449cfb] shadow-sm" : "border-[#d1d5db] bg-white"
+                  value === "all" ? "border-[#449cfb] bg-[#449cfb] shadow-sm" : "border-[#d1d5db] bg-white"
                 }`}
               >
-                {selectedOption === "all" && (
+                {value === "all" && (
                   <div className="w-full h-full rounded-full bg-white scale-50 flex items-center justify-center">
                     <div className="w-2 h-2 rounded-full bg-[#449cfb]"></div>
                   </div>
@@ -58,7 +56,7 @@ export function ProcessedDataFilter() {
 
           <label
             className={`flex items-center space-x-3 p-4 rounded-xl cursor-pointer transition-all duration-300 border-2 ${
-              selectedOption === "last"
+              value === "last"
                 ? "bg-white text-[#374151] shadow-md border-[#449cfb] transform scale-[1.02]"
                 : "text-[#6b7280] hover:text-[#374151] hover:bg-[#f9fafb] border-[#e5e7eb]"
             }`}
@@ -68,16 +66,16 @@ export function ProcessedDataFilter() {
                 type="radio"
                 name="processedData"
                 value="last"
-                checked={selectedOption === "last"}
-                onChange={() => setSelectedOption("last")}
+                checked={value === "last"}
+                onChange={() => onChange("last")}
                 className="sr-only"
               />
               <div
                 className={`w-5 h-5 rounded-full border-2 transition-all duration-200 ${
-                  selectedOption === "last" ? "border-[#449cfb] bg-[#449cfb] shadow-sm" : "border-[#d1d5db] bg-white"
+                  value === "last" ? "border-[#449cfb] bg-[#449cfb] shadow-sm" : "border-[#d1d5db] bg-white"
                 }`}
               >
-                {selectedOption === "last" && (
+                {value === "last" && (
                   <div className="w-full h-full rounded-full bg-white scale-50 flex items-center justify-center">
                     <div className="w-2 h-2 rounded-full bg-[#449cfb]"></div>
                   </div>
@@ -98,7 +96,7 @@ export function ProcessedDataFilter() {
             <div className="min-w-0">
               <div className="text-sm font-medium text-[#449cfb]">Active Filter:</div>
               <div className="text-sm text-[#2f4ca3] truncate">
-                {selectedOption === "all" ? "All Processing Runs" : "Latest Processing Run"}
+                {value === "all" ? "All Processing Runs" : "Latest Processing Run"}
               </div>
             </div>
           </div>
@@ -121,7 +119,7 @@ export function ProcessedDataFilter() {
           <div className="flex items-center bg-[#f9fafb] rounded-2xl p-2 border border-[#e5e7eb] shadow-sm">
             <label
               className={`flex items-center space-x-3 px-6 py-3 rounded-xl cursor-pointer transition-all duration-300 ${
-                selectedOption === "all"
+                value === "all"
                   ? "bg-white text-[#374151] shadow-md border border-[#e5e7eb] transform scale-105"
                   : "text-[#6b7280] hover:text-[#374151] hover:bg-white/50"
               }`}
@@ -131,16 +129,16 @@ export function ProcessedDataFilter() {
                   type="radio"
                   name="processedData"
                   value="all"
-                  checked={selectedOption === "all"}
-                  onChange={() => setSelectedOption("all")}
+                  checked={value === "all"}
+                  onChange={() => onChange("all")}
                   className="sr-only"
                 />
                 <div
                   className={`w-5 h-5 rounded-full border-2 transition-all duration-200 ${
-                    selectedOption === "all" ? "border-[#449cfb] bg-[#449cfb] shadow-sm" : "border-[#d1d5db] bg-white"
+                    value === "all" ? "border-[#449cfb] bg-[#449cfb] shadow-sm" : "border-[#d1d5db] bg-white"
                   }`}
                 >
-                  {selectedOption === "all" && (
+                  {value === "all" && (
                     <div className="w-full h-full rounded-full bg-white scale-50 flex items-center justify-center">
                       <div className="w-2 h-2 rounded-full bg-[#449cfb]"></div>
                     </div>
@@ -155,7 +153,7 @@ export function ProcessedDataFilter() {
 
             <label
               className={`flex items-center space-x-3 px-6 py-3 rounded-xl cursor-pointer transition-all duration-300 ${
-                selectedOption === "last"
+                value === "last"
                   ? "bg-white text-[#374151] shadow-md border border-[#e5e7eb] transform scale-105"
                   : "text-[#6b7280] hover:text-[#374151] hover:bg-white/50"
               }`}
@@ -165,16 +163,16 @@ export function ProcessedDataFilter() {
                   type="radio"
                   name="processedData"
                   value="last"
-                  checked={selectedOption === "last"}
-                  onChange={() => setSelectedOption("last")}
+                  checked={value === "last"}
+                  onChange={() => onChange("last")}
                   className="sr-only"
                 />
                 <div
                   className={`w-5 h-5 rounded-full border-2 transition-all duration-200 ${
-                    selectedOption === "last" ? "border-[#449cfb] bg-[#449cfb] shadow-sm" : "border-[#d1d5db] bg-white"
+                    value === "last" ? "border-[#449cfb] bg-[#449cfb] shadow-sm" : "border-[#d1d5db] bg-white"
                   }`}
                 >
-                  {selectedOption === "last" && (
+                  {value === "last" && (
                     <div className="w-full h-full rounded-full bg-white scale-50 flex items-center justify-center">
                       <div className="w-2 h-2 rounded-full bg-[#449cfb]"></div>
                     </div>
@@ -196,7 +194,7 @@ export function ProcessedDataFilter() {
             <div className="text-sm">
               <span className="font-medium text-[#449cfb]">Active Filter:</span>
               <span className="text-[#2f4ca3] ml-1">
-                {selectedOption === "all" ? "All Processing Runs" : "Latest Processing Run"}
+                {value === "all" ? "All Processing Runs" : "Latest Processing Run"}
               </span>
             </div>
           </div>
