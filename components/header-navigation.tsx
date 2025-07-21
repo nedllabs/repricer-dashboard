@@ -93,7 +93,7 @@ export function HeaderNavigation() {
 
           <div className="flex items-center space-x-2 lg:space-x-3 bg-white/70 backdrop-blur-sm rounded-xl lg:rounded-2xl px-2 lg:px-4 py-1.5 lg:py-2 hover:bg-white/90 transition-all duration-200 cursor-pointer border border-[#e5e7eb]/50 shadow-sm">
             <span className="text-xs lg:text-sm font-medium text-[#374151] hidden sm:inline">
-              Analytics User
+              Ashish
             </span>
             <div className="w-7 h-7 lg:w-9 lg:h-9 bg-gradient-to-r from-[#449cfb] to-[#f087fb] rounded-lg lg:rounded-xl flex items-center justify-center text-white text-xs lg:text-sm font-bold shadow-md">
               A
