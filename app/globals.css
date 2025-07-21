@@ -90,6 +90,10 @@
   ::file-selector-button {
     border-color: var(--color-gray-200, currentcolor);
   }
+
+  body {
+    background-color: #f6f6f6;
+  }
 }
 
 .recharts-pie *,
