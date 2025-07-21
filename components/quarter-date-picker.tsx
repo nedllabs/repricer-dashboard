@@ -178,7 +178,7 @@ export function QuarterDatePicker({ value, onChange }: QuarterDatePickerProps) {
                 {[2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026].map((year) => (
                   <Button
                     key={year}
-                    variant={year === currentYear ? "default" : "outline"}
+                    variant={year === currentYear ? "default" : "outline-solid"}
                     size="sm"
                     onClick={() => setCurrentYear(year)}
                     className={`text-xs ${

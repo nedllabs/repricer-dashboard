@@ -29,13 +29,13 @@ export function MobileTabNavigation({
   return (
     <>
       {/* Mobile Tab Navigation - Horizontal Scroll */}
-      <div className="block lg:hidden bg-white rounded-xl shadow-sm border border-[#e5e7eb] mb-6 overflow-hidden">
+      <div className="block lg:hidden bg-white rounded-xl shadow-xs border border-[#e5e7eb] mb-6 overflow-hidden">
         <div className="flex overflow-x-auto scrollbar-hide bg-[#f9fafb] border-b border-[#e5e7eb]">
           {tabs.map((tab) => (
             <button
               key={tab.id}
               onClick={() => handleTabClick(tab.id)}
-              className={`relative px-4 py-4 text-sm font-medium transition-all duration-300 whitespace-nowrap flex-shrink-0 ${
+              className={`relative px-4 py-4 text-sm font-medium transition-all duration-300 whitespace-nowrap shrink-0 ${
                 activeTab === tab.id
                   ? "text-[#374151] bg-white"
                   : "text-[#6b7280] hover:text-[#374151] hover:bg-white/50"
@@ -44,7 +44,7 @@ export function MobileTabNavigation({
               {tab.label}
               {activeTab === tab.id && (
                 <div className="absolute bottom-0 left-0 right-0">
-                  <div className="h-1 bg-gradient-to-r from-[#449cfb] to-[#e679f2] rounded-t-full"></div>
+                  <div className="h-1 bg-linear-to-r from-[#449cfb] to-[#e679f2] rounded-t-full"></div>
                 </div>
               )}
             </button>
@@ -53,7 +53,7 @@ export function MobileTabNavigation({
       </div>
 
       {/* Desktop Tab Navigation - Same as before */}
-      <div className="hidden lg:block bg-white rounded-xl shadow-sm border border-[#e5e7eb] mb-6 overflow-hidden">
+      <div className="hidden lg:block bg-white rounded-xl shadow-xs border border-[#e5e7eb] mb-6 overflow-hidden">
         <div className="flex bg-[#f9fafb] border-b border-[#e5e7eb]">
           {tabs.map((tab) => (
             <button
@@ -68,7 +68,7 @@ export function MobileTabNavigation({
               {tab.label}
               {activeTab === tab.id && (
                 <div className="absolute bottom-0 left-0 right-0">
-                  <div className="h-1 bg-gradient-to-r from-[#449cfb] to-[#e679f2] rounded-t-full"></div>
+                  <div className="h-1 bg-linear-to-r from-[#449cfb] to-[#e679f2] rounded-t-full"></div>
                 </div>
               )}
             </button>

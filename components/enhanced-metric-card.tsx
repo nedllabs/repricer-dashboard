@@ -32,7 +32,7 @@ export function EnhancedMetricCard({
 
   const CardContent = () => (
     <div
-      className="group relative bg-white rounded-xl p-6 shadow-sm border border-[#e5e7eb] hover:shadow-lg transition-all duration-300 cursor-pointer overflow-hidden w-full"
+      className="group relative bg-white rounded-xl p-6 shadow-xs border border-[#e5e7eb] hover:shadow-lg transition-all duration-300 cursor-pointer overflow-hidden w-full"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >

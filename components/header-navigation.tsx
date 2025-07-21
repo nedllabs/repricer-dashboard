@@ -28,7 +28,7 @@ export function HeaderNavigation() {
   ];
 
   return (
-    <header className="bg-white/90 backdrop-blur-md border-b border-[#e5e7eb]/50 px-4 lg:px-6 sticky top-0 z-50 shadow-sm">
+    <header className="bg-white/90 backdrop-blur-md border-b border-[#e5e7eb]/50 px-4 lg:px-6 sticky top-0 z-50 shadow-xs">
       <div className="flex justify-between mx-auto">
         {/* Left Section - Logo */}
         <div className="flex items-center space-x-2 lg:space-x-4 flex-1">
@@ -46,7 +46,7 @@ export function HeaderNavigation() {
           <div className="flex items-center">
             <button
               onClick={handleLogoClick}
-              className="flex items-center focus:outline-none"
+              className="flex items-center focus:outline-hidden"
             >
               <NedlLogo className="p-3" />
             </button>
@@ -55,7 +55,7 @@ export function HeaderNavigation() {
 
         {/* Desktop Navigation - Hidden on mobile */}
         <div className="hidden lg:flex items-center justify-center flex-2">
-          <div className="flex items-center bg-white/80 backdrop-blur-sm rounded-2xl p-2 ">
+          <div className="flex items-center bg-white/80 backdrop-blur-xs rounded-2xl p-2 ">
             {navigationItems.map((item) => {
               const IconComponent = item.icon;
               return (
@@ -64,7 +64,7 @@ export function HeaderNavigation() {
                   href={item.href}
                   className={`relative px-4 xl:px-4 mx-2 py-2 text-sm font-medium transition-all duration-300 rounded-3xl flex items-center space-x-2 ${
                     pathname === item.href
-                      ? "bg-gradient-to-r from-[#449CFB] to-[#E85DF9] text-white shadow-lg transform scale-105"
+                      ? "bg-linear-to-r from-[#449CFB] to-[#E85DF9] text-white shadow-lg transform scale-105"
                       : "text-[#6b7280] hover:text-[#374151] hover:bg-white/70"
                   }`}
                 >
@@ -73,7 +73,7 @@ export function HeaderNavigation() {
                     {item.label}
                   </span>
                   {pathname === item.href && (
-                    <div className="absolute inset-0 bg-gradient-to-r from-[#449cfb]/20 to-[#5489c2]/20 rounded-xl blur-xl"></div>
+                    <div className="absolute inset-0 bg-linear-to-r from-[#449cfb]/20 to-[#5489c2]/20 rounded-xl blur-xl"></div>
                   )}
                 </Link>
               );
@@ -84,18 +84,18 @@ export function HeaderNavigation() {
         {/* Right Section - User Menu */}
         <div className="flex items-center justify-end space-x-2 lg:space-x-4 flex-1">
           <button className="relative p-2 lg:p-3 hover:bg-[#f3f4f6] rounded-xl transition-all duration-200 group">
-            <Bell className="w-4 h-4 lg:w-5 lg:h-5 text-[#6b7280] group-hover:text-[#374151]" />
+            <Bell className="w-5 h-5 lg:w-5 lg:h-5 text-[#6b7280] group-hover:text-[#374151]" />
             <div
-              className="absolute -top-1 -right-1 w-2 h-2 lg:w-3 lg:h-3 bg-[#FA1717] rounded-full shadow-sm animate-pulse"
+              className="absolute -top-1 -right-1 w-2 h-2 lg:w-3 lg:h-3 bg-[#FA1717] rounded-full shadow-xs animate-pulse"
               style={{ animationDuration: "1s" }}
             ></div>
           </button>
 
-          <div className="flex items-center space-x-2 lg:space-x-3 bg-white/70 backdrop-blur-sm rounded-xl lg:rounded-2xl px-2 lg:px-4 py-1.5 lg:py-2 hover:bg-white/90 transition-all duration-200 cursor-pointer border border-[#e5e7eb]/50 shadow-sm">
+          <div className="flex items-center space-x-2 lg:space-x-3 bg-white/70 backdrop-blur-xs rounded-xl lg:rounded-2xl px-2 lg:px-4 py-1.5 lg:py-2 hover:bg-white/90 transition-all duration-200 cursor-pointer border border-[#e5e7eb]/50 shadow-xs">
             <span className="text-xs lg:text-sm font-medium text-[#374151] hidden sm:inline">
               Ashish
             </span>
-            <div className="w-7 h-7 lg:w-9 lg:h-9 bg-gradient-to-r from-[#449cfb] to-[#f087fb] rounded-lg lg:rounded-xl flex items-center justify-center text-white text-xs lg:text-sm font-bold shadow-md">
+            <div className="w-7 h-7 lg:w-9 lg:h-9 bg-linear-to-r from-[#449cfb] to-[#f087fb] rounded-lg lg:rounded-xl flex items-center justify-center text-white text-xs lg:text-sm font-bold shadow-md">
               A
             </div>
             <ChevronDown className="w-3 h-3 lg:w-4 lg:h-4 text-[#6b7280] hidden sm:inline" />
@@ -116,7 +116,7 @@ export function HeaderNavigation() {
                   onClick={() => setIsMobileMenuOpen(false)}
                   className={`block w-full p-4 rounded-xl text-sm font-semibold transition-all duration-300 flex items-center space-x-3 ${
                     pathname === item.href
-                      ? "text-white bg-gradient-to-r from-[#449cfb] to-[#f087fb] shadow-lg"
+                      ? "text-white bg-linear-to-r from-[#449cfb] to-[#f087fb] shadow-lg"
                       : "text-[#6b7280] hover:text-[#374151] hover:bg-[#f3f4f6]"
                   }`}
                 >

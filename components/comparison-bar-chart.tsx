@@ -95,12 +95,12 @@ export function ComparisonBarChart({
   type = "comparison",
 }: ComparisonBarChartProps) {
   return (
-    <div className="bg-white rounded-xl p-6 shadow-sm border border-[#e5e7eb] hover:shadow-lg transition-all duration-300">
+    <div className="bg-white rounded-xl p-6 shadow-xs border border-[#e5e7eb] hover:shadow-lg transition-all duration-300">
       <div className="text-center mb-6">
         <h3 className="text-lg font-semibold text-[#374151] mb-2 font-comfortaa">
           {title}
         </h3>
-        <div className="w-16 h-1 bg-gradient-to-r from-[#449cfb] to-[#f087fb] rounded-full mx-auto"></div>
+        <div className="w-16 h-1 bg-linear-to-r from-[#449cfb] to-[#f087fb] rounded-full mx-auto"></div>
       </div>
 
       <div className="h-80">

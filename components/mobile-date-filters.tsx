@@ -130,7 +130,7 @@ export function MobileDateFilters() {
   };
 
   return (
-    <div className="bg-white rounded-xl p-4 lg:p-6 shadow-sm border border-[#e5e7eb] mb-6">
+    <div className="bg-white rounded-xl p-4 lg:p-6 shadow-xs border border-[#e5e7eb] mb-6">
       <div className="space-y-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
@@ -154,7 +154,7 @@ export function MobileDateFilters() {
             onClick={() => setIsOpen(!isOpen)}
           >
             <span className="truncate">{formatRange()}</span>
-            <ChevronDown className="ml-2 h-4 w-4 flex-shrink-0" />
+            <ChevronDown className="ml-2 h-4 w-4 shrink-0" />
           </button>
 
           {isOpen && (
@@ -202,7 +202,7 @@ export function MobileDateFilters() {
                           <SelectTrigger className="h-10 text-xs border-[#e5e7eb]">
                             <SelectValue />
                           </SelectTrigger>
-                          <SelectContent className="z-[60]">
+                          <SelectContent className="z-60">
                             {[2019, 2020, 2021, 2022, 2023, 2024, 2025].map(
                               (year) => (
                                 <SelectItem key={year} value={year.toString()}>
@@ -224,7 +224,7 @@ export function MobileDateFilters() {
                           <SelectTrigger className="h-10 text-xs border-[#e5e7eb]">
                             <SelectValue />
                           </SelectTrigger>
-                          <SelectContent className="z-[60]">
+                          <SelectContent className="z-60">
                             <SelectItem value="Q1">Q1</SelectItem>
                             <SelectItem value="Q2">Q2</SelectItem>
                             <SelectItem value="Q3">Q3</SelectItem>
@@ -248,7 +248,7 @@ export function MobileDateFilters() {
                           <SelectTrigger className="h-10 text-xs border-[#e5e7eb]">
                             <SelectValue />
                           </SelectTrigger>
-                          <SelectContent className="z-[60]">
+                          <SelectContent className="z-60">
                             {[2019, 2020, 2021, 2022, 2023, 2024, 2025].map(
                               (year) => (
                                 <SelectItem key={year} value={year.toString()}>
@@ -270,7 +270,7 @@ export function MobileDateFilters() {
                           <SelectTrigger className="h-10 text-xs border-[#e5e7eb]">
                             <SelectValue />
                           </SelectTrigger>
-                          <SelectContent className="z-[60]">
+                          <SelectContent className="z-60">
                             <SelectItem value="Q1">Q1</SelectItem>
                             <SelectItem value="Q2">Q2</SelectItem>
                             <SelectItem value="Q3">Q3</SelectItem>

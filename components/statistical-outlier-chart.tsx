@@ -177,12 +177,12 @@ export function StatisticalOutlierChart({
   const totalClaims = data.reduce((sum, d) => sum + d.claimCount, 0);
 
   return (
-    <div className="bg-white rounded-xl p-6 shadow-sm border border-[#e5e7eb] hover:shadow-lg transition-all duration-300">
+    <div className="bg-white rounded-xl p-6 shadow-xs border border-[#e5e7eb] hover:shadow-lg transition-all duration-300">
       <div className="mb-6">
         <h3 className="text-lg font-semibold text-[#374151] mb-2 font-comfortaa text-center">
           {title || "Claims Distribution by Medicare Rate Relativity"}
         </h3>
-        <div className="w-16 h-1 bg-gradient-to-r from-[#449cfb] to-[#f087fb] rounded-full mx-auto mb-4"></div>
+        <div className="w-16 h-1 bg-linear-to-r from-[#449cfb] to-[#f087fb] rounded-full mx-auto mb-4"></div>
 
         <div className="text-center">
           <div className="text-3xl font-bold text-[#449cfb] mb-1">

@@ -93,7 +93,7 @@ export default function RootLayout({
       <body
         className={`${openSans.variable} ${comfortaa.variable} font-sans antialiased`}
       >
-        <div className="min-h-screen bg-gradient-to-br from-[#f8fafc] to-[#f1f5f9]">
+        <div className="min-h-screen bg-linear-to-br from-[#f8fafc] to-[#f1f5f9]">
           <HeaderNavigation />
           {children}
         </div>

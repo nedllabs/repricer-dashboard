@@ -87,7 +87,7 @@ export function EnhancedDrgTable({
     level3Filter !== "All Procedures";
 
   return (
-    <div className="bg-white rounded-xl shadow-sm border border-[#e5e7eb] overflow-hidden">
+    <div className="bg-white rounded-xl shadow-xs border border-[#e5e7eb] overflow-hidden">
       {/* Table Header with Title */}
       <div className="p-4 bg-[#f9fafb] border-b border-[#e5e7eb]">
         <div className="flex items-center justify-between">

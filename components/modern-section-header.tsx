@@ -16,7 +16,7 @@ export function ModernSectionHeader({
       </h3>
       {subtitle && <p className="text-sm text-[#6b7280] mb-4">{subtitle}</p>}
       <div className="relative">
-        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-[#449cfb] to-[#f087fb] rounded-full -translate-y-px"></div>
+        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-linear-to-r from-[#449cfb] to-[#f087fb] rounded-full -translate-y-px"></div>
       </div>
     </div>
   );

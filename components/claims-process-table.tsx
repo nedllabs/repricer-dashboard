@@ -12,7 +12,7 @@ interface ClaimsProcessTableProps {
 
 export function ClaimsProcessTable({ data }: ClaimsProcessTableProps) {
   return (
-    <div className="bg-white rounded-xl shadow-sm border border-[#e5e7eb] overflow-hidden">
+    <div className="bg-white rounded-xl shadow-xs border border-[#e5e7eb] overflow-hidden">
       {/* Table Header */}
       <div className="bg-[#f9fafb] border-b border-[#e5e7eb]">
         <div className="grid grid-cols-4 gap-4 p-4">

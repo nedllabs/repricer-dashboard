@@ -71,13 +71,13 @@ export function HealthSystemsChart({ title, data }: HealthSystemsChartProps) {
   const sortedData = [...data].sort((a, b) => b.relativity - a.relativity);
 
   return (
-    <div className="bg-white rounded-xl p-6 shadow-sm border border-[#e5e7eb] hover:shadow-lg transition-all duration-300">
+    <div className="bg-white rounded-xl p-6 shadow-xs border border-[#e5e7eb] hover:shadow-lg transition-all duration-300">
       <div className="flex items-center justify-between mb-6">
         <div className="text-center flex-1">
           <h3 className="text-lg font-semibold text-[#374151] mb-2 font-comfortaa">
             {title}
           </h3>
-          <div className="w-16 h-1 bg-gradient-to-r from-[#449cfb] to-[#f087fb] rounded-full mx-auto"></div>
+          <div className="w-16 h-1 bg-linear-to-r from-[#449cfb] to-[#f087fb] rounded-full mx-auto"></div>
         </div>
         <button className="p-2 hover:bg-[#f3f4f6] rounded-lg transition-colors">
           <MoreHorizontal className="w-5 h-5 text-[#6b7280]" />

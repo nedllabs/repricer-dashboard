@@ -5,11 +5,11 @@ import { Database, Clock, CheckCircle2 } from "lucide-react"
 
 export function ProcessedDataFilter({ value, onChange }: { value: "all" | "last", onChange: (val: "all" | "last") => void }) {
   return (
-    <div className="bg-white rounded-xl p-4 lg:p-6 shadow-sm border border-[#e5e7eb] mb-6">
+    <div className="bg-white rounded-xl p-4 lg:p-6 shadow-xs border border-[#e5e7eb] mb-6">
       {/* Mobile Layout */}
       <div className="block lg:hidden space-y-4">
         <div className="flex items-center space-x-3">
-          <div className="p-2 bg-gradient-to-r from-[#449cfb] to-[#5489c2] rounded-xl shadow-sm">
+          <div className="p-2 bg-linear-to-r from-[#449cfb] to-[#5489c2] rounded-xl shadow-xs">
             <Database className="w-4 h-4 text-white" />
           </div>
           <div>
@@ -38,7 +38,7 @@ export function ProcessedDataFilter({ value, onChange }: { value: "all" | "last"
               />
               <div
                 className={`w-5 h-5 rounded-full border-2 transition-all duration-200 ${
-                  value === "all" ? "border-[#449cfb] bg-[#449cfb] shadow-sm" : "border-[#d1d5db] bg-white"
+                  value === "all" ? "border-[#449cfb] bg-[#449cfb] shadow-xs" : "border-[#d1d5db] bg-white"
                 }`}
               >
                 {value === "all" && (
@@ -72,7 +72,7 @@ export function ProcessedDataFilter({ value, onChange }: { value: "all" | "last"
               />
               <div
                 className={`w-5 h-5 rounded-full border-2 transition-all duration-200 ${
-                  value === "last" ? "border-[#449cfb] bg-[#449cfb] shadow-sm" : "border-[#d1d5db] bg-white"
+                  value === "last" ? "border-[#449cfb] bg-[#449cfb] shadow-xs" : "border-[#d1d5db] bg-white"
                 }`}
               >
                 {value === "last" && (
@@ -92,7 +92,7 @@ export function ProcessedDataFilter({ value, onChange }: { value: "all" | "last"
         {/* Mobile Status Indicator */}
         <div className="bg-[#f0f9ff] border border-[#93c6fd] rounded-lg p-3">
           <div className="flex items-center space-x-2">
-            <CheckCircle2 className="w-4 h-4 text-[#449cfb] flex-shrink-0" />
+            <CheckCircle2 className="w-4 h-4 text-[#449cfb] shrink-0" />
             <div className="min-w-0">
               <div className="text-sm font-medium text-[#449cfb]">Active Filter:</div>
               <div className="text-sm text-[#2f4ca3] truncate">
@@ -107,7 +107,7 @@ export function ProcessedDataFilter({ value, onChange }: { value: "all" | "last"
       <div className="hidden lg:flex lg:items-center lg:justify-between">
         <div className="flex items-center space-x-4">
           <div className="flex items-center space-x-3">
-            <div className="p-2 bg-gradient-to-r from-[#449cfb] to-[#5489c2] rounded-xl shadow-sm">
+            <div className="p-2 bg-linear-to-r from-[#449cfb] to-[#5489c2] rounded-xl shadow-xs">
               <Database className="w-5 h-5 text-white" />
             </div>
             <div>
@@ -116,7 +116,7 @@ export function ProcessedDataFilter({ value, onChange }: { value: "all" | "last"
             </div>
           </div>
 
-          <div className="flex items-center bg-[#f9fafb] rounded-2xl p-2 border border-[#e5e7eb] shadow-sm">
+          <div className="flex items-center bg-[#f9fafb] rounded-2xl p-2 border border-[#e5e7eb] shadow-xs">
             <label
               className={`flex items-center space-x-3 px-6 py-3 rounded-xl cursor-pointer transition-all duration-300 ${
                 value === "all"
@@ -135,7 +135,7 @@ export function ProcessedDataFilter({ value, onChange }: { value: "all" | "last"
                 />
                 <div
                   className={`w-5 h-5 rounded-full border-2 transition-all duration-200 ${
-                    value === "all" ? "border-[#449cfb] bg-[#449cfb] shadow-sm" : "border-[#d1d5db] bg-white"
+                    value === "all" ? "border-[#449cfb] bg-[#449cfb] shadow-xs" : "border-[#d1d5db] bg-white"
                   }`}
                 >
                   {value === "all" && (
@@ -169,7 +169,7 @@ export function ProcessedDataFilter({ value, onChange }: { value: "all" | "last"
                 />
                 <div
                   className={`w-5 h-5 rounded-full border-2 transition-all duration-200 ${
-                    value === "last" ? "border-[#449cfb] bg-[#449cfb] shadow-sm" : "border-[#d1d5db] bg-white"
+                    value === "last" ? "border-[#449cfb] bg-[#449cfb] shadow-xs" : "border-[#d1d5db] bg-white"
                   }`}
                 >
                   {value === "last" && (

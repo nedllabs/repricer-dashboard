@@ -22,7 +22,7 @@ export function ModernTabNavigation({ tabs, onTabChange }: ModernTabNavigationPr
   }
 
   return (
-    <div className="bg-white rounded-xl shadow-sm border border-[#e5e7eb] mb-6 overflow-hidden">
+    <div className="bg-white rounded-xl shadow-xs border border-[#e5e7eb] mb-6 overflow-hidden">
       <div className="flex bg-[#f9fafb] border-b border-[#e5e7eb]">
         {tabs.map((tab) => (
           <button
@@ -35,7 +35,7 @@ export function ModernTabNavigation({ tabs, onTabChange }: ModernTabNavigationPr
             {tab.label}
             {activeTab === tab.id && (
               <div className="absolute bottom-0 left-0 right-0">
-                <div className="h-1 bg-gradient-to-r from-[#449cfb] to-[#e679f2] rounded-t-full"></div>
+                <div className="h-1 bg-linear-to-r from-[#449cfb] to-[#e679f2] rounded-t-full"></div>
               </div>
             )}
           </button>

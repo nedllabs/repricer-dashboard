@@ -247,13 +247,13 @@ export function CbsaMap({ title, metric, legendUnit, token }: ChoroplethProps) {
   }, [metric, legendUnit, token]);
 
   return (
-    <div className="bg-white rounded-xl p-4 shadow-sm border border-[#e5e7eb] flex flex-col relative">
+    <div className="bg-white rounded-xl p-4 shadow-xs border border-[#e5e7eb] flex flex-col relative">
       <h4 className="font-semibold text-[#374151] mb-4 font-comfortaa">
         {title}
       </h4>
 
       {/* Legend */}
-      <div className="absolute top-4 right-4 z-10 bg-white/95 backdrop-blur-sm rounded-lg p-3 shadow-lg border border-gray-200">
+      <div className="absolute top-4 right-4 z-10 bg-white/95 backdrop-blur-xs rounded-lg p-3 shadow-lg border border-gray-200">
         <div className="text-xs font-semibold text-gray-700 mb-2">
           {metric === "claimsVolume" ? "Claims Volume" : "Rate Relativity (%)"}
         </div>
@@ -275,7 +275,7 @@ export function CbsaMap({ title, metric, legendUnit, token }: ChoroplethProps) {
 
       <div
         ref={mapContainer}
-        className="flex-grow rounded-lg overflow-hidden"
+        className="grow rounded-lg overflow-hidden"
         style={{ minHeight: 400, width: "100%", height: "400px", position: "relative" }}
       />
 

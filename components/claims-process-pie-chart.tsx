@@ -62,7 +62,7 @@ const renderCustomizedLabel = ({
       fill="white"
       textAnchor={x > cx ? "start" : "end"}
       dominantBaseline="central"
-      className="text-sm font-bold drop-shadow-sm"
+      className="text-sm font-bold drop-shadow-xs"
     >
       {`${(percent * 100).toFixed(1)}%`}
     </text>
@@ -84,12 +84,12 @@ export function ClaimsProcessPieChart({
   };
 
   return (
-    <div className="bg-white rounded-xl p-4 lg:p-6 shadow-sm border border-[#e5e7eb] hover:shadow-lg transition-all duration-300">
+    <div className="bg-white rounded-xl p-4 lg:p-6 shadow-xs border border-[#e5e7eb] hover:shadow-lg transition-all duration-300">
       <div className="text-center mb-4 lg:mb-6">
         <h3 className="text-base lg:text-lg font-semibold text-[#374151] mb-2 font-comfortaa">
           {title}
         </h3>
-        <div className="w-12 lg:w-16 h-1 bg-gradient-to-r from-[#449cfb] to-[#f087fb] rounded-full mx-auto"></div>
+        <div className="w-12 lg:w-16 h-1 bg-linear-to-r from-[#449cfb] to-[#f087fb] rounded-full mx-auto"></div>
       </div>
 
       {/* Mobile: Always use vertical layout (< lg breakpoint) */}
@@ -139,7 +139,7 @@ export function ClaimsProcessPieChart({
               key={index}
               className={`flex items-center justify-between p-2 rounded-lg transition-all duration-200 cursor-pointer ${
                 activeIndex === index
-                  ? "bg-gray-50 shadow-sm"
+                  ? "bg-gray-50 shadow-xs"
                   : "hover:bg-gray-50"
               }`}
               onMouseEnter={() => setActiveIndex(index)}
@@ -147,7 +147,7 @@ export function ClaimsProcessPieChart({
             >
               <div className="flex items-center space-x-2">
                 <div
-                  className="w-3 h-3 rounded-full shadow-sm"
+                  className="w-3 h-3 rounded-full shadow-xs"
                   style={{ backgroundColor: entry.color }}
                 />
                 <div>
@@ -177,7 +177,7 @@ export function ClaimsProcessPieChart({
       {/* Desktop: Use horizontal layout (>= lg breakpoint) */}
       <div className="hidden lg:flex items-center space-x-4">
         {/* Chart on the left - Made bigger */}
-        <div className="flex-shrink-0 w-80 h-80">
+        <div className="shrink-0 w-80 h-80">
           <ResponsiveContainer width="100%" height="100%">
             <PieChart>
               <Pie
@@ -221,7 +221,7 @@ export function ClaimsProcessPieChart({
               key={index}
               className={`flex items-center justify-between p-2.5 rounded-lg transition-all duration-200 cursor-pointer ${
                 activeIndex === index
-                  ? "bg-gray-50 shadow-sm"
+                  ? "bg-gray-50 shadow-xs"
                   : "hover:bg-gray-50"
               }`}
               onMouseEnter={() => setActiveIndex(index)}
@@ -229,7 +229,7 @@ export function ClaimsProcessPieChart({
             >
               <div className="flex items-center space-x-2">
                 <div
-                  className="w-3 h-3 rounded-full shadow-sm"
+                  className="w-3 h-3 rounded-full shadow-xs"
                   style={{ backgroundColor: entry.color }}
                 />
                 <div>

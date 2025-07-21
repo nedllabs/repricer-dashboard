@@ -34,7 +34,7 @@ const CustomTooltip = ({ active, payload, label }: any) => {
 
 export function RepricingStatusChart({ title, data }: RepricingStatusChartProps) {
   return (
-    <div className="bg-white rounded-xl p-6 shadow-sm border border-[#e5e7eb]">
+    <div className="bg-white rounded-xl p-6 shadow-xs border border-[#e5e7eb]">
       <h3 className="text-lg font-semibold text-[#374151] text-center mb-6 font-comfortaa">{title}</h3>
 
       <div className="h-80">

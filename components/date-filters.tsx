@@ -9,7 +9,7 @@ interface DateFiltersProps {
 
 export function DateFilters({ startDate, startQuarter, endDate, endQuarter }: DateFiltersProps) {
   return (
-    <div className="bg-white rounded-lg p-6 shadow-sm border border-[#d9d9d9] mb-6">
+    <div className="bg-white rounded-lg p-6 shadow-xs border border-[#d9d9d9] mb-6">
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         <div>
           <label className="block text-sm font-medium text-[#4d4d4d] mb-2">START DATE</label>

@@ -36,7 +36,7 @@ export function EnhancedDateFilters() {
   }
 
   return (
-    <div className="bg-white rounded-lg p-6 shadow-sm border border-[#d9d9d9] mb-6">
+    <div className="bg-white rounded-lg p-6 shadow-xs border border-[#d9d9d9] mb-6">
       <div className="flex items-center justify-between mb-4">
         <div>
           <h3 className="text-lg font-semibold text-[#4d4d4d] font-comfortaa">Date Range Selection</h3>

@@ -53,7 +53,7 @@ export function MethodologySelector() {
   };
 
   return (
-    <div className="bg-white rounded-xl p-6 shadow-sm border border-[#e5e7eb]">
+    <div className="bg-white rounded-xl p-6 shadow-xs border border-[#e5e7eb]">
       <div className="mb-6">
         <h3 className="text-lg font-semibold text-[#374151] mb-2 font-comfortaa">
           SELECT CLAIM TYPE
@@ -64,7 +64,7 @@ export function MethodologySelector() {
       </div>
 
       {/* Selected Methodology Display */}
-      <div className="mb-4 p-3 bg-gradient-to-r from-[#f0f9ff] to-[#eff6ff] rounded-lg border border-[#93c6fd]">
+      <div className="mb-4 p-3 bg-linear-to-r from-[#f0f9ff] to-[#eff6ff] rounded-lg border border-[#93c6fd]">
         <div className="text-sm font-medium text-[#449cfb]">
           Selected:{" "}
           <span className="font-semibold">{getSelectedMethodologyName()}</span>
@@ -77,7 +77,7 @@ export function MethodologySelector() {
           onClick={() => setSelectedMethodology("all")}
           className={`p-4 rounded-lg cursor-pointer transition-all duration-200 border-2 ${
             selectedMethodology === "all"
-              ? "bg-gradient-to-r from-[#f0f9ff] to-[#eff6ff] border-[#449cfb] text-[#449cfb] shadow-sm"
+              ? "bg-linear-to-r from-[#f0f9ff] to-[#eff6ff] border-[#449cfb] text-[#449cfb] shadow-xs"
               : "bg-[#f9fafb] border-[#e5e7eb] hover:bg-[#f3f4f6] text-[#374151] hover:border-[#d1d5db]"
           }`}
         >
@@ -136,7 +136,7 @@ export function MethodologySelector() {
                       onClick={() => setSelectedMethodology(methodology.id)}
                       className={`p-4 cursor-pointer transition-all duration-200 border-l-4 hover:bg-[#f9fafb] ${
                         selectedMethodology === methodology.id
-                          ? `bg-gradient-to-r from-[#f0f9ff] to-[#eff6ff] border-l-[${categoryColor}] shadow-sm`
+                          ? `bg-linear-to-r from-[#f0f9ff] to-[#eff6ff] border-l-[${categoryColor}] shadow-xs`
                           : "border-l-transparent hover:border-l-[#d1d5db]"
                       }`}
                       style={{

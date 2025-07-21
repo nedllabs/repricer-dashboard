@@ -5,7 +5,7 @@ interface DataTableProps {
 
 export function DataTable({ headers, rows }: DataTableProps) {
   return (
-    <div className="bg-white rounded-lg shadow-sm border border-[#d9d9d9] overflow-hidden">
+    <div className="bg-white rounded-lg shadow-xs border border-[#d9d9d9] overflow-hidden">
       <div className="bg-[#858585] text-white">
         <div className="grid grid-cols-3 gap-4 p-4">
           {headers.map((header, index) => (

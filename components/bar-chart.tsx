@@ -15,7 +15,7 @@ interface CustomBarChartProps {
 
 export function CustomBarChart({ title, data }: CustomBarChartProps) {
   return (
-    <div className="bg-white rounded-lg p-6 shadow-sm border border-[#d9d9d9]">
+    <div className="bg-white rounded-lg p-6 shadow-xs border border-[#d9d9d9]">
       <div className="flex items-center justify-between mb-4">
         <h3 className="text-lg font-medium text-[#4d4d4d]">{title}</h3>
         <button className="text-[#858585] hover:text-[#4d4d4d]">
