@@ -249,10 +249,10 @@ export function SidebarNavigation({
                       className={cn(
                         "flex w-full items-center rounded-full px-2 py-4 my-1 text-sm font-bold text-left transition-all duration-200 no-shadow",
                         hasChildren
-                          ? "text-gray-700 hover:bg-white"
+                          ? "text-black hover:bg-white"
                           : isActive(item.href)
                           ? "bg-gradient-to-r from-[#449CFB] to-[#E85DF9] text-white"
-                          : "text-gray-700 hover:bg-white"
+                          : "text-black hover:bg-white"
                       )}
                     >
                       <item.icon
@@ -305,7 +305,7 @@ export function SidebarNavigation({
                                 "flex w-full items-center rounded-full px-4 py-3 my-1 text-sm font-medium text-left transition-all duration-200 no-shadow",
                                 childActive
                                   ? "bg-gradient-to-r from-[#449CFB] to-[#E85DF9] text-white"
-                                  : "text-gray-600 hover:bg-white"
+                                  : "text-gray-900 hover:bg-white"
                               )}
                             >
                               <child.icon
@@ -351,7 +351,7 @@ export function SidebarNavigation({
         className
       )}
     >
-      <div className="p-4">
+      <div className="p-2">
         <nav className="mt-2 space-y-1">
           {quickNavItems.map((item) => {
             const hasChildren = item.children && item.children.length > 0;
@@ -370,12 +370,12 @@ export function SidebarNavigation({
                     }
                   }}
                   className={cn(
-                    "flex w-full items-center rounded-full px-1 py-4 my-1 text-md font-semibold text-left transition-all duration-200 no-shadow",
+                    "flex w-full items-center rounded-full px-3 py-4 my-2 text-md font-semibold text-left transition-all duration-200 no-shadow",
                     hasChildren
-                      ? "text-gray-700 hover:bg-white"
+                      ? "text-black hover:bg-white"
                       : isActive(item.href)
                       ? "bg-gradient-to-r from-[#449CFB] to-[#E85DF9] text-white"
-                      : "text-gray-700 hover:bg-white"
+                      : "text-black hover:bg-white"
                   )}
                 >
                   <item.icon
@@ -423,7 +423,7 @@ export function SidebarNavigation({
                             "flex w-full items-center rounded-full px-4 py-3 my-1 text-sm font-medium text-left transition-all duration-200 no-shadow",
                             childActive
                               ? "bg-gradient-to-r from-[#449CFB] to-[#E85DF9] text-white"
-                              : "text-gray-600 hover:bg-white"
+                              : "text-gray-900 hover:bg-white"
                           )}
                         >
                           <child.icon
