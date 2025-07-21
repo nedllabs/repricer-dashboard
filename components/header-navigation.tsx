@@ -29,7 +29,7 @@ export function HeaderNavigation() {
 
   return (
     <header className="bg-white/90 backdrop-blur-md border-b border-[#e5e7eb]/50 px-4 lg:px-6 sticky top-0 z-50 shadow-sm">
-      <div className="flex items-center justify-between mx-auto">
+      <div className="flex justify-between mx-auto">
         {/* Left Section - Logo */}
         <div className="flex items-center space-x-2 lg:space-x-4 flex-1">
           <button
@@ -43,7 +43,7 @@ export function HeaderNavigation() {
             )}
           </button>
 
-          <div className="flex items-center space-x-2 lg:space-x-3">
+          <div className="flex items-center">
             <button
               onClick={handleLogoClick}
               className="flex items-center focus:outline-none"
