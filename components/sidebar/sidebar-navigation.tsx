@@ -148,7 +148,7 @@ export function SidebarNavigation({
         {
           id: "diagnosis-configuration",
           icon: BookOpen,
-          label: "Diagnosis Configuration",
+          label: "Edits and Configuration",
           color: "text-orange-600",
           href: "https://payment-leakage.vercel.app/diagnosis-configuration",
         },
