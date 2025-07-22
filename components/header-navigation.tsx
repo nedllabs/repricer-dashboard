@@ -15,7 +15,7 @@ export function HeaderNavigation({ onSidebarToggle }: HeaderNavigationProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const handleLogoClick = () => {
-    window.location.href = "/";
+    window.location.href = "https://nedl-dashboard.vercel.app/summary";
   };
 
   return (
