@@ -18,19 +18,6 @@ export function HeaderNavigation({ onSidebarToggle }: HeaderNavigationProps) {
     window.location.href = "/";
   };
 
-  const navigationItems = [
-    {
-      href: "/",
-      label: "Repricer Intelligence Dashboard",
-      icon: BarChart3,
-    },
-    {
-      href: "/claims-process",
-      label: "Claims Process Summary",
-      icon: FileText,
-    },
-  ];
-
   return (
     <header className="bg-white/90 backdrop-blur-md border-b border-[#e5e7eb]/50 px-4 lg:px-6 sticky top-0 z-50 shadow-xs">
       <div className="flex justify-between mx-auto">
@@ -50,34 +37,6 @@ export function HeaderNavigation({ onSidebarToggle }: HeaderNavigationProps) {
             >
               <NedlLogo className="p-3" />
             </button>
-          </div>
-        </div>
-
-        {/* Desktop Navigation - Hidden on mobile */}
-        <div className="hidden lg:flex items-center justify-center flex-2">
-          <div className="flex items-center bg-white/80 backdrop-blur-xs rounded-2xl p-2 ">
-            {navigationItems.map((item) => {
-              const IconComponent = item.icon;
-              return (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className={`relative px-4 xl:px-4 mx-2 py-2 text-sm font-medium transition-all duration-300 rounded-3xl flex items-center space-x-2 ${
-                    pathname === item.href
-                      ? "bg-linear-to-r from-[#449CFB] to-[#E85DF9] text-white shadow-lg transform scale-105"
-                      : "text-[#6b7280] hover:text-[#374151] hover:bg-white/70"
-                  }`}
-                >
-                  <IconComponent className="w-4 h-4" />
-                  <span className="relative z-10 font-comfortaa">
-                    {item.label}
-                  </span>
-                  {pathname === item.href && (
-                    <div className="absolute inset-0 bg-linear-to-r from-[#449cfb]/20 to-[#5489c2]/20 rounded-xl blur-xl"></div>
-                  )}
-                </Link>
-              );
-            })}
           </div>
         </div>
 

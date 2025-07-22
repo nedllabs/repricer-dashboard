@@ -8,6 +8,7 @@ import {
   FileCheck,
   X,
   ChevronDown,
+  House,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useState, useEffect } from "react";
@@ -57,6 +58,13 @@ export function SidebarNavigation({
 
   const quickNavItems: NavigationItem[] = [
     {
+      id: "summary",
+      icon: House,
+      label: "Summary",
+      color: "text-[#f087fb]",
+      href: "https://nedl-dashboard.vercel.app/summary",
+    },
+    {
       id: "policy-intelligence",
       icon: FileBarChart,
       label: "Policy Intelligence",
@@ -68,7 +76,7 @@ export function SidebarNavigation({
           icon: FileBarChart,
           label: "Overview",
           color: "text-blue-600",
-          href: "https://nedl-dashboard.vercel.app/",
+          href: "https://nedl-dashboard.vercel.app/dashboard",
         },
         {
           id: "bookmarked",
