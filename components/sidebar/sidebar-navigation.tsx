@@ -9,6 +9,7 @@ import {
   X,
   ChevronDown,
   House,
+  Diff,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useState, useEffect } from "react";
@@ -98,6 +99,13 @@ export function SidebarNavigation({
           label: "Code Coverage",
           color: "text-blue-600",
           href: "https://nedl-dashboard.vercel.app/code-coverage",
+        },
+        {
+          id: "service-comparison",
+          icon: Diff,
+          label: "Service Comparison",
+          color: "text-blue-600",
+          href: "https://nedl-dashboard.vercel.app/service-comparison",
         },
       ],
     },
