@@ -10,6 +10,8 @@ import {
   ChevronDown,
   House,
   Diff,
+  ChartNoAxesColumnIncreasing,
+  Blend,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useState, useEffect } from "react";
@@ -23,6 +25,7 @@ interface NavigationItem {
   color?: string;
   href: string;
   children?: NavigationItem[];
+  disabled?: boolean;
 }
 
 interface SidebarNavigationProps {
@@ -101,6 +104,13 @@ export function SidebarNavigation({
           href: "https://nedl-dashboard.vercel.app/code-coverage",
         },
         {
+          id: "lcd-mcd-coverage",
+          icon: ChartNoAxesColumnIncreasing,
+          label: "LCD / MCD Coverage",
+          color: "text-blue-600",
+          href: "https://nedl-dashboard.vercel.app/lcd-mcd-coverage",
+        },
+        {
           id: "service-comparison",
           icon: Diff,
           label: "Service Comparison",
@@ -176,12 +186,33 @@ export function SidebarNavigation({
         },
       ],
     },
+    {
+      id: "raise-transparency",
+      icon: Blend,
+      label: "Price Transparency Intelligence",
+      color: "text-[#66348f]",
+      href: "",
+      disabled: true,
+    },
+    {
+      id: "contract-library",
+      icon: BookOpen,
+      label: "Contract Library",
+      color: "text-[#9c5d45]",
+      href: "",
+      disabled: true,
+    },
   ];
 
-  const handleNavigate = (href: string, itemId?: string) => {
+  const handleNavigate = (href: string, itemId?: string | null) => {
     if (href !== "#") {
       // Check if it's an external link
       router.push(href);
+
+      // If Summary is clicked, collapse all other menus
+      if (itemId === "summary") {
+        setExpandedCategories(new Set());
+      }
 
       if (isMobile) {
         onToggle(); // Close mobile menu after navigation
@@ -227,7 +258,7 @@ export function SidebarNavigation({
         {/* Mobile Sidebar */}
         <div
           className={cn(
-            "fixed left-0 top-0 h-full w-64 z-50 font-comfortaa transform transition-transform duration-300 ease-in-out",
+            "fixed left-0 top-0 h-full w-64 z-50 font-title transform transition-transform duration-300 ease-in-out",
             "bg-[#F5F5F5] shadow-[3px_0px_25px_0px_rgba(0,0,0,0.15)]",
             isOpen ? "translate-x-0" : "-translate-x-full",
             className
@@ -259,17 +290,20 @@ export function SidebarNavigation({
                         if (hasChildren) {
                           toggleCategory(item.id!);
                         } else {
-                          handleNavigate(item.href, item.id || undefined);
+                          handleNavigate(item.href, item.id || null);
                         }
                       }}
                       className={cn(
                         "flex w-full items-center rounded-full px-2 py-4 my-1 text-sm font-bold text-left transition-all duration-200 no-shadow",
+                        item.disabled &&
+                          "opacity-50 cursor-not-allowed hover:bg-transparent",
                         hasChildren
-                          ? "text-black hover:bg-white"
+                          ? "text-gray-700 hover:bg-white"
                           : isActive(item.href)
                           ? "bg-gradient-to-r from-[#449CFB] to-[#E85DF9] text-white"
-                          : "text-black hover:bg-white"
+                          : "text-gray-700 hover:bg-white"
                       )}
+                      disabled={item.disabled}
                     >
                       <item.icon
                         className={cn(
@@ -312,17 +346,15 @@ export function SidebarNavigation({
                             <button
                               key={child.id || "child-overview"}
                               onClick={() =>
-                                handleNavigate(
-                                  child.href,
-                                  child.id || undefined
-                                )
+                                handleNavigate(child.href, child.id || null)
                               }
                               className={cn(
                                 "flex w-full items-center rounded-full px-4 py-3 my-1 text-sm font-medium text-left transition-all duration-200 no-shadow",
                                 childActive
                                   ? "bg-gradient-to-r from-[#449CFB] to-[#E85DF9] text-white"
-                                  : "text-gray-900 hover:bg-white"
+                                  : "text-gray-600 hover:bg-white"
                               )}
+                              disabled={item.disabled}
                             >
                               <child.icon
                                 className={cn(
@@ -362,7 +394,7 @@ export function SidebarNavigation({
   return (
     <div
       className={cn(
-        "fixed left-0 top-16 h-[calc(100vh-5rem)] w-64 z-10 font-comfortaa",
+        "fixed left-0 top-16 h-[calc(100vh-5rem)] w-64 z-10 font-title",
         "bg-[#F5F5F5] shadow-[3px_0px_25px_0px_rgba(0,0,0,0.15)]",
         className
       )}
@@ -382,17 +414,19 @@ export function SidebarNavigation({
                     if (hasChildren) {
                       toggleCategory(item.id!);
                     } else {
-                      handleNavigate(item.href, item.id || undefined);
+                      handleNavigate(item.href, item.id || null);
                     }
                   }}
                   className={cn(
                     "flex w-full items-center rounded-full px-3 py-4 my-2 text-md font-semibold text-left transition-all duration-200 no-shadow",
                     hasChildren
-                      ? "text-black hover:bg-white"
+                      ? "text-gray-700 hover:bg-white"
                       : isActive(item.href)
                       ? "bg-gradient-to-r from-[#449CFB] to-[#E85DF9] text-white"
-                      : "text-black hover:bg-white"
+                      : "text-gray-700 hover:bg-white",
+                    item.disabled && "opacity-60 hover:bg-transparent"
                   )}
+                  disabled={item.disabled}
                 >
                   <item.icon
                     className={cn(
@@ -433,13 +467,13 @@ export function SidebarNavigation({
                         <button
                           key={child.id || "child-overview"}
                           onClick={() =>
-                            handleNavigate(child.href, child.id || undefined)
+                            handleNavigate(child.href, child.id || null)
                           }
                           className={cn(
                             "flex w-full items-center rounded-full px-4 py-3 my-1 text-sm font-medium text-left transition-all duration-200 no-shadow",
                             childActive
                               ? "bg-gradient-to-r from-[#449CFB] to-[#E85DF9] text-white"
-                              : "text-gray-900 hover:bg-white"
+                              : "text-gray-600 hover:bg-white"
                           )}
                         >
                           <child.icon
