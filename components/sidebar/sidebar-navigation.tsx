@@ -502,7 +502,7 @@ export function SidebarNavigation({
             );
           })}
         </nav>
-        <div className="mt-[20%] text-center text-sm text-gray-400 border-t border-gray-200 pt-6">
+        <div className="text-center text-xs text-orange-400 border-t border-gray-200 pt-6">
           Illustrative sample data for presentation purposes only.
         </div>
       </div>
