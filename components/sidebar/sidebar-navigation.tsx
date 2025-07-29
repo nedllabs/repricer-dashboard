@@ -195,9 +195,9 @@ export function SidebarNavigation({
       disabled: true,
     },
     {
-      id: "contract-library",
+      id: "contract-intelligence",
       icon: BookOpen,
-      label: "Contract Library",
+      label: "Contract Intelligence",
       color: "text-[#9c5d45]",
       href: "",
       disabled: true,
